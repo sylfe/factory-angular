@@ -1,0 +1,17 @@
+<form (ngSubmit)="send()" #monForm="ngForm">
+  <div class="form-group">
+    <label>Pseudo</label>
+    <input name="pseudo" [(ngModel)]="user.pseudo" required class="form-control" #pseudo="ngModel">
+  </div>
+  <div *ngIf="pseudo.dirty && pseudo.invalid" class="alert-danger">
+    *information obligatoire (s'affiche si le champ a été touché et n'est pas valide</div>
+  <div>
+    <label>Mot de Passe</label>
+    <input type="password" name="mdp" [(ngModel)]="user.motDePasse" required class="form-control" #mdp="ngModel">
+  </div>
+  <div *ngIf="mdp.dirty && mdp.invalid" class="alert-danger">*champ obligatoire </div>
+  <div>
+    <button type="submit" class="btn btn-success" [disabled]="monForm.invalid"> Envoyer</button>
+    <a [routerLink]="['/home']" routerLinkActive="active" class="btn btn-warning">retour</a>
+  </div>
+</form>
