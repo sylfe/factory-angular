@@ -4,10 +4,10 @@ import {Materiel} from './materiel';
 export class Ordinateur extends Materiel {
 
 
-  constructor(nom?: string, coutJournee?: number, disponibilite?: false,
+  constructor(id?: number, code?: string, nom?: string, coutJournee?: number, disponibilite?: false,
               private _processeur?: string, private _ram?: number, private _dd?: number,
               private _anneeAchat?: number) {
-    super(nom, coutJournee, disponibilite);
+    super(id, code, nom, coutJournee, disponibilite);
   }
 
   get processeur(): string {

@@ -1,4 +1,4 @@
 export class Materiel {
   constructor(
-    private nom?: string, private coutJournee?: number, private disponibilite?: false) {}
+    private id?: number, private code?: string, private nom?: string, private coutJournee?: number, private disponibilite?: false) {}
 }
