@@ -45,7 +45,11 @@ export class ModulesService {
   public  insert(module: Module): Observable<any> {
     const p = {
       'dateDebut' : module.dateDebut,
-      'module' : module.matiere
+      'matiere' : {
+        'id' : module.matiere.id
+      }
+      // 'formateur': {},
+      // 'formation': {}
     };
     return this.http.post( `${this.url}/insert`, p, this.httpOptions );
   }
