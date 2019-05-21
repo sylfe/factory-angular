@@ -33,10 +33,6 @@ export class MaterielService {
     return this.http.get(`${this.url}/${id}`, this.httpOptions);
   }
 
-  public findByIdLog(option): Observable<any> {
-    return this.http.get(`${this.url}/1`, option);
-  }
-
 
   public insert(materiel: Materiel): Observable<any> {
     const m = {
@@ -49,8 +45,8 @@ export class MaterielService {
     return this.http.post(`${this.url}/new`, m, this.httpOptions);
   }
 
-  public update(produit: Produit): Observable<any> {
-    return this.http.put(`${this.url}/${produit.id}`, produit, this.httpOptions);
+  public update(materiel: Materiel): Observable<any> {
+    return this.http.put(`${this.url}/${materiel.id}`, materiel, this.httpOptions);
   }
 
 

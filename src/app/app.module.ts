@@ -13,7 +13,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {routes} from "./routes";
 import { UserEditerComponent } from './testRest/user-editer/user-editer.component';
 import { MaterielComponent } from './materiel/materiel.component';
+<<<<<<< HEAD
+import { FormateurComponent } from './formateur/formateur.component';
+=======
 import { UserComponent } from './testRest/user/user.component';
+>>>>>>> master
 
 @NgModule({
   declarations: [
@@ -21,7 +25,16 @@ import { UserComponent } from './testRest/user/user.component';
     LoginComponent,
     UserEditerComponent,
     MaterielComponent,
+<<<<<<< HEAD
     UserComponent,
+=======
+<<<<<<< HEAD
+    FormateurComponent
+=======
+    UserComponent
+>>>>>>> master
+=======
+>>>>>>> master
     ModulesComponent,
     MatieresComponent,
     LoginComponent
