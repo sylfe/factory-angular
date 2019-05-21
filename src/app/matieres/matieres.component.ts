@@ -3,6 +3,8 @@ import {HttpHeaders} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Matiere} from '../model/matiere';
+import {MatieresService} from '../matieres.service';
+import {connectableObservableDescriptor} from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-matieres',
@@ -12,18 +14,15 @@ import {Matiere} from '../model/matiere';
 export class MatieresComponent implements OnInit {
 
   private matiere: Matiere = new Matiere();
-  private nomCtrl: FormControl;
-  private objectifsCtrl: FormControl;
   private monForm: FormGroup;
 
-  private headers: HttpHeaders;
-  private httpOptions: any;
+
 
   private message = 'pseudo et/ou mot de passe incorrect(s)';
 
 
   constructor(private activatedRoute: ActivatedRoute,
-              private router: Router) {
+              private router: Router, private matiereService: MatieresService) {
 
   }
   ngOnInit() {
@@ -33,5 +32,8 @@ export class MatieresComponent implements OnInit {
       }});
   }
 
-  send() {}
+  send() {
+    this.matiereService.insert(this.matiere).subscribe( data => {
+      console.log('ok')}, error => { console.log(error);} );
+  }
 }

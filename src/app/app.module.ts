@@ -17,6 +17,8 @@ import { SalleComponent } from './salle/salle.component';
 import { VideoProjecteursComponent } from './video-projecteurs/video-projecteurs.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UserComponent } from './testRest/user/user.component';
+import {MatieresService} from './matieres.service';
+import {ModulesService} from './modules.service';
 import { OrdinateurEditComponent } from './ordinateur-edit/ordinateur-edit.component';
 import { VideoProjecteurEditComponent } from './videoprojecteur-edit/videoprojecteur-edit.component';
 import { SalleEditComponent } from './salle-edit/salle-edit.component';
@@ -44,7 +46,7 @@ import { SalleEditComponent } from './salle-edit/salle-edit.component';
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, MatieresService, ModulesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
