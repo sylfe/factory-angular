@@ -12,13 +12,15 @@ import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {routes} from "./routes";
 import { UserEditerComponent } from './testRest/user-editer/user-editer.component';
+import { MaterielComponent } from './materiel/materiel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
 <<<<<<< HEAD
     LoginComponent,
-    UserEditerComponent
+    UserEditerComponent,
+    MaterielComponent
 =======
     ModulesComponent,
     MatieresComponent

@@ -1,10 +1,11 @@
 import {Materiel} from './materiel';
 
 export class Salle extends Materiel {
-  constructor(id?: number, code?: string, nom?: string, coutJournee?: number, disponibilite?: false,
+  constructor(id?: number, code?: string, coutJournee?: number, disponibilite?: false,
               private _maxPersonne?: number) {
-    super(id, code, nom, coutJournee, disponibilite);
+    super(id, code, coutJournee, disponibilite);
   }
+
 
   get maxPersonne(): number {
     return this._maxPersonne;
