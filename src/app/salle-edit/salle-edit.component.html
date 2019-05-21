@@ -9,21 +9,21 @@
 
   <div class="input-group mb-3">
     <label class="input-group-text">id</label>
-    <input [(ngModel)]="salle.id" readonly placeholder="ID généré automatiquement">
+    <input [(ngModel)]="salle.id" readonly placeholder="ID généré automatiquement" name="id">
   </div>
   <div class="input-group mb-3">
-    <label class="input-group-text" type="text" name="code">code</label>
-    <input [(ngModel)]="salle.code">
-  </div>
-
-  <div class="input-group mb-3">
-    <label class="input-group-text" type="text" name="coutJournee">coût(€)/jour</label>
-    <input [(ngModel)]="salle.coutJournee">
+    <label class="input-group-text" type="text">code</label>
+    <input [(ngModel)]="salle.code" name="code">
   </div>
 
   <div class="input-group mb-3">
-    <label class="input-group-text" type="number" name="coutJournee">Capacité(pers.)</label>
-    <input [(ngModel)]="salle.capacite">
+    <label class="input-group-text" type="text">coût(€)/jour</label>
+    <input [(ngModel)]="salle.coutJournee" name="coutJournee">
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" type="number" >Capacité(pers.)</label>
+    <input [(ngModel)]="salle.capacite"name="capacite">
   </div>
 
   <div class="input-group mb-3">

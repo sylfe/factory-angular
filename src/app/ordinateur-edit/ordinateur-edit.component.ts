@@ -34,14 +34,12 @@ export class OrdinateurEditComponent implements OnInit {
     // methode save pour ordinateur
     if (this.ordinateur.id) {
       this.ordinateurService.update(this.ordinateur).subscribe(result => {
-        console.log('ok');
         this.router.navigate(['/ordinateurs', 'modifié', this.ordinateur.code]);
 
       });
     } else {
 
       this.ordinateurService.insert(this.ordinateur).subscribe(result => {
-        console.log('okoo');
         this.router.navigate(['/ordinateurs', 'ajouté', this.ordinateur.code]);
       });
 
