@@ -9,7 +9,7 @@ import {Formateur} from './model/formateur';
 })
 export class FormateurService implements CanActivate {
 
-  private url = 'http://localhoste:8080/la-factory-rest-formateur';
+  private url = 'http://localhost:8080/la-factory/rest/formateur';
   private headers: HttpHeaders;
   private httpOptions: any;
 
