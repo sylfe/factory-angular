@@ -62,7 +62,7 @@ export class UserService implements CanActivate {
 
 
   public list(): Observable<any> {
-    return this.http.get(`${this.url}/all`, this.httpOptions);
+    return this.http.get(`${this.url}`, this.httpOptions);
   }
 
   public delete(id: number): Observable<any> {
