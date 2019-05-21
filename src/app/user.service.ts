@@ -16,6 +16,13 @@ export class UserService implements CanActivate {
 
   constructor(private http: HttpClient, private router: Router) {
 
+    this.headers = new HttpHeaders({
+      'Content-Type': 'application/JSON',
+      'Authorization': 'Basic ' + btoa('benjamin@benjamin.fr:benjamin')
+    });
+
+    this.httpOptions = {headers: this.headers};
+
   }
 
   private _isLogged = false;
