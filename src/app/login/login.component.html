@@ -1,0 +1,26 @@
+<div>
+  <h1>
+    login works! (✿◠‿◠)
+  </h1>
+  <div *ngIf="message" class=" alert alert-danger"> {{message}}</div>
+  <form (ngSubmit)="send()" #monForm="ngForm">
+    <div class="form-group">
+      <label> email  </label>
+      <input class="form-control" name="login" [(ngModel)]="user.email" required #login="ngModel">
+      <div *ngIf="login.dirty && login.invalid" class="alert alert-danger">* info obligatoire</div>
+    </div>
+    <div class="form-group">
+      <label>  Mot de passe  </label>
+      <input class="form-control" name="password" [(ngModel)]="user.motDePasse" required #password="ngModel">
+      <div *ngIf="password.dirty && password.invalid" class="alert alert-danger">* info obligatoire</div>
+    </div>
+
+    <div>
+      <button type="submit" value="envoyer" [disabled]="monForm.invalid">Connexion</button>
+      <a [routerLink]="['/']" routerLinkActive="active" class="btn btn-warning">retour</a>
+    </div>
+
+
+
+  </form>
+</div>

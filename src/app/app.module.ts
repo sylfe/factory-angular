@@ -6,16 +6,21 @@ import {UserService} from "./user.service";
 import { ModulesComponent } from './modules/modules.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { MatieresComponent } from './matieres/matieres.component';
+import { LoginComponent } from './login/login.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RouterModule} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
+import {routes} from "./routes";
 
 @NgModule({
   declarations: [
     AppComponent,
     ModulesComponent,
     MatieresComponent
+    LoginComponent
   ],
   imports: [
-    BrowserModule,
-    ReactiveFormsModule
+    BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
