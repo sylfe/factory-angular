@@ -18,16 +18,13 @@ import { UserComponent } from './testRest/user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
     LoginComponent,
     UserEditerComponent,
     MaterielComponent,
-    UserComponent
-=======
+    UserComponent,
     ModulesComponent,
-    MatieresComponent
+    MatieresComponent,
     LoginComponent
->>>>>>> master
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
