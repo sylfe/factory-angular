@@ -1,0 +1,27 @@
+<div *ngIf="message" class="alert alert-info">{{message}}</div>
+
+<table class="table">
+  <thead>
+  <th>id</th>
+  <th>nom</th>
+  <th>prenom</th>
+  <th>adresse</th>
+  <th>email</th>
+  <th>telephone</th>
+  <th>mot de passe</th>
+  <th>editer</th>
+  <th>supprimer</th>
+  </thead>
+  <tr *ngFor="let u of users">
+    <td> {{ u.id }}  </td>
+    <td> {{ u.nom }}  </td>
+    <td>   {{ u.prenom }}  </td>
+    <td>   {{ u.adresse }}    </td>
+    <td>   {{ u.email }}    </td>
+    <td>   {{ u.telephone }}    </td>
+    <td>   {{ u.motDePasse }}    </td>
+    <td> <a class="btn btn-warning" [routerLink]="['/user', u.id]" routerLinkActive="active"> editer </a>  </td>
+    <td> <button class="btn btn-danger" (click)="delete(u.id)">supprimer</button> </td>
+  </tr>
+</table>
+<a class="btn btn-info" [routerLink]="['/user']" routerLinkActive="active"> ajouter </a>
