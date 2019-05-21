@@ -17,7 +17,7 @@ export class FormateurService implements CanActivate {
 
   }
 
-  private isLogged = false;
+  private _isLogged = false;
 
   get isLogged(): boolean {
     return this.isLogged;
@@ -34,12 +34,12 @@ export class FormateurService implements CanActivate {
   public login(formateur: Formateur) {
     sessionStorage.setItem('isLoggedIn', 'true');
     sessionStorage.setItem('login', formateur.email);
-    this.isLogged = true;
+    this._isLogged = true;
   }
 
   public logout() {
     sessionStorage.clear();
-    this.isLogged = false;
+    this._isLogged = false;
   }
 
   verifLog() {
@@ -56,7 +56,7 @@ export class FormateurService implements CanActivate {
   }
 
 
-  public list() {
+  public list(): Observable<any> {
     return this.http.get(this.url, this.httpOptions);
   }
 
