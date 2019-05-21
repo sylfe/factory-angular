@@ -37,9 +37,9 @@ export class MaterielService {
   public insert(materiel: Materiel): Observable<any> {
     const m = {
       'id': materiel.id,
+      'version': materiel.version++,
       'code': materiel.code,
       'coutJournee': materiel.coutJournee,
-      'disponibilite': materiel.disponibilite,
 
     }
     return this.http.post(`${this.url}/new`, m, this.httpOptions);

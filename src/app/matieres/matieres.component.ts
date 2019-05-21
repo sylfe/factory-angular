@@ -12,8 +12,8 @@ import {Matiere} from '../model/matiere';
 export class MatieresComponent implements OnInit {
 
   private matiere: Matiere = new Matiere();
-  private pseudoCtrl: FormControl;
-  private mdpCtrl: FormControl;
+  private nomCtrl: FormControl;
+  private objectifsCtrl: FormControl;
   private monForm: FormGroup;
 
   private headers: HttpHeaders;

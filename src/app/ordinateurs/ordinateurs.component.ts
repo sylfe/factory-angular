@@ -18,7 +18,7 @@ export class OrdinateursComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       if (params.nom) {
-        this.message = `L'odrinateur "${params.nom}" a été ${params.action}`;
+        this.message = `L'ordinateur "${params.nom}" a été ${params.action}`;
       }
     });
     this.list();

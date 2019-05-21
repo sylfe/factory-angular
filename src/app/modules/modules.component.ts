@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Module} from '../model/module';
+import {Matiere} from '../model/matiere';
+import {MatieresService} from '../matieres.service';
 
 @Component({
   selector: 'app-modules',
@@ -9,13 +13,17 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 export class ModulesComponent implements OnInit {
 
 
+  private module: Module;
   private monForm: FormGroup;
+  private matieres: Matiere[];
 
-  constructor(private fb: FormBuilder) {
-    this.monForm = this.fb.group( {
-      duree: this.fb.control('', [Validators.required, Validators.minLength(2)]),
-      matiere: this.fb.control('', [Validators.required])
-    });
+
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router, private matiereService: MatieresService) {
+  //  this.matiereService.list().subscribe(rez => this.matieres = rez);
+    this.matieres.push(new Matiere('nom', 'niveau',
+      'objectifs', 'prerequis', 'contenu', 10));
   }
 
 

@@ -1,9 +1,10 @@
 import {Materiel} from './materiel';
+import {Stagiaire} from "./stagiaire";
+import {VideoProjecteur} from "./videoProjecteur";
 
 export class Salle extends Materiel {
-  constructor(id?: number, code?: string, coutJournee?: number, disponibilite?: false,
-              private _capacite?: number) {
-    super(id, code, coutJournee, disponibilite);
+  constructor(id?: number, version?: number, code?: string, coutJournee?: number, private _capacite?: number, private _videoprojecteur?: VideoProjecteur) {
+    super(id, version, code, coutJournee);
   }
 
 
@@ -13,5 +14,13 @@ export class Salle extends Materiel {
 
   set capacite(value: number) {
     this._capacite = value;
+  }
+
+  get videoprojecteur(): VideoProjecteur {
+    return this._videoprojecteur;
+  }
+
+  set videoprojecteur(value: VideoProjecteur) {
+    this._videoprojecteur = value;
   }
 }

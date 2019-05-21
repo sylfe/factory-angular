@@ -1,3 +1,27 @@
-<p>
-  formateur works!
-</p>
+<div *ngIf="message" class="alert alert-info">{{message}}</div>
+
+<table class="table">
+  <thead>
+  <th>id</th>
+  <th>nom</th>
+  <th>prenom</th>
+  <th>adresse</th>
+  <th>email</th>
+  <th>telephone</th>
+  <th>mot de passe</th>
+  <th>editer</th>
+  <th>supprimer</th>
+  </thead>
+  <tr *ngFor="let f of formateurs">
+    <td> {{ f.id }}  </td>
+    <td> {{ f.nom }}  </td>
+    <td>   {{ f.prenom }}  </td>
+    <td>   {{ f.adresse }}    </td>
+    <td>   {{ f.email }}    </td>
+    <td>   {{ f.telephone }}    </td>
+    <td>   {{ f.motDePasse }}    </td>
+    <td> <a class="btn btn-warning" [routerLink]="['/formateur', f.id]" routerLinkActive="active"> Editer </a>  </td>
+    <td> <button class="btn btn-danger" (click)="delete(f.id)">Supprimer</button> </td>
+  </tr>
+</table>
+<a class="btn btn-info" [routerLink]="['/formateur']" routerLinkActive="active"> Ajouter </a>

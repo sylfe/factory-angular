@@ -1,10 +1,10 @@
-import {Droit} from './droit.enum';
+import {PersonneDroit} from "./personne-droit";
 
 export class User {
 
   constructor(private _id?: number, private _nom?: string, private _prenom?: string, private _adresse?: string,
               private _email?: string, private _telephone?: string, private _motDePasse?: string,
-              private _version?: number, private _droit?: Droit) {}
+              private _version?: number, private _droits?: PersonneDroit[]) {}
 
   get id(): number {
     return this._id;
@@ -70,11 +70,12 @@ export class User {
     this._version = value;
   }
 
-  get droit(): Droit {
-    return this._droit;
+
+  get droits(): PersonneDroit[] {
+    return this._droits;
   }
 
-  set droit(value: Droit) {
-    this._droit = value;
+  set droits(value: PersonneDroit[]) {
+    this._droits = value;
   }
 }

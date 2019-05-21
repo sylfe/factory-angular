@@ -27,11 +27,11 @@
 
   <div class="input-group mb-3">
     <label class="input-group-text" type="text" name="ram">RAM (Go)</label>
-    <input [(ngModel)]="ordinateur.ram">
+    <input [(ngModel)]="ordinateur.quantiteRAM">
   </div>
   <div class="input-group mb-3">
     <label class="input-group-text" type="text" name="dd">Disque dur(Go)</label>
-    <input [(ngModel)]="ordinateur.dd">
+    <input [(ngModel)]="ordinateur.quantiteDD">
   </div>
   <div class="input-group mb-3">
     <label class="input-group-text">Année d'achat</label>
@@ -40,8 +40,8 @@
 
   <div class="input-group mb-3">
     <label class="input-group-text">Disponibilité</label>
-    <input [(ngModel)]="ordinateur.disponibilite" type="radio" name="disponibilite" value="true">Oui
-    <input [(ngModel)]="ordinateur.disponibilite" type="radio" name="disponibilite" value="false">Oui
+    <input [(ngModel)]="ordinateur.stagiaires" type="radio" name="disponibilite" value="true">Oui
+    <input [(ngModel)]="ordinateur.stagiaires" type="radio" name="disponibilite" value="false">Oui
   </div>
   <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
   <button  class="btn btn-secondary" [routerLink]="['/ordinateurs']" routerLinkActive="active">Retour</button>

@@ -13,39 +13,32 @@ import {HttpClientModule} from "@angular/common/http";
 import {routes} from "./routes";
 import { UserEditerComponent } from './testRest/user-editer/user-editer.component';
 import { MaterielComponent } from './materiel/materiel.component';
-<<<<<<< HEAD
+
 import { FormateurComponent } from './formateur/formateur.component';
 import { OrdinateursComponent } from './ordinateurs/ordinateurs.component';
 import { MaterielEditComponent } from './materiel-edit/materiel-edit.component';
-import { VideoProjecteurComponent } from './video-projecteurs/video-projecteur.component';
-import { VideoProjecteursComponent } from './video-projecteurs/video-projecteurs.component';
 import { SalleComponent } from './salle/salle.component';
-=======
+import { VideoProjecteursComponent } from './video-projecteurs/video-projecteurs.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 import { UserComponent } from './testRest/user/user.component';
->>>>>>> master
+
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
     LoginComponent,
     UserEditerComponent,
     MaterielComponent,
-<<<<<<< HEAD
-    FormateurComponent,
-OrdinateursComponent,
-MaterielEditComponent,
-VideoProjecteurComponent,
-VideoProjecteursComponent,
 SalleComponent
-=======
-    UserComponent
->>>>>>> master
-=======
+MaterielEditComponent,
+OrdinateursComponent,
+VideoProjecteursComponent,
+    FormateurComponent,
+    UserComponent,
     ModulesComponent,
-    MatieresComponent
-    LoginComponent
->>>>>>> master
+    MatieresComponent,
+    LoginComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
