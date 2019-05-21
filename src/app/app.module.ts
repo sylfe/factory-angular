@@ -17,6 +17,9 @@ import { SalleComponent } from './salle/salle.component';
 import { VideoProjecteursComponent } from './video-projecteurs/video-projecteurs.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UserComponent } from './testRest/user/user.component';
+import { OrdinateurEditComponent } from './ordinateur-edit/ordinateur-edit.component';
+import { VideoprojecteurEditComponent } from './videoprojecteur-edit/videoprojecteur-edit.component';
+import { SalleEditComponent } from './salle-edit/salle-edit.component';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { UserComponent } from './testRest/user/user.component';
     ModulesComponent,
     MatieresComponent,
     LoginComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    OrdinateurEditComponent,
+    VideoprojecteurEditComponent,
+    SalleEditComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule

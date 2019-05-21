@@ -1,0 +1,36 @@
+
+<form (ngSubmit)="save()" #monForm="ngForm">
+  <ng-container *ngIf="salle.id"; else ajouter>
+    <h1>Modifier une salle</h1>
+  </ng-container>
+  <ng-template #ajouter>
+    <h1>Ajouter une salle</h1>
+  </ng-template>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text">id</label>
+    <input [(ngModel)]="salle.id" readonly placeholder="ID généré automatiquement">
+  </div>
+  <div class="input-group mb-3">
+    <label class="input-group-text" type="text" name="code">code</label>
+    <input [(ngModel)]="salle.code">
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" type="text" name="coutJournee">coût(€)/jour</label>
+    <input [(ngModel)]="salle.coutJournee">
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" type="number" name="coutJournee">Capacité(pers.)</label>
+    <input [(ngModel)]="salle.capacite">
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text">Vidéo-projecteur</label>
+    <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="true">Oui
+    <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="false">Oui
+  </div>
+  <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
+  <button  class="btn btn-secondary" [routerLink]="['/salles']" routerLinkActive="active">Retour</button>
+</form>
