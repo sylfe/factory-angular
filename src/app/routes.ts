@@ -36,5 +36,5 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   {path: 'user', component: UserEditerComponent},
   {path: 'users', component: UserComponent},
   {path: 'users/:action/:nom', component: UserComponent},
-  { path : 'formateurs', component: FormateurComponent},
+  { path : 'formateur', component: FormateurComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}];
