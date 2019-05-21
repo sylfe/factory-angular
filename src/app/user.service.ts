@@ -28,7 +28,8 @@ export class UserService implements CanActivate {
   public authentication(user: User): Observable<any> {
     const headers: HttpHeaders = new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa(`${user.email}:${user.motDePasse}`)
+      'Authorization': 'Basic ' + btoa('benjamin@benjamin.fr:benjamin')
+      //  'Authorization': 'Basic ' + btoa(`${user.email}:${user.motDePasse}`)
       }
     );
     return this.http.get('http://localhost:8080/la-factory/rest/login', {headers: headers});
@@ -62,7 +63,7 @@ export class UserService implements CanActivate {
 
 
   public list(): Observable<any> {
-    return this.http.get(`${this.url}`, this.httpOptions);
+    return this.http.get(this.url, this.httpOptions);
   }
 
   public delete(id: number): Observable<any> {

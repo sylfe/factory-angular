@@ -22,6 +22,7 @@ import {ModulesService} from './modules.service';
 import { OrdinateurEditComponent } from './ordinateur-edit/ordinateur-edit.component';
 import { VideoProjecteurEditComponent } from './videoprojecteur-edit/videoprojecteur-edit.component';
 import { SalleEditComponent } from './salle-edit/salle-edit.component';
+import { MatiereEditComponent } from './matiere-edit/matiere-edit.component';
 import { FormationCreateComponent } from './formation-create/formation-create.component';
 import { FormationEditComponent } from './formation-edit/formation-edit.component';
 
@@ -44,6 +45,7 @@ import { FormationEditComponent } from './formation-edit/formation-edit.componen
     OrdinateurEditComponent,
     VideoProjecteurEditComponent,
     SalleEditComponent,
+    MatiereEditComponent
     FormationCreateComponent,
     FormationEditComponent
   ],
