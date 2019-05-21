@@ -40,7 +40,7 @@ export class MatieresComponent implements OnInit {
 
   list() {
     this.matiereService.list().subscribe(data => {
-      this.matiere = data;
+      this.matieres = data;
     }, error => {
       console.log(error);
     });
