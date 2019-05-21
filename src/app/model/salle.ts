@@ -1,17 +1,26 @@
 import {Materiel} from './materiel';
+import {Stagiaire} from "./stagiaire";
+import {VideoProjecteur} from "./videoProjecteur";
 
 export class Salle extends Materiel {
-  constructor(id?: number, code?: string, coutJournee?: number, disponibilite?: false,
-              private _maxPersonne?: number) {
-    super(id, code, coutJournee, disponibilite);
+  constructor(id?: number, version?: number, code?: string, coutJournee?: number, private _capacite?: number, private _videoprojecteur?: VideoProjecteur) {
+    super(id, version, code, coutJournee);
   }
 
 
-  get maxPersonne(): number {
-    return this._maxPersonne;
+  get capacite(): number {
+    return this._capacite;
   }
 
-  set maxPersonne(value: number) {
-    this._maxPersonne = value;
+  set capacite(value: number) {
+    this._capacite = value;
+  }
+
+  get videoprojecteur(): VideoProjecteur {
+    return this._videoprojecteur;
+  }
+
+  set videoprojecteur(value: VideoProjecteur) {
+    this._videoprojecteur = value;
   }
 }

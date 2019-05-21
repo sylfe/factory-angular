@@ -24,8 +24,8 @@ export class ModulesComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router, private matiereService: MatieresService) {
   //  this.matiereService.list().subscribe(rez => this.matieres = rez);
-    this.matieres.push(new Matiere('nom', 'niveau',
-      'objectifs', 'prerequis', 'contenu', 10));
+    this.matieres.push(new Matiere(1, 'nom',
+      'niveau', 'objectif', 'prerequis', 'contenu', 10, null, null));
   }
 
 

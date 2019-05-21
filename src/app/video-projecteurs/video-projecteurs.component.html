@@ -1,0 +1,24 @@
+<h1>Liste des vidéo-projecteurs</h1>
+<div *ngIf="message" class="alert-success">
+  {{message}}
+</div>
+<button [routerLink]="['/videoprojecteurs/new']" class="btn btn-info" routerLinkActive="active">Ajouter un nouveau vidéo-projecteur</button>
+<table class="table table-striped">
+  <thead>
+  <th>ID</th>
+  <th>CODE</th>
+  <th>COÛT/JOUR</th>
+  <th>DISPONIBILITE</th>
+  <th>ACTION</th>
+  </thead>
+  <tr *ngFor="let videopro of videoProjecteurs">
+    <td>{{videopro.id}}</td>
+    <td>{{videopro.code}}</td>
+    <td>{{videopro.coutJournee}}</td>
+    <td>{{videopro.disponibilite}}</td>
+    <td><button class="btn btn-warning" [routerLink]="['/videoprojecteurs',videopro.id]" routerLinkActive="active">modifier</button>&nbsp;
+      <button class="btn btn-danger" (click)="delete(videopro.id)">Supprimer</button></td>
+  </tr>
+
+  <button [routerLink]="['/videoprojecteurs/new']" class="btn btn-info" routerLinkActive="active">Ajouter un nouveau vidéo-projecteur</button>
+</table>

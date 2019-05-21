@@ -11,11 +11,13 @@ import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {routes} from "./routes";
 import { UserEditerComponent } from './testRest/user-editer/user-editer.component';
-import { MaterielComponent } from './materiel/materiel.component';
 
 import { FormateurComponent } from './formateur/formateur.component';
+import { OrdinateursComponent } from './ordinateurs/ordinateurs.component';
+import { MaterielEditComponent } from './materiel-edit/materiel-edit.component';
+import { SalleComponent } from './salle/salle.component';
+import { VideoProjecteursComponent } from './video-projecteurs/video-projecteurs.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-
 import { UserComponent } from './testRest/user/user.component';
 
 
@@ -25,6 +27,10 @@ import { UserComponent } from './testRest/user/user.component';
     LoginComponent,
     UserEditerComponent,
     MaterielComponent,
+SalleComponent,
+MaterielEditComponent,
+OrdinateursComponent,
+VideoProjecteursComponent,
     FormateurComponent,
     UserComponent,
     ModulesComponent,

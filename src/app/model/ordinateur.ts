@@ -1,14 +1,16 @@
 import {Materiel} from './materiel';
+import {Stagiaire} from './stagiaire';
 
 
 export class Ordinateur extends Materiel {
 
 
-  constructor(id?: number, code?: string, coutJournee?: number, disponibilite?: false,
-              private _processeur?: string, private _ram?: number, private _dd?: number,
-              private _anneeAchat?: number) {
-    super(id, code, coutJournee, disponibilite);
+  constructor(id?: number, version?: number, code?: string, coutJournee?: number,
+              private _processeur?: string, private _quantiteRAM?: number, private _quantiteDD?: number,
+              private _anneeAchat?: number, private _stagiaires?: Stagiaire[]) {
+    super(id, version, code, coutJournee);
   }
+
 
   get processeur(): string {
     return this._processeur;
@@ -18,20 +20,20 @@ export class Ordinateur extends Materiel {
     this._processeur = value;
   }
 
-  get ram(): number {
-    return this._ram;
+  get quantiteRAM(): number {
+    return this._quantiteRAM;
   }
 
-  set ram(value: number) {
-    this._ram = value;
+  set quantiteRAM(value: number) {
+    this._quantiteRAM = value;
   }
 
-  get dd(): number {
-    return this._dd;
+  get quantiteDD(): number {
+    return this._quantiteDD;
   }
 
-  set dd(value: number) {
-    this._dd = value;
+  set quantiteDD(value: number) {
+    this._quantiteDD = value;
   }
 
   get anneeAchat(): number {
@@ -40,5 +42,13 @@ export class Ordinateur extends Materiel {
 
   set anneeAchat(value: number) {
     this._anneeAchat = value;
+  }
+
+  get stagiaires(): Stagiaire[] {
+    return this._stagiaires;
+  }
+
+  set stagiaires(value: Stagiaire[]) {
+    this._stagiaires = value;
   }
 }

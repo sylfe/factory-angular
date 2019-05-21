@@ -3,7 +3,7 @@
 
     <div class="form-group">
       <label>Duree</label>
-      <input name="nbJours" [(ngModel)]="module.nbJours" required class="form-control" #nbJours="ngModel">
+      <input name="dateDebut" type="date" [(ngModel)]="module.dateDebut" required class="form-control" #dateDebut="ngModel">
     </div>
     <select class="form-control" id="matiere" name="matiere" required [(ngModel)]="module.matiere">
       <option *ngFor="let matiere of matieres" [value]="matiere">{{matiere.nom}}</option>

@@ -46,7 +46,7 @@ export class MatieresService {
   public  insert(matiere: Matiere): Observable<any> {
     const p = {
       'nom' : matiere.nom,
-      'objectifs' : matiere.objectifs
+      'objectifs' : matiere.objectif
     };
     return this.http.post( `${this.url}/insert`, p, this.httpOptions );
   }

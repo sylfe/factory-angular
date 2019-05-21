@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Materiel} from './model/materiel';
+
+import {Ordinateur} from './model/ordinateur';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MaterielService {
-  private url = 'http://localhost:8080/la-factory/rest/materiel';
+export class OrdinateurService {
+  private url = 'http://localhost:8080/la-factory/rest/ordinateurs';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -26,7 +27,7 @@ export class MaterielService {
   }
 
   public delete(id: number): Observable<any> {
-    return this.http.delete(`${this.url}/${id}`, this.httpOptions );
+    return this.http.delete(`${this.url}/${id}`, this.httpOptions);
   }
 
   public findById(id): Observable<any> {
@@ -34,20 +35,23 @@ export class MaterielService {
   }
 
 
-  public insert(materiel: Materiel): Observable<any> {
-    const m = {
-      'id': materiel.id,
-      'version': materiel.version++,
-      'code': materiel.code,
-      'coutJournee': materiel.coutJournee,
+  public insert(ordi: Ordinateur): Observable<any> {
+    const o = {
+      'id': ordi.id,
+      'code': ordi.code,
+      'coutJournee': ordi.coutJournee,
+      'disponibilite': ordi.disponibilite,
+      'processeur': ordi.processeur,
+      'ram': ordi.code,
+      'dd': ordi.dd,
+      'anneeAchat': ordi.anneeAchat,
+
 
     }
-    return this.http.post(`${this.url}/new`, m, this.httpOptions);
+    return this.http.post(`${this.url}/new`, o, this.httpOptions);
   }
 
-  public update(materiel: Materiel): Observable<any> {
-    return this.http.put(`${this.url}/${materiel.id}`, materiel, this.httpOptions);
+  public update(ordi: Ordinateur): Observable<any> {
+    return this.http.put(`${this.url}/${ordi.id}`, ordi, this.httpOptions);
   }
-
-
 }

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Materiel} from './model/materiel';
+import {Salle} from './model/salle';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MaterielService {
-  private url = 'http://localhost:8080/la-factory/rest/materiel';
+export class SalleService {
+  private url = 'http://localhost:8080/la-factory/rest/salles';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -34,20 +34,22 @@ export class MaterielService {
   }
 
 
-  public insert(materiel: Materiel): Observable<any> {
-    const m = {
-      'id': materiel.id,
-      'version': materiel.version++,
-      'code': materiel.code,
-      'coutJournee': materiel.coutJournee,
+  public insert(salle: Salle): Observable<any> {
+    const v = {
+      'id': salle.id,
+      'code': salle.code,
+      'coutJournee': salle.coutJournee,
+      'disponibilite': salle.disponibilite,
+      'capacite': salle.capacite,
 
     }
-    return this.http.post(`${this.url}/new`, m, this.httpOptions);
+    return this.http.post(`${this.url}/new`, v, this.httpOptions);
   }
 
-  public update(materiel: Materiel): Observable<any> {
-    return this.http.put(`${this.url}/${materiel.id}`, materiel, this.httpOptions);
+  public update(salle: Salle): Observable<any> {
+    return this.http.put(`${this.url}/${salle.id}`, salle, this.httpOptions);
   }
 
 
 }
+

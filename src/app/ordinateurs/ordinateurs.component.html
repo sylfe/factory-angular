@@ -1,0 +1,32 @@
+<h1>Liste des ordinateurs</h1>
+<div *ngIf="message" class="alert-success">
+  {{message}}
+</div>
+<button [routerLink]="['/ordinateurs/new']" class="btn btn-info" routerLinkActive="active">Ajouter un nouvel ordinateur</button>
+<table class="table table-striped">
+  <thead>
+  <th>ID</th>
+  <th>CODE</th>
+  <th>COÛT(€)/JOUR</th>
+  <th>PROCESSEUR</th>
+  <th>RAM (Go)</th>
+  <th>Disque Dur (Go)</th>
+  <th>ANNEE ACHAT</th>
+  <th>DISPONIBILITE</th>
+  <th>ACTION</th>
+  </thead>
+  <tr *ngFor="let ordi of ordinateurs">
+    <td>{{ordi.id}}</td>
+    <td>{{ordi.code}}</td>
+    <td>{{ordi.coutJournee}}</td>
+    <td>{{ordi.processeur}}</td>
+    <td>{{ordi.quantiteRAM}}</td>
+    <td>{{ordi.quantiteDD}}</td>
+    <td>{{ordi.anneeAchat}}</td>
+    <td>{{ordi.stagiaires}}</td>
+    <td><button class="btn btn-warning" [routerLink]="['/ordinateurs',ordi.id]" routerLinkActive="active">modifier</button>&nbsp;
+      <button class="btn btn-danger" (click)="delete(ordi.id)">Supprimer</button></td>
+  </tr>
+
+  <button [routerLink]="['/ordinateurs/new']" class="btn btn-info" routerLinkActive="active">Ajouter un nouvel ordinateur</button>
+</table>

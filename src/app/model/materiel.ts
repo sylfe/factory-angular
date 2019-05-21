@@ -1,6 +1,8 @@
 export class Materiel {
+
   constructor(
-    private _id?: number, private _code?: string, private _coutJournee?: number, private _disponibilite?: false) {}
+    private _id?: number, private _version?: number, private _code?: string = 'MAT', private _coutJournee?: number = 0) {
+  }
 
   get id(): number {
     return this._id;
@@ -26,11 +28,12 @@ export class Materiel {
     this._coutJournee = value;
   }
 
-  get disponibilite(): false {
-    return this._disponibilite;
+
+  get version(): number {
+    return this._version;
   }
 
-  set disponibilite(value: false) {
-    this._disponibilite = value;
+  set version(value: number) {
+    this._version = value;
   }
 }

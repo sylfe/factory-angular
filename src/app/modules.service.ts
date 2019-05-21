@@ -44,7 +44,7 @@ export class ModulesService {
 
   public  insert(module: Module): Observable<any> {
     const p = {
-      'nbJours' : module.nbJours,
+      'dateDebut' : module.dateDebut,
       'module' : module.matiere
     };
     return this.http.post( `${this.url}/insert`, p, this.httpOptions );

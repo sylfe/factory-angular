@@ -1,17 +1,30 @@
-import {Matiere} from './matiere';
-import {Formateur} from './formateur';
+
+import {Formateur} from "./formateur";
+import {Matiere} from "./matiere";
+import {Formation} from "./formation";
 
 export class Module {
 
-  constructor(private _nbJours?: number, private _matiere?: Matiere, private _formateur?: Formateur, private _id?: number) {}
 
-
-  get nbJours(): number {
-    return this._nbJours;
+  constructor(private _id?: number, private _dateDebut?: Date, private _matiere?: Matiere,
+              private _formateur?: Formateur, private _formation?: Formation, private _version?: number) {
   }
 
-  set nbJours(value: number) {
-    this._nbJours = value;
+
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
+  }
+
+  get dateDebut(): Date {
+    return this._dateDebut;
+  }
+
+  set dateDebut(value: Date) {
+    this._dateDebut = value;
   }
 
   get matiere(): Matiere {
@@ -30,12 +43,19 @@ export class Module {
     this._formateur = value;
   }
 
-
-  get id(): number {
-    return this._id;
+  get formation(): Formation {
+    return this._formation;
   }
 
-  set id(value: number) {
-    this._id = value;
+  set formation(value: Formation) {
+    this._formation = value;
+  }
+
+  get version(): number {
+    return this._version;
+  }
+
+  set version(value: number) {
+    this._version = value;
   }
 }
