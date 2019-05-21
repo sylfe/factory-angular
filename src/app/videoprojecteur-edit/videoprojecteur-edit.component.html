@@ -9,22 +9,22 @@
 
   <div class="input-group mb-3">
     <label class="input-group-text">id</label>
-    <input [(ngModel)]="videoprojecteur.id" readonly placeholder="ID généré automatiquement">
+    <input [(ngModel)]="videoprojecteur.id" readonly placeholder="ID généré automatiquement" name="id">
   </div>
   <div class="input-group mb-3">
-    <label class="input-group-text" type="text" name="code">code</label>
-    <input [(ngModel)]="videoprojecteur.code">
+    <label class="input-group-text" type="text">code</label>
+    <input [(ngModel)]="videoprojecteur.code" name="code">
   </div>
 
   <div class="input-group mb-3">
-    <label class="input-group-text" type="text" name="coutJournee">coût(€)/jour</label>
-    <input [(ngModel)]="videoprojecteur.coutJournee">
+    <label class="input-group-text" type="text">coût(€)/jour</label>
+    <input [(ngModel)]="videoprojecteur.coutJournee" name="coutJournee">
   </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text">Salle</label>
     <input [(ngModel)]="videoprojecteur.salle" type="radio" name="disponibilite" value="true">Oui
-    <input [(ngModel)]="videoprojecteur.salle" type="radio" name="disponibilite" value="false">Oui
+    <input [(ngModel)]="videoprojecteur.salle" type="radio" name="disponibilite" value="false">Non
   </div>
   <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
   <button  class="btn btn-secondary" [routerLink]="['/videoprojecteurs']" routerLinkActive="active">Retour</button>

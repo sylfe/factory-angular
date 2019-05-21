@@ -33,12 +33,12 @@ export class SalleEditComponent implements OnInit {
 
     if (this.salle.id) {
       this.salleService.update(this.salle).subscribe(result => {
-        this.router.navigate(['/ordinateurs', 'modifié', this.salle.code]);
+        this.router.navigate(['/salles', 'modifié', this.salle.code]);
 
       });
     } else {
       this.salleService.insert(this.salle).subscribe(result => {
-        this.router.navigate(['/ordinateurs', 'ajouté', this.salle.code]);
+        this.router.navigate(['/salles', 'ajouté', this.salle.code]);
       });
 
     }
