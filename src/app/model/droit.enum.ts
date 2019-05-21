@@ -1,4 +1,4 @@
-export enum Droit {
+export const enum Droit {
   DROIT_ADMIN,
   DROIT_GESTIONNAIRE,
   DROIT_FORMATEUR,
