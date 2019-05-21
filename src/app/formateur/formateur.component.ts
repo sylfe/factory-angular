@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Formateur} from '../model/formateur';
-import {FormateurService} from "../formateur.service";
+import {FormateurService} from '../formateur.service';
 
 @Component({
   selector: 'app-formateur',
