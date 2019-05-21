@@ -9,6 +9,11 @@ import {CanActivate, Router} from '@angular/router';
 })
 export class UserService implements CanActivate {
 
+  private url = 'http://localhost:8080/la-factory/rest/user';
+  private headers: HttpHeaders;
+  private httpOptions: any;
+
+
   constructor(private http: HttpClient, private router: Router) {
 
   }
@@ -54,4 +59,40 @@ export class UserService implements CanActivate {
 
     return this.verifLog();
   }
+
+
+  public list(): Observable<any> {
+    return this.http.get(this.url, this.httpOptions);
+  }
+
+  public delete(id: number): Observable<any> {
+
+    return this.http.delete(`${this.url}/${id}`, this.httpOptions);
+  }
+
+  public findById(id): Observable<any> {
+    return this.http.get(`${this.url}/${id}`, this.httpOptions);
+  }
+
+  public update(user: User): Observable<any> {
+    return this.http.put(`${this.url}/${user.id}`, user, this.httpOptions);
+  }
+
+  public insert(user: User): Observable<any> {
+    // à revoir pour les droits !!
+
+    const u = {
+      'nom': user.nom,
+      'prenom': user.prenom,
+      'adresse': user.adresse,
+      'email': user.email,
+      'telephone': user.telephone,
+      'motDePasse': user.motDePasse
+
+    };
+
+
+    return this.http.post(this.url, u, this.httpOptions);
+  }
+
 }
