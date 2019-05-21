@@ -39,7 +39,7 @@ export class VideoProjecteurService {
       'id': videopro.id,
       'code': videopro.code,
       'coutJournee': videopro.coutJournee,
-      'disponibilite': videopro.disponibilite,
+      'salle': videopro.salle,
 
     }
     return this.http.post(`${this.url}/new`, v, this.httpOptions);
