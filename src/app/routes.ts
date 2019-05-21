@@ -8,6 +8,10 @@ import {MaterielEditComponent} from './materiel-edit/materiel-edit.component';
 import {WelcomeComponent} from "./welcome/welcome.component";
 import {UserEditerComponent} from "./testRest/user-editer/user-editer.component";
 import {UserComponent} from "./testRest/user/user.component";
+import {OrdinateurEditComponent} from './ordinateur-edit/ordinateur-edit.component';
+import {SalleEditComponent} from './salle-edit/salle-edit.component';
+import {VideoProjecteurEditComponent} from './videoprojecteur-edit/videoprojecteur-edit.component';
+import {FormateurComponent} from './formateur/formateur.component';
 
 
 export const routes: Routes = [{path: 'home', component: WelcomeComponent},
@@ -15,10 +19,14 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   {path: 'login/:error', component: LoginComponent},
   { path : 'matiere/edit', component: MatieresComponent},
   { path : 'ordinateurs', component: OrdinateursComponent},
+  { path : 'ordinateurs/edit', component: OrdinateurEditComponent},
   { path : 'salles', component: SalleComponent},
+  { path : 'salles/edit', component: SalleEditComponent},
   { path : 'videoprojecteurs', component: VideoProjecteursComponent},
+  { path : 'videoprojecteurs/edit', component: VideoProjecteurEditComponent},
   { path : 'materiel/edit', component: MaterielEditComponent},
   {path: 'user', component: UserEditerComponent},
   {path: 'users', component: UserComponent},
   {path: 'users/:action/:nom', component: UserComponent},
+  { path : 'formateur', component: FormateurComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'}];
