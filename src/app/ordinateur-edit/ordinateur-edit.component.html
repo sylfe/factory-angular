@@ -1,5 +1,5 @@
 
-<form (ngSubmit)="save()" #monForm="ngForm">
+<form (ngSubmit)="send()" #monForm="ngForm">
   <ng-container *ngIf="ordinateur.id"; else ajouter>
     <h1>Modifier un ordinateur</h1>
   </ng-container>
