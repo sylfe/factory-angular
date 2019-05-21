@@ -2,7 +2,7 @@ import {Droit} from './droit.enum';
 import {User} from './user';
 
 export class PersonneDroit {
-  constructor(private _id?: number, private _droit?: Droit = Droit.DROIT_ALL, private _personne?: User) {
+  constructor(private _id?: number, private _droit?: Droit, private _personne?: User) {
   }
 
 

@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import {CanActivate, Router} from '@angular/router';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Matiere} from './model/matiere';
+import {Module} from './model/module';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MatieresService {
+export class ModulesService {
 
   private url = 'http://localhost:8080/la-factory/rest/matiere';
   private headers: HttpHeaders;
@@ -39,14 +38,14 @@ export class MatieresService {
   }
 
 
-  public update(matiere: Matiere): Observable<any> {
-    return this.http.put(`${this.url}/${matiere.id}`, matiere, this.httpOptions);
+  public update(module: Module): Observable<any> {
+    return this.http.put(`${this.url}/${module.id}`, module, this.httpOptions);
   }
 
-  public  insert(matiere: Matiere): Observable<any> {
+  public  insert(module: Module): Observable<any> {
     const p = {
-      'nom' : matiere.nom,
-      'objectifs' : matiere.objectif
+      'dateDebut' : module.dateDebut,
+      'module' : module.matiere
     };
     return this.http.post( `${this.url}/insert`, p, this.httpOptions );
   }
