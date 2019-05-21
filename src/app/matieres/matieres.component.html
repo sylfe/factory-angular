@@ -1,15 +1,31 @@
 <form (ngSubmit)="send()" #monForm="ngForm">
   <div class="form-group">
-    <label>Pseudo</label>
-    <input name="pseudo" [(ngModel)]="user.pseudo" required class="form-control" #pseudo="ngModel">
+    <label>Nom</label>
+    <input name="nom" [(ngModel)]="matiere.nom" required class="form-control" #nom="ngModel">
   </div>
-  <div *ngIf="pseudo.dirty && pseudo.invalid" class="alert-danger">
+  <div *ngIf="nom.dirty && nom.invalid" class="alert-danger">
     *information obligatoire (s'affiche si le champ a été touché et n'est pas valide</div>
   <div>
-    <label>Mot de Passe</label>
-    <input type="password" name="mdp" [(ngModel)]="user.motDePasse" required class="form-control" #mdp="ngModel">
+    <label>Niveau</label>
+    <input type="text" name="niveau" [(ngModel)]="matiere.niveau" required class="form-control" #niveau="ngModel">
   </div>
-  <div *ngIf="mdp.dirty && mdp.invalid" class="alert-danger">*champ obligatoire </div>
+  <div *ngIf="niveau.dirty && niveau.invalid" class="alert-danger">*champ obligatoire </div>
+  <div class="form-group">
+    <label>Objectifs</label>
+    <input name="pseudo" [(ngModel)]="matiere.objectifs" required class="form-control" #objectifs="ngModel">
+  </div>
+  <div class="form-group">
+    <label>Prerequis</label>
+    <input name="prerequis" [(ngModel)]="matiere.prerequis" required class="form-control" #pseudo="ngModel">
+  </div>
+  <div class="form-group">
+    <label>Contenu</label>
+    <input name="contenu" [(ngModel)]="matiere.contenu" required class="form-control" #contenu="ngModel">
+  </div>
+  <div class="form-group">
+    <label>Nombres jours</label>
+    <input name="nbJours" [(ngModel)]="matiere.nbJours" required class="form-control" #nbJours="ngModel">
+  </div>
   <div>
     <button type="submit" class="btn btn-success" [disabled]="monForm.invalid"> Envoyer</button>
     <a [routerLink]="['/home']" routerLinkActive="active" class="btn btn-warning">retour</a>
