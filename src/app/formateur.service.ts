@@ -9,12 +9,16 @@ import {Formateur} from './model/formateur';
 })
 export class FormateurService implements CanActivate {
 
-  private url = 'http://localhost:8080/la-factory/rest/formateur';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/user/formateur';
   private headers: HttpHeaders;
   private httpOptions: any;
+  private htttpH: any;
 
   constructor(private http: HttpClient, private router: Router) {
-
+    this.headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ' + btoa(`benjamin@benjamin.fr:benjamin`)
+    });
   }
 
   private _isLogged = false;
@@ -26,9 +30,9 @@ export class FormateurService implements CanActivate {
   public authentication(formateur: Formateur): Observable<any> {
     const headers: HttpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Basic ' + btoa(`${formateur.email}:${formateur.motDePasse}`)
+      'Authorization': 'Basic ' + btoa(`benjamin@benjamin@fr:benjamin`)
     });
-    return this.http.get('http://localhost:8080/la-factory/rest/login', {headers: headers});
+    return this.http.get('http://localhost:8080/la-factory/rest/formateur', {headers: headers});
   }
 
   public login(formateur: Formateur) {
@@ -83,7 +87,7 @@ export class FormateurService implements CanActivate {
       'motDePasse': formateur.motDePasse
     };
 
-    return this.http.post(this.url, f, this.httpOptions);
+    return this.http.post(this.url, f, {headers : this.headers});
   }
 
 

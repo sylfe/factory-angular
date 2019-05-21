@@ -22,6 +22,7 @@ import {ModulesService} from './modules.service';
 import { OrdinateurEditComponent } from './ordinateur-edit/ordinateur-edit.component';
 import { VideoProjecteurEditComponent } from './videoprojecteur-edit/videoprojecteur-edit.component';
 import { SalleEditComponent } from './salle-edit/salle-edit.component';
+import { FormateurEditComponent } from './formateur-edit/formateur-edit.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { SalleEditComponent } from './salle-edit/salle-edit.component';
     WelcomeComponent,
     OrdinateurEditComponent,
     VideoProjecteurEditComponent,
-    SalleEditComponent
+    SalleEditComponent,
+    FormateurEditComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
