@@ -41,7 +41,7 @@
   <div class="input-group mb-3">
     <label class="input-group-text">Stagiaire</label>
     <input [(ngModel)]="ordinateur.stagiaires" type="radio" name="disponibilite" value="true">Oui
-    <input [(ngModel)]="ordinateur.stagiaires" type="radio" name="disponibilite" value="false">Oui
+    <input [(ngModel)]="ordinateur.stagiaires" type="radio" name="disponibilite" value="false">Non
   </div>
   <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
   <button  class="btn btn-secondary" [routerLink]="['/ordinateurs']" routerLinkActive="active">Retour</button>

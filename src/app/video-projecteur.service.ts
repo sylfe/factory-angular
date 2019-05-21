@@ -7,7 +7,7 @@ import {VideoProjecteur} from './model/videoProjecteur';
   providedIn: 'root'
 })
 export class VideoProjecteurService {
-  private url = 'http://localhost:8080/la-factory/rest/videoprojecteurs';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/videoprojecteur';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -15,7 +15,7 @@ export class VideoProjecteurService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/JSON',
-      'Authorization': 'Basic ' + btoa('tutu:tutu')
+      'Authorization': 'Basic ' + btoa('benjamin@benjamin.fr:benjamin')
     });
 
     this.httpOptions = {headers: this.headers};

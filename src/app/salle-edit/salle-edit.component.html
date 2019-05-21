@@ -29,7 +29,7 @@
   <div class="input-group mb-3">
     <label class="input-group-text">Vidéo-projecteur</label>
     <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="true">Oui
-    <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="false">Oui
+    <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="false">Non
   </div>
   <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
   <button  class="btn btn-secondary" [routerLink]="['/salles']" routerLinkActive="active">Retour</button>

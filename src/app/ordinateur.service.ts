@@ -8,7 +8,7 @@ import {Ordinateur} from './model/ordinateur';
   providedIn: 'root'
 })
 export class OrdinateurService {
-  private url = 'http://localhost:8080/la-factory/rest/ordinateurs';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/ordinateur';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -16,7 +16,7 @@ export class OrdinateurService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/JSON',
-      'Authorization': 'Basic ' + btoa('tutu:tutu')
+      'Authorization': 'Basic ' + btoa('benjamin@benjamin.fr:benjamin')
     });
 
     this.httpOptions = {headers: this.headers};
