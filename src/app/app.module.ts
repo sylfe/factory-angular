@@ -22,6 +22,8 @@ import {ModulesService} from './modules.service';
 import { OrdinateurEditComponent } from './ordinateur-edit/ordinateur-edit.component';
 import { VideoProjecteurEditComponent } from './videoprojecteur-edit/videoprojecteur-edit.component';
 import { SalleEditComponent } from './salle-edit/salle-edit.component';
+import { FormationCreateComponent } from './formation-create/formation-create.component';
+import { FormationEditComponent } from './formation-edit/formation-edit.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { SalleEditComponent } from './salle-edit/salle-edit.component';
     WelcomeComponent,
     OrdinateurEditComponent,
     VideoProjecteurEditComponent,
-    SalleEditComponent
+    SalleEditComponent,
+    FormationCreateComponent,
+    FormationEditComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
