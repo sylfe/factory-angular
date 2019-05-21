@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpHeaders} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Matiere} from '../model/matiere';
 import {MatieresService} from '../matieres.service';
-import {connectableObservableDescriptor} from 'rxjs/internal/observable/ConnectableObservable';
+
 
 @Component({
   selector: 'app-matieres',
@@ -13,12 +12,10 @@ import {connectableObservableDescriptor} from 'rxjs/internal/observable/Connecta
 })
 export class MatieresComponent implements OnInit {
 
-  private matiere: Matiere = new Matiere();
+  private matieres: Matiere[];
   private monForm: FormGroup;
 
-
-
-  private message = 'pseudo et/ou mot de passe incorrect(s)';
+  private message: string = null;
 
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -27,13 +24,25 @@ export class MatieresComponent implements OnInit {
   }
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      if (params.error) {
-        this.message = 'il faut vous connecter pour aller sur cette page';
-      }});
+      if (params.nom) {
+        this.message = `La matière "${params.nom}" a été ${params.action}`;
+      }
+    });
+    this.list();
   }
 
-  send() {
-    this.matiereService.insert(this.matiere).subscribe( data => {
-      console.log('ok')}, error => { console.log(error);} );
+  delete(id: number) {
+    this.matiereService.delete(id).subscribe(result => {
+        this.list();
+      }
+    );
+  }
+
+  list() {
+    this.matiereService.list().subscribe(data => {
+      this.matiere = data;
+    }, error => {
+      console.log(error);
+    });
   }
 }
