@@ -13,29 +13,25 @@ import {HttpClientModule} from "@angular/common/http";
 import {routes} from "./routes";
 import { UserEditerComponent } from './testRest/user-editer/user-editer.component';
 import { MaterielComponent } from './materiel/materiel.component';
-<<<<<<< HEAD
+
 import { FormateurComponent } from './formateur/formateur.component';
-=======
+import { WelcomeComponent } from './welcome/welcome.component';
+
 import { UserComponent } from './testRest/user/user.component';
->>>>>>> master
+
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
     LoginComponent,
     UserEditerComponent,
     MaterielComponent,
-<<<<<<< HEAD
-    FormateurComponent
-=======
-    UserComponent
->>>>>>> master
-=======
+    FormateurComponent,
+    UserComponent,
     ModulesComponent,
-    MatieresComponent
-    LoginComponent
->>>>>>> master
+    MatieresComponent,
+    LoginComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
