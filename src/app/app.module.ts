@@ -13,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {routes} from "./routes";
 import { UserEditerComponent } from './testRest/user-editer/user-editer.component';
 import { MaterielComponent } from './materiel/materiel.component';
+import { FormateurComponent } from './formateur/formateur.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MaterielComponent } from './materiel/materiel.component';
 <<<<<<< HEAD
     LoginComponent,
     UserEditerComponent,
-    MaterielComponent
+    MaterielComponent,
+    FormateurComponent
 =======
     ModulesComponent,
     MatieresComponent
