@@ -1,0 +1,14 @@
+<div>
+  <div class="form-group">
+    <label>E-mail</label>
+    <input [(ngModel)]="user.email">
+  </div>
+  <div class="form-group">
+    <label>Mot de passe</label>
+    <input [(ngModel)]="user.motDePasse">
+  </div>
+  <div>
+    <button class="btn btn-success" (click)="save()">Enregistrer</button>
+    <a [routerLink]="['/user']" routerLinkActive="active" class="btn btn-warning">Annuler</a>
+  </div>
+</div>
