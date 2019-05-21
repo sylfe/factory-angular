@@ -1,0 +1,48 @@
+
+<form (ngSubmit)="save()" #monForm="ngForm">
+  <ng-container *ngIf="ordinateur.id"; else ajouter>
+    <h1>Modifier un ordinateur</h1>
+  </ng-container>
+  <ng-template #ajouter>
+    <h1>Ajouter un ordinateur</h1>
+  </ng-template>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text">id</label>
+    <input [(ngModel)]="ordinateur.id" readonly placeholder="ID généré automatiquement">
+  </div>
+  <div class="input-group mb-3">
+    <label class="input-group-text" type="text" name="code">code</label>
+    <input [(ngModel)]="ordinateur.code">
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" type="text" name="coutJournee">coût(€)/jour</label>
+    <input [(ngModel)]="ordinateur.coutJournee">
+  </div>
+  <div class="input-group mb-3">
+    <label class="input-group-text" type="text" name="processeur">Processeur</label>
+    <input [(ngModel)]="ordinateur.processeur">
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" type="text" name="ram">RAM (Go)</label>
+    <input [(ngModel)]="ordinateur.ram">
+  </div>
+  <div class="input-group mb-3">
+    <label class="input-group-text" type="text" name="dd">Disque dur(Go)</label>
+    <input [(ngModel)]="ordinateur.dd">
+  </div>
+  <div class="input-group mb-3">
+    <label class="input-group-text">Année d'achat</label>
+    <input [(ngModel)]="ordinateur.anneeAchat" type="text" name="anneeAchat">
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text">Disponibilité</label>
+    <input [(ngModel)]="ordinateur.disponibilite" type="radio" name="disponibilite" value="true">Oui
+    <input [(ngModel)]="ordinateur.disponibilite" type="radio" name="disponibilite" value="false">Oui
+  </div>
+  <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
+  <button  class="btn btn-secondary" [routerLink]="['/ordinateurs']" routerLinkActive="active">Retour</button>
+</form>

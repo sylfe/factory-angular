@@ -2,16 +2,16 @@ import {Materiel} from './materiel';
 
 export class Salle extends Materiel {
   constructor(id?: number, code?: string, coutJournee?: number, disponibilite?: false,
-              private _maxPersonne?: number) {
+              private _capacite?: number) {
     super(id, code, coutJournee, disponibilite);
   }
 
 
-  get maxPersonne(): number {
-    return this._maxPersonne;
+  get capacite(): number {
+    return this._capacite;
   }
 
-  set maxPersonne(value: number) {
-    this._maxPersonne = value;
+  set capacite(value: number) {
+    this._capacite = value;
   }
 }

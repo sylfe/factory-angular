@@ -15,6 +15,11 @@ import { UserEditerComponent } from './testRest/user-editer/user-editer.componen
 import { MaterielComponent } from './materiel/materiel.component';
 <<<<<<< HEAD
 import { FormateurComponent } from './formateur/formateur.component';
+import { OrdinateursComponent } from './ordinateurs/ordinateurs.component';
+import { MaterielEditComponent } from './materiel-edit/materiel-edit.component';
+import { VideoProjecteurComponent } from './video-projecteurs/video-projecteur.component';
+import { VideoProjecteursComponent } from './video-projecteurs/video-projecteurs.component';
+import { SalleComponent } from './salle/salle.component';
 =======
 import { UserComponent } from './testRest/user/user.component';
 >>>>>>> master
@@ -27,7 +32,12 @@ import { UserComponent } from './testRest/user/user.component';
     UserEditerComponent,
     MaterielComponent,
 <<<<<<< HEAD
-    FormateurComponent
+    FormateurComponent,
+OrdinateursComponent,
+MaterielEditComponent,
+VideoProjecteurComponent,
+VideoProjecteursComponent,
+SalleComponent
 =======
     UserComponent
 >>>>>>> master
