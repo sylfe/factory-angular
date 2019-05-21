@@ -8,14 +8,14 @@
   <th>ID</th>
   <th>CODE</th>
   <th>COÛT/JOUR</th>
-  <th>DISPONIBILITE</th>
+  <th>SALLE</th>
   <th>ACTION</th>
   </thead>
   <tr *ngFor="let videopro of videoProjecteurs">
     <td>{{videopro.id}}</td>
     <td>{{videopro.code}}</td>
     <td>{{videopro.coutJournee}}</td>
-    <td>{{videopro.disponibilite}}</td>
+    <td>{{videopro.salle}}</td>
     <td><button class="btn btn-warning" [routerLink]="['/videoprojecteurs',videopro.id]" routerLinkActive="active">modifier</button>&nbsp;
       <button class="btn btn-danger" (click)="delete(videopro.id)">Supprimer</button></td>
   </tr>
