@@ -3,7 +3,7 @@ import {Formateur} from './formateur';
 
 export class Module {
 
-  constructor(private _nbJours?: number, private _matiere?: Matiere, private _formateur?: Formateur) {}
+  constructor(private _nbJours?: number, private _matiere?: Matiere, private _formateur?: Formateur, private _id?: number) {}
 
 
   get nbJours(): number {
@@ -28,5 +28,14 @@ export class Module {
 
   set formateur(value: Formateur) {
     this._formateur = value;
+  }
+
+
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
   }
 }

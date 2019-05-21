@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {UserService} from "./user.service";
 import { ModulesComponent } from './modules/modules.component';
-import {ReactiveFormsModule} from '@angular/forms';
 import { MatieresComponent } from './matieres/matieres.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
