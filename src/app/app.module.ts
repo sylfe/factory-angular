@@ -45,7 +45,7 @@ import { FormationEditComponent } from './formation-edit/formation-edit.componen
     OrdinateurEditComponent,
     VideoProjecteurEditComponent,
     SalleEditComponent,
-    MatiereEditComponent
+    MatiereEditComponent,
     FormationCreateComponent,
     FormationEditComponent
   ],
