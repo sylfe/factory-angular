@@ -1,6 +1,8 @@
+import {Enseignement} from "./enseignement";
+
 export class Matiere {
-  constructor(private _nom?: string, private _niveau?: string, private _objectifs?: string,
-              private _prerequis?: string, private _contenu?: string, private _nbJours?: number, private _id?: number){}
+  constructor(private _id?: number, private _nom?: string, private _niveau?: string, private _objectif?: string,
+              private _prerequis?: string, private _contenu?: string, private _nbJours?: number, private _enseignements: Enseignement[], private _version?: number){}
 
 
   get nom(): string {
@@ -17,14 +19,6 @@ export class Matiere {
 
   set niveau(value: string) {
     this._niveau = value;
-  }
-
-  get objectifs(): string {
-    return this._objectifs;
-  }
-
-  set objectifs(value: string) {
-    this._objectifs = value;
   }
 
   get prerequis(): string {
@@ -59,5 +53,30 @@ export class Matiere {
 
   set id(value: number) {
     this._id = value;
+  }
+
+
+  get objectif(): string {
+    return this._objectif;
+  }
+
+  set objectif(value: string) {
+    this._objectif = value;
+  }
+
+  get enseignements(): Enseignement[] {
+    return this._enseignements;
+  }
+
+  set enseignements(value: Enseignement[]) {
+    this._enseignements = value;
+  }
+
+  get version(): number {
+    return this._version;
+  }
+
+  set version(value: number) {
+    this._version = value;
   }
 }

@@ -1,14 +1,4 @@
 import {User} from './user';
-<<<<<<< HEAD
-import {Droit} from './droit.enum';
-import {Matiere} from './matiere';
-
-
-export class Formateur extends User {
-  constructor(id?: number, nom?: string, prenom?: string, adresse?: string, email?: string, telephone?: string,
-              motDePasse?: string, version?: number, droit?: Droit, listeMatiere?: Matiere[]) {
-    super(id, nom, prenom, adresse, email, telephone, motDePasse, version, droit);
-=======
 import {PersonneDroit} from "./personne-droit";
 import {Enseignement} from "./enseignement";
 import {Indisponibilite} from "./indisponibilite";
@@ -36,7 +26,6 @@ export class Formateur extends User {
 
   set indisponibilites(value: Indisponibilite[]) {
     this._indisponibilites = value;
->>>>>>> master
   }
 }
 
