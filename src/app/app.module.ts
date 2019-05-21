@@ -19,6 +19,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { UserComponent } from './testRest/user/user.component';
 import {MatieresService} from './matieres.service';
 import {ModulesService} from './modules.service';
+import { OrdinateurEditComponent } from './ordinateur-edit/ordinateur-edit.component';
+import { VideoprojecteurEditComponent } from './videoprojecteur-edit/videoprojecteur-edit.component';
+import { SalleEditComponent } from './salle-edit/salle-edit.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import {ModulesService} from './modules.service';
     ModulesComponent,
     MatieresComponent,
     LoginComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    OrdinateurEditComponent,
+    VideoprojecteurEditComponent,
+    SalleEditComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
