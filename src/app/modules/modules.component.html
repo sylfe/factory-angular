@@ -1,0 +1,22 @@
+<div>
+  <form (ngSubmit)="send()" [formGroup]="monForm">
+
+    <div class="form-group">
+      <input class="form-control" formControlName="duree"/>
+      <div class="alert alert-danger" *ngIf="monForm.get('duree').dirty && monForm.get('duree').invalid">
+        <ng-container *ngIf="monForm.get('duree').hasError('required');else longueur">*Information obligatoire</ng-container>
+        <ng-template #longueur>* Il faut au moins 2 caractère</ng-template></div>
+    </div>
+      <div class="form-group">
+        <label for="power">Hero Power</label>
+        <select class="form-control"  id="power"
+                required
+                [(ngModel)]="model.power" name="power">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+      </div>
+    <div>
+      <input type="submit" value="envoyer"/>
+    </div>
+  </form>
+</div>

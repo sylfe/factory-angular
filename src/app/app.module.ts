@@ -3,13 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {UserService} from "./user.service";
+import { ModulesComponent } from './modules/modules.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { MatieresComponent } from './matieres/matieres.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ModulesComponent,
+    MatieresComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
