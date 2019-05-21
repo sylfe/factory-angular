@@ -17,6 +17,8 @@ import { SalleComponent } from './salle/salle.component';
 import { VideoProjecteursComponent } from './video-projecteurs/video-projecteurs.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UserComponent } from './testRest/user/user.component';
+import {MatieresService} from './matieres.service';
+import {ModulesService} from './modules.service';
 
 
 @NgModule({
@@ -38,7 +40,7 @@ import { UserComponent } from './testRest/user/user.component';
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, MatieresService, ModulesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

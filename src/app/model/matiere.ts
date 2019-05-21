@@ -2,7 +2,7 @@ import {Enseignement} from "./enseignement";
 
 export class Matiere {
   constructor(private _id?: number, private _nom?: string, private _niveau?: string, private _objectif?: string,
-              private _prerequis?: string, private _contenu?: string, private _nbJours?: number, private _enseignements: Enseignement[], private _version?: number){}
+              private _prerequis?: string, private _contenu?: string, private _nbJours?: number, private _enseignements?: Enseignement[], private _version?: number){}
 
 
   get nom(): string {

@@ -9,14 +9,14 @@ import {Matiere} from './model/matiere';
 })
 export class MatieresService {
 
-  private url = 'http://localhost:8080/la-factory/rest/matiere';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/matiere';
   private headers: HttpHeaders;
   private httpOptions: any;
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization' : 'Basic ' + btoa('tutu:tutu'),
+      'Authorization' : 'Basic ' + btoa('benjamin@benjamin.fr:benjamin'),
       'Access-Control-Allow-Origin' : '*'
     });
     this.httpOptions = { headers: this.headers};
@@ -46,8 +46,9 @@ export class MatieresService {
   public  insert(matiere: Matiere): Observable<any> {
     const p = {
       'nom' : matiere.nom,
-      'objectifs' : matiere.objectif
+      'objectif' : matiere.objectif,
+      'niveau': matiere.niveau
     };
-    return this.http.post( `${this.url}/insert`, p, this.httpOptions );
+    return this.http.post( `${this.url}`, p, this.httpOptions );
   }
 }
