@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpHeaders} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
+import {Matiere} from '../model/matiere';
 
 @Component({
   selector: 'app-matieres',
@@ -10,7 +11,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class MatieresComponent implements OnInit {
 
-  private user: Matiere = new Matiere();
+  private matiere: Matiere = new Matiere();
   private pseudoCtrl: FormControl;
   private mdpCtrl: FormControl;
   private monForm: FormGroup;
