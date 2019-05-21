@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
+import {Formateur} from '../model/formateur';
+import {FormateurService} from "../formateur.service";
 
 @Component({
   selector: 'app-formateur',
@@ -8,10 +10,33 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class FormateurComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, router: Router) { }
+  private formateurs: Formateur[];
+  private message: string = null;
 
-  ngOnInit() {
+  constructor(private formateurService: FormateurService, private activatedRoute: ActivatedRoute) { }
+
+
+  list() {
+    this.formateurService.list().subscribe(data => {
+      this.formateurs = data;
+    }, error => {
+      console.log(error);
+    });
   }
 
-  estDisponible(date1: Date, date2: Date) {}
+
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      if (params.nom) {
+        this.message = `formateur ${params.nom} ${params.action}`;
+      }
+    });
+    this.list();
+  }
+
+  delete(id: number) {
+    this.formateurService.delete(id).subscribe(result => this.list());
+  }
+
+
 }
