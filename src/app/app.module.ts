@@ -18,7 +18,7 @@ import { VideoProjecteursComponent } from './video-projecteurs/video-projecteurs
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UserComponent } from './testRest/user/user.component';
 import { OrdinateurEditComponent } from './ordinateur-edit/ordinateur-edit.component';
-import { VideoprojecteurEditComponent } from './videoprojecteur-edit/videoprojecteur-edit.component';
+import { VideoProjecteurEditComponent } from './videoprojecteur-edit/videoprojecteur-edit.component';
 import { SalleEditComponent } from './salle-edit/salle-edit.component';
 
 
@@ -38,7 +38,7 @@ import { SalleEditComponent } from './salle-edit/salle-edit.component';
     LoginComponent,
     WelcomeComponent,
     OrdinateurEditComponent,
-    VideoprojecteurEditComponent,
+    VideoProjecteurEditComponent,
     SalleEditComponent
   ],
   imports: [

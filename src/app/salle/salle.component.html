@@ -2,7 +2,7 @@
 <div *ngIf="message" class="alert-success">
   {{message}}
 </div>
-<button [routerLink]="['/salles/new']" class="btn btn-info" routerLinkActive="active">Ajouter une nouvelle salle</button>
+<button [routerLink]="['/salles/edit']" class="btn btn-info" routerLinkActive="active">Ajouter une nouvelle salle</button>
 <table class="table table-striped">
   <thead>
   <th>ID</th>
@@ -22,5 +22,5 @@
       <button class="btn btn-danger" (click)="delete(salle.id)">Supprimer</button></td>
   </tr>
 
-  <button [routerLink]="['/salles/new']" class="btn btn-info" routerLinkActive="active">Ajouter une nouvelle salle</button>
+  <button [routerLink]="['/salles/edit']" class="btn btn-info" routerLinkActive="active">Ajouter une nouvelle salle</button>
 </table>

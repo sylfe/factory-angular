@@ -39,7 +39,7 @@ export class SalleService {
       'id': salle.id,
       'code': salle.code,
       'coutJournee': salle.coutJournee,
-      'disponibilite': salle.disponibilite,
+      'disponibilite': salle.videoprojecteur,
       'capacite': salle.capacite,
 
     }

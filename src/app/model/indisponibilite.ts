@@ -4,7 +4,7 @@ import {Formateur} from "./formateur";
 export class Indisponibilite {
 
 
-  constructor(private _id?: number, private _dateDebut?: Date, private _dateFin?: Date, private _formateur: Formateur) {
+  constructor(private _id?: number, private _dateDebut?: Date, private _dateFin?: Date, private _formateur?: Formateur) {
   }
 
 

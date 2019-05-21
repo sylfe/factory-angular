@@ -1,7 +1,7 @@
 export class Materiel {
 
   constructor(
-    private _id?: number, private _version?: number, private _code?: string = 'MAT', private _coutJournee?: number = 0) {
+    private _id?: number, private _version?: number, private _code?: string, private _coutJournee?: number) {
   }
 
   get id(): number {

@@ -40,10 +40,10 @@ export class OrdinateurService {
       'id': ordi.id,
       'code': ordi.code,
       'coutJournee': ordi.coutJournee,
-      'disponibilite': ordi.disponibilite,
+      'disponibilite': ordi.stagiaires,
       'processeur': ordi.processeur,
-      'ram': ordi.code,
-      'dd': ordi.dd,
+      'ram': ordi.quantiteRAM,
+      'dd': ordi.quantiteDD,
       'anneeAchat': ordi.anneeAchat,
 
 
