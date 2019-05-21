@@ -37,18 +37,16 @@ export class OrdinateurService {
 
   public insert(ordi: Ordinateur): Observable<any> {
     const o = {
-      'id': ordi.id,
       'code': ordi.code,
       'coutJournee': ordi.coutJournee,
-      'disponibilite': ordi.stagiaires,
       'processeur': ordi.processeur,
-      'ram': ordi.quantiteRAM,
-      'dd': ordi.quantiteDD,
+      'quantiteRAM': ordi.quantiteRAM,
+      'quantiteDD': ordi.quantiteDD,
       'anneeAchat': ordi.anneeAchat,
 
 
     }
-    return this.http.post(`${this.url}/new`, o, this.httpOptions);
+    return this.http.post(`${this.url}`, o, this.httpOptions);
   }
 
   public update(ordi: Ordinateur): Observable<any> {
