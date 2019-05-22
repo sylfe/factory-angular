@@ -30,14 +30,14 @@ export class GestionnaireEditComponent implements OnInit {
   save() {
     if (this.gestionnaire.id) {
       this.gestionnaireService.update(this.gestionnaire).subscribe(result => {
-        this.router.navigate(['/gestionnaire', 'modifié', this.gestionnaire.email]);
+        this.router.navigate(['/gestionnaires', 'modifié', this.gestionnaire.email]);
       });
     } else {
       this.gestionnaireService.insert(this.gestionnaire).subscribe(result => {
-        this.router.navigate(['/gestionnaire', 'ajouté', this.gestionnaire.email]);
+        this.router.navigate(['/gestionnaires', 'ajouté', this.gestionnaire.email]);
       });
     }
   }
-  
+
 
 }
