@@ -9,7 +9,7 @@ import {Technicien} from './model/technicien';
 })
 export class TechnicienService {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/matiere';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/user/technicien';
   private headers: HttpHeaders;
   private httpOptions: any;
 
