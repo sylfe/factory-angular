@@ -1,16 +1,17 @@
+<h1>Liste des gestionnaires</h1>
 <div *ngIf="message" class="alert alert-info">{{message}}</div>
-
+<a class="btn btn-info" [routerLink]="['/gestionnaire/edit']" routerLinkActive="active"> Ajouter un nouveau gestionnaire</a>
 <table class="table">
   <thead>
-  <th>id</th>
-  <th>nom</th>
-  <th>prenom</th>
-  <th>adresse</th>
-  <th>email</th>
-  <th>telephone</th>
-  <th>mot de passe</th>
-  <th>editer</th>
-  <th>supprimer</th>
+  <th>ID</th>
+  <th>NOM</th>
+  <th>PRENOM</th>
+  <th>ADRESSE</th>
+  <th>EMAIL</th>
+  <th>TELEPHONE</th>
+  <th>MOT DE PASSE</th>
+  <th>EDITER</th>
+  <th>SUPPRIMER</th>
   </thead>
   <tr *ngFor="let g of gestionnaires">
     <td> {{ g.id }}  </td>
@@ -24,4 +25,4 @@
     <td> <button class="btn btn-danger" (click)="delete(g.id)">Supprimer</button> </td>
   </tr>
 </table>
-<a class="btn btn-info" [routerLink]="['/gestionnaire/edit']" routerLinkActive="active"> Ajouter </a>
+

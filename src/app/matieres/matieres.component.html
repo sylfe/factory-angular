@@ -6,14 +6,15 @@
 <table class="table table-striped">
   <thead>
   <th>ID</th>
-  <th>Intitulé</th>
-  <th>Niveau</th>
-  <th>Ojectif</th>
-  <th>Pré-requis</th>
-  <th>Contenu</th>
-  <th>Durée</th>
-  <th>Formateur</th>
-  <th>ACTION</th>
+  <th>INTITULE</th>
+  <th>NIVEAU</th>
+  <th>OBJECTIF</th>
+  <th>PRE-REQUIS</th>
+  <th>CONTENU</th>
+  <th>DUREE</th>
+  <th>FORMATEUR</th>
+  <th>EDITER</th>
+  <th>SUPPRIMER</th>
   </thead>
   <tr *ngFor="let mat of matieres">
     <td>{{mat.id}}</td>
@@ -24,8 +25,8 @@
     <td>{{mat.contenu}}</td>
     <td>{{mat.nbJours}}</td>
     <td>{{mat.enseignements}}</td>
-    <td><button class="btn btn-warning" [routerLink]="['/matiere/edit',mat.id]" routerLinkActive="active">modifier</button>&nbsp;
-      <button class="btn btn-danger" (click)="delete(mat.id)">Supprimer</button></td>
+    <td><button class="btn btn-warning" [routerLink]="['/matiere/edit',mat.id]" routerLinkActive="active">modifier</button>&nbsp;</td>
+      <td><button class="btn btn-danger" (click)="delete(mat.id)">Supprimer</button></td>
   </tr>
 
 
