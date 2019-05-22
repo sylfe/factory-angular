@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {CanActivate, Router} from '@angular/router';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Formateur} from './model/formateur';
@@ -13,7 +12,7 @@ export class FormateurService {
   private headers: HttpHeaders;
   private httpOptions: any;
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Basic ' + btoa(`benjamin@benjamin.fr:benjamin`)
@@ -22,7 +21,7 @@ export class FormateurService {
   }
 
   public list(): Observable<any> {
-    return this.http.get( `${this.url}s`, this.httpOptions);
+    return this.http.get( 'http://10.0.0.205:8080/la-factory/rest/user/formateurs', this.httpOptions);
   }
 
   public delete(id: number): Observable<any> {
@@ -45,11 +44,13 @@ export class FormateurService {
       'adresse': formateur.adresse,
       'email': formateur.email,
       'telephone': formateur.telephone,
-      'motDePasse': formateur.motDePasse
+      'motDePasse': formateur.motDePasse,
+      'droits':formateur.droits
     };
 
-    return this.http.post(this.url, f, {headers : this.headers});
+    return this.http.post(`${this.url}`, f, this.httpOptions );
   }
+
 
 
 

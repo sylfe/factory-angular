@@ -6,6 +6,8 @@ import {Matiere} from '../model/matiere';
 import {MatieresService} from '../matieres.service';
 import {Formateur} from '../model/formateur';
 import {FormateurService} from '../formateur.service';
+import {Module} from '../model/module';
+import {ModulesService} from '../modules.service';
 
 @Component({
   selector: 'app-formation-edit',
@@ -16,13 +18,15 @@ export class FormationEditComponent implements OnInit {
 
   private matieres: Matiere[];
   private formateurs: Formateur[];
+  private modules: Module[];
 
   private formation: Formation = new Formation();
 
   constructor(private activedRoute: ActivatedRoute,
               private formationService: FormationService,
               private matiereService: MatieresService,
-              private formateurServise: FormateurService,
+              private formateurService: FormateurService,
+              private moduleService: ModulesService,
               private router: Router) { }
 
   ngOnInit() {
@@ -34,6 +38,8 @@ export class FormationEditComponent implements OnInit {
       }
     });
     this.listMatiere();
+    this.listFormateur();
+    this.listModule();
   }
 
   save() {
@@ -53,6 +59,24 @@ export class FormationEditComponent implements OnInit {
     this.matiereService.list().subscribe( data => {
       this.matieres = data;
       console.log(this.matieres);
+    }, error => {
+      console.log('error');
+    });
+  }
+
+  listFormateur() {
+    this.formateurService.list().subscribe( data => {
+      this.formateurs = data;
+      console.log(this.formateurs);
+    }, error => {
+      console.log('error');
+    });
+  }
+
+  listModule() {
+    this.moduleService.list().subscribe( data => {
+      this.modules = data;
+      console.log(this.modules);
     }, error => {
       console.log('error');
     });

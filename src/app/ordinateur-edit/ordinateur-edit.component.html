@@ -9,43 +9,50 @@
 
   <div class="input-group mb-3">
     <label class="input-group-text">id</label>
-    <input [(ngModel)]="ordinateur.id" readonly placeholder="ID généré automatiquement" name="id" #nom="ngModel">
+    <input [(ngModel)]="ordinateur.id" readonly placeholder="ID généré automatiquement" name="id" class="form-control">
   </div>
-    <div *ngIf="nom.dirty && nom.invalid" class="alert-danger">
-      *champ vide/non valide </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">code</label>
-    <input [(ngModel)]="ordinateur.code" name="code"  required>
+    <input [(ngModel)]="ordinateur.code" name="code" class="form-control" #code="ngModel" required>
   </div>
+  <div *ngIf="code.dirty && code.invalid" class="alert-danger">*champ obligatoire </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">coût(€)/jour</label>
-    <input [(ngModel)]="ordinateur.coutJournee"  name="coutJournee" required>
+    <input [(ngModel)]="ordinateur.coutJournee"  name="coutJournee" class="form-control" #coutJournee="ngModel" required>
   </div>
+  <div *ngIf="coutJournee.dirty && coutJournee.invalid" class="alert-danger">*champ obligatoire </div>
+
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">Processeur</label>
-    <input [(ngModel)]="ordinateur.processeur" name="processeur" required>
+    <input [(ngModel)]="ordinateur.processeur" name="processeur" class="form-control" #processeur="ngModel" required>
   </div>
+  <div *ngIf="processeur.dirty && processeur.invalid" class="alert-danger">*champ obligatoire </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">RAM (Go)</label>
-    <input [(ngModel)]="ordinateur.quantiteRAM" name="quantiteRAM" required>
+    <input [(ngModel)]="ordinateur.quantiteRAM" name="quantiteRAM" class="form-control" #quantiteRAM="ngModel" required>
   </div>
+  <div *ngIf="quantiteRAM.dirty && quantiteRAM.invalid" class="alert-danger">*champ obligatoire </div>
+
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">Disque dur(Go)</label>
-    <input [(ngModel)]="ordinateur.quantiteDD" name="quantiteDD" required>
+    <input [(ngModel)]="ordinateur.quantiteDD" name="quantiteDD" class="form-control" #quantiteDD="ngModel" required>
   </div>
+  <div *ngIf="quantiteDD.dirty && quantiteDD.invalid" class="alert-danger">*champ obligatoire </div>
+
   <div class="input-group mb-3">
     <label class="input-group-text">Année d'achat</label>
-    <input [(ngModel)]="ordinateur.anneeAchat" type="text" name="anneeAchat" required>
+    <input [(ngModel)]="ordinateur.anneeAchat" type="text" name="anneeAchat" class="form-control" #anneeAchat="ngModel" required>
   </div>
+  <div *ngIf="anneeAchat.dirty && anneeAchat.invalid" class="alert-danger">*champ obligatoire </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text">Stagiaire</label>
-    <input type="radio" name="stagiaires" ng-model="dispo" value="nondisponible">Oui
-    <input [(ngModel)]="ordinateur.stagiaires" type="radio" name="stagiaires" value="disponible">Non
-
+    <input [(ngModel)]="ordinateur.stagiaires" type="texte" name="stagiaires" value="stagiaire" class="form-control">
+  </div>
+  <div>
 
     <select id="listestagiaires">
       <option [(ngModel)]="ordinateur.stagiaires" name="stagiaires" value=stagiaire.nom>AFFICHER LA LISTE DES STAGIAIRE SI "OUI" </option>
