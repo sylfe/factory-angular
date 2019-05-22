@@ -46,8 +46,11 @@ export class MatieresService {
   public  insert(matiere: Matiere): Observable<any> {
     const p = {
       'nom' : matiere.nom,
+      'niveau': matiere.niveau,
       'objectif' : matiere.objectif,
-      'niveau': matiere.niveau
+      'prerequis': matiere.prerequis,
+      'contenu': matiere.contenu,
+      'nbJours': matiere.nbJours
     };
     return this.http.post( `${this.url}`, p, this.httpOptions );
   }

@@ -2,7 +2,7 @@
 <div *ngIf="message" class="alert-success">
   {{message}}
 </div>
-<button [routerLink]="['/matieres/edit']" class="btn btn-info" routerLinkActive="active">Ajouter une nouvelle matière</button>
+<button [routerLink]="['/matiere/edit']" class="btn btn-info" routerLinkActive="active">Ajouter une nouvelle matière</button>
 <table class="table table-striped">
   <thead>
   <th>ID</th>
@@ -28,5 +28,5 @@
       <button class="btn btn-danger" (click)="delete(mat.id)">Supprimer</button></td>
   </tr>
 
-  <button [routerLink]="['/matieres/edit']" class="btn btn-info" routerLinkActive="active">Ajouter un nouvel ordinateur</button>
+
 </table>
