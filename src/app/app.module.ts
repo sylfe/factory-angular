@@ -25,6 +25,7 @@ import { SalleEditComponent } from './salle-edit/salle-edit.component';
 import { MatiereEditComponent } from './matiere-edit/matiere-edit.component';
 import { FormationCreateComponent } from './formation-create/formation-create.component';
 import { FormationEditComponent } from './formation-edit/formation-edit.component';
+import {FormateurEditComponent} from './formateur-edit/formateur-edit.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { FormationEditComponent } from './formation-edit/formation-edit.componen
     SalleEditComponent,
     MatiereEditComponent,
     FormationCreateComponent,
-    FormationEditComponent
+    FormationEditComponent,
+    FormateurEditComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
