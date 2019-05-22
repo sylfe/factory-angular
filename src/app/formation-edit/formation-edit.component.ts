@@ -22,7 +22,7 @@ export class FormationEditComponent implements OnInit {
   constructor(private activedRoute: ActivatedRoute,
               private formationService: FormationService,
               private matiereService: MatieresService,
-              private formateurServise: FormateurService,
+              private formateurService: FormateurService,
               private router: Router) { }
 
   ngOnInit() {
@@ -34,6 +34,7 @@ export class FormationEditComponent implements OnInit {
       }
     });
     this.listMatiere();
+    this.listFormateur();
   }
 
   save() {
@@ -53,6 +54,15 @@ export class FormationEditComponent implements OnInit {
     this.matiereService.list().subscribe( data => {
       this.matieres = data;
       console.log(this.matieres);
+    }, error => {
+      console.log('error');
+    });
+  }
+
+  listFormateur() {
+    this.formateurService.list().subscribe( data => {
+      this.formateurs = data;
+      console.log(this.formateurs);
     }, error => {
       console.log('error');
     });

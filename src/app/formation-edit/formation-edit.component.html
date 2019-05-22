@@ -9,8 +9,8 @@
       <label> Choix de la matière </label>
     </div>
     <div class="col-3 d-flex justify-content-center">
-      <select *ngFor="let matiere of matieres" class="" name="listeMatieres">
-        <option value="">{{matiere.nom}}</option>
+      <select  name="listeMatieres">
+        <option *ngFor="let matiere of matieres" value="{{matiere.id}}">{{matiere.nom}}</option>
       </select>
     </div>
   </div>
@@ -33,8 +33,8 @@
       <label> Choix du formateur </label>
     </div>
     <div class="col-3 d-flex justify-content-center">
-      <select *ngFor="let formateur of formateurs" name="listeFormateur">
-        <option value="">{{formateur.nom}}</option>
+      <select name="listeFormateur">
+        <option *ngFor="let formateur of formateurs" value="">{{formateur.nom}}</option>
       </select>
     </div>
   </div>
@@ -46,3 +46,33 @@
   </div>
 
 </div>
+
+<table class="table table-striped table-dark table-hover">
+  <thead>
+  <tr>
+    <td>
+      Date début
+    </td>
+    <td>
+      Date fin
+    </td>
+    <td>
+      Matière
+    </td>
+    <td>
+      Formateur
+    </td>
+    <td>
+      Action
+    </td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let module of modules">
+    <td>{{module.id}}</td>
+    <td>{{module.nom}}</td>
+    <td><button class="btn btn-secondary" [routerLink]="['/produit', produit.id]" routerLinkActive="active">Editer</button></td>
+    <td><button class="btn btn-danger" (click)="delete(produit.id)">Supprimer</button></td>
+  </tr>
+  </tbody>
+</table>
