@@ -20,7 +20,7 @@
     <td> {{ f.email }}    </td>
     <td> {{ f.telephone }}    </td>
     <td> {{ f.motDePasse }}    </td>
-    <td><a class="btn btn-warning" [routerLink]="['/formateur', f.id]" routerLinkActive="active"> Editer </a></td>
+    <td><a class="btn btn-warning" [routerLink]="['/formateur/edit', f.id]" routerLinkActive="active"> Editer </a></td>
     <td>
       <button class="btn btn-danger" (click)="delete(f.id)">Supprimer</button>
     </td>

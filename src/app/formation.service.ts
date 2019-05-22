@@ -8,14 +8,14 @@ import {Formation} from "./model/formation";
 })
 export class FormationService {
 
-  private url = 'http://localhost:8080/la-factory/rest/formation';
+  private url = 'http://localhost:8080/la-factory/rest/formations';
   private headers: HttpHeaders;
   private httpOptions: any;
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa('tutu:tutu')
+        'Authorization': 'Basic ' + btoa('constance@constance.fr:constance')
       }
     );
     this.httpOptions = {headers: this.headers};
