@@ -11,6 +11,7 @@ import {Formateur} from '../model/formateur';
 export class FormateurEditComponent implements OnInit {
 
   private formateur: Formateur = new Formateur();
+
   constructor(private activedRoute: ActivatedRoute,
               private formateurService: FormateurService,
               private router: Router) { }
