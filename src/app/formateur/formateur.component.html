@@ -15,13 +15,15 @@
   <tr *ngFor="let f of formateurs">
     <td> {{ f.id }}  </td>
     <td> {{ f.nom }}  </td>
-    <td>   {{ f.prenom }}  </td>
-    <td>   {{ f.adresse }}    </td>
-    <td>   {{ f.email }}    </td>
-    <td>   {{ f.telephone }}    </td>
-    <td>   {{ f.motDePasse }}    </td>
-    <td> <a class="btn btn-warning" [routerLink]="['/formateur', f.id]" routerLinkActive="active"> Editer </a>  </td>
-    <td> <button class="btn btn-danger" (click)="delete(f.id)">Supprimer</button> </td>
+    <td> {{ f.prenom }}  </td>
+    <td> {{ f.adresse }}    </td>
+    <td> {{ f.email }}    </td>
+    <td> {{ f.telephone }}    </td>
+    <td> {{ f.motDePasse }}    </td>
+    <td><a class="btn btn-warning" [routerLink]="['/formateur', f.id]" routerLinkActive="active"> Editer </a></td>
+    <td>
+      <button class="btn btn-danger" (click)="delete(f.id)">Supprimer</button>
+    </td>
   </tr>
 </table>
 <a class="btn btn-info" [routerLink]="['/formateur/edit']" routerLinkActive="active"> Ajouter </a>

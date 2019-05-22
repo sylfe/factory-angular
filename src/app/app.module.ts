@@ -33,6 +33,7 @@ import {AccessFormateurService} from './access-formateur.service';
 import {AccessGestionnaireService} from './access-gestionnaire.service';
 import {AccessTechnicienService} from './access-technicien.service';
 import { ModulesEditComponent } from './modules-edit/modules-edit.component';
+import { FormationComponent } from './formation/formation.component';
 import { TechnicienComponent } from './technicien/technicien.component';
 import {TechnicienEditComponent} from './technicien-edit/technicien-edit.component';
 
@@ -62,6 +63,8 @@ import {TechnicienEditComponent} from './technicien-edit/technicien-edit.compone
     FormateurEditComponent,
     TestPageComponent,
     TestComponentComponent,
+    ModulesEditComponent,
+    FormationComponent,
     ModulesEditComponent,
     TechnicienComponent,
     TechnicienEditComponent

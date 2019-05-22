@@ -20,9 +20,10 @@
         <input class="form-control form-control" type="date" name="dateFin" value="AAAA-MM-JJ" [(ngModel)]="formation.dateFin" required #dateFin="ngModel">
       </div>
     </div>
-
-    <button type="submit" class="btn btn-success btn-block">Créer la formation</button>
-
+<div>
+    <button type="submit" class="btn btn-success btn-block" (click)="save()">Créer la formation</button>
+    <a [routerLink]="['/formations']" routerLinkActive="active" class="btn btn-warning btn-block">Retour</a>
+</div>
   </form>
 </div>
 </body>
