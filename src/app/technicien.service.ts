@@ -10,7 +10,7 @@ import {Droit} from './model/droit.enum';
 })
 export class TechnicienService {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/technicien';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/user/technicien';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -24,7 +24,7 @@ export class TechnicienService {
   }
 
   public list(): Observable<any> {
-    return this.http.get(this.url, this.httpOptions);
+    return this.http.get('http://10.0.0.205:8080/la-factory/rest/user/techniciens', this.httpOptions);
   }
 
   public delete(id: number): Observable<any> {
@@ -33,10 +33,6 @@ export class TechnicienService {
 
   public findById(id: number): Observable<any> {
     return this.http.get(`${this.url}/${id}`, this.httpOptions);
-  }
-
-  public login(options): Observable<any> {
-    return this.http.get(`${this.url}/1`, options);
   }
 
 
