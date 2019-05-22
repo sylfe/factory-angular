@@ -15,7 +15,7 @@ export class ModulesService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization' : 'Basic ' + btoa('tutu:tutu'),
+      'Authorization' : 'Basic ' + btoa('benjamin@benjamin.fr:benjamin'),
       'Access-Control-Allow-Origin' : '*'
     });
     this.httpOptions = { headers: this.headers};
@@ -25,6 +25,10 @@ export class ModulesService {
     return this.http.get(this.url, this.httpOptions);
   }
 
+  public findByFormation(id: number): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`, this.httpOptions);
+  }
+
   public delete(id: number): Observable<any> {
     return this.http.delete(`${this.url}/${id}`, this.httpOptions);
   }
@@ -32,6 +36,7 @@ export class ModulesService {
   public findById(id: number): Observable<any> {
     return this.http.get(`${this.url}/${id}`, this.httpOptions);
   }
+
 
   public login(options): Observable<any> {
     return this.http.get(`${this.url}/1`, options);
