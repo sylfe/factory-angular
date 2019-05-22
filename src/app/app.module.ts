@@ -33,6 +33,7 @@ import {AccessFormateurService} from './access-formateur.service';
 import {AccessGestionnaireService} from './access-gestionnaire.service';
 import {AccessTechnicienService} from './access-technicien.service';
 import { ModulesEditComponent } from './modules-edit/modules-edit.component';
+import { FormationComponent } from './formation/formation.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { ModulesEditComponent } from './modules-edit/modules-edit.component';
     FormateurEditComponent,
     TestPageComponent,
     TestComponentComponent,
-    ModulesEditComponent
+    ModulesEditComponent,
+    FormationComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule

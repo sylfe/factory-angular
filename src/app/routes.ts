@@ -24,6 +24,7 @@ import {ModulesComponent} from './modules/modules.component';
 import {ModulesEditComponent} from './modules-edit/modules-edit.component';
 import {FormationCreateComponent} from './formation-create/formation-create.component';
 import {FormationEditComponent} from './formation-edit/formation-edit.component';
+import {FormationComponent} from "./formation/formation.component";
 
 
 export const routes: Routes = [{path: 'home', component: WelcomeComponent},
@@ -59,9 +60,9 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'modules',  component: ModulesComponent},
   { path : 'module',  component: ModulesComponent},
   { path : 'module/edit', component: ModulesEditComponent},
-  { path : 'formation', component: FormationCreateComponent},
-  { path : 'formations/:action/:titre', component: FormationCreateComponent},
-  { path : 'formation/edit', component: FormationEditComponent},
+  { path : 'formations', component: FormationComponent},
+  { path : 'formation/:action/:titre', component: FormationEditComponent},
+  { path : 'formation/create', component: FormationCreateComponent},
   { path : 'formation/edit/:id', component: FormationEditComponent},
   { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
   { path : 'testinit', component: TestComponentComponent},
