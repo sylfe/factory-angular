@@ -1,16 +1,25 @@
-<div>
-  <form (ngSubmit)="send()" #monForm="ngForm">
-
-    <div class="form-group">
-      <label>Duree</label>
-      <input name="dateDebut" type="date" [(ngModel)]="module.dateDebut" required class="form-control" #dateDebut="ngModel">
-    </div>
-    <select class="form-control" id="matiere" name="matiere" required [(ngModel)]="module.matiere">
-      <option *ngFor="let matiere of matieres" [value]="matiere">{{matiere.nom}}</option>
-    </select>
-    <div>
-      <button class="btn btn-success" [disabled]="monForm.invalid"> Envoyer</button>
-    </div>
-  </form>
-
+<h1>Liste des ordinateurs</h1>
+<div *ngIf="message" class="alert-success">
+  {{message}}
 </div>
+<button [routerLink]="['/ordinateur/edit']" class="btn btn-info" routerLinkActive="active">Ajouter un nouvel ordinateur</button>
+<table class="table table-striped">
+  <thead>
+  <th>ID</th>
+  <th>Date début</th>
+  <th>Formateur</th>
+  <th>Matière</th>
+  <th>Formation</th>
+  <th>ACTION</th>
+  </thead>
+  <tr *ngFor="let module of modules">
+    <td>{{module.id}}</td>
+    <td>{{module.dateDebut}}</td>
+    <td>{{module.formateur}}</td>
+    <td>{{module.matiere}}</td>
+    <td>{{module.formation}}</td>
+    <td><button class="btn btn-warning" [routerLink]="['/ordinateur',module.id]" routerLinkActive="active">modifier</button>&nbsp;
+      <button class="btn btn-danger" (click)="delete(module.id)">Supprimer</button></td>
+  </tr>
+
+</table>

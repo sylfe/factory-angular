@@ -20,12 +20,15 @@ import {TestComponentComponent} from './test-component/test-component.component'
 import {AccessFormateurService} from './access-formateur.service';
 import {AccessTechnicienService} from './access-technicien.service';
 import {AccessGestionnaireService} from './access-gestionnaire.service';
+import {ModulesComponent} from './modules/modules.component';
+import {ModulesEditComponent} from './modules-edit/modules-edit.component';
 
 
 export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'login/:error', component: LoginComponent},
   { path : 'matieres', component: MatieresComponent, canActivate: [AccessFormateurService]},
+  { path : 'matieres/:action/:nom', component: MatieresComponent, canActivate: [AccessFormateurService]},
   { path : 'matiere/edit', component: MatiereEditComponent, canActivate: [AccessFormateurService]},
   { path : 'matiere/edit/:id', component: MatiereEditComponent, canActivate: [AccessFormateurService]},
   { path : 'ordinateurs', component: OrdinateursComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
@@ -46,9 +49,12 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'user', component: UserEditerComponent},
   { path : 'users', component: UserComponent},
   { path : 'user/:action/:nom', component: UserComponent},
-  { path : 'formateurs', component: FormateurComponent},
+  { path : 'formateur', component: FormateurComponent},
   { path : 'formateur/:id', component: FormateurEditComponent},
   { path : 'formateur/edit', component: FormateurEditComponent},
+  { path : 'modules',  component: ModulesComponent},
+  { path : 'module',  component: ModulesComponent},
+  { path : 'module/edit', component: ModulesEditComponent},
   { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
   { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];
