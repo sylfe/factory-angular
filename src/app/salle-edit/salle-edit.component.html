@@ -29,15 +29,13 @@
   <div class="input-group mb-3">
     <label class="input-group-text">Vidéoprojecteur</label>
     <button [(ngModel)]="salleAvecVideo" type="radio" name="videoprojecteur" value="true" (click)="video()">Oui</button>
-    <button [(ngModel)]="salleAvecVideo" type="radio" name="videoprojecteur" value="false" (click)="video()">Non
-    </button>
+    <button [(ngModel)]="salleAvecVideo" type="radio" name="videoprojecteur" value="false" (click)="video()">Non</button>
+  </div>
 
     <!-- liste déroulante des vidéoproj qui s'affiche quand on coche oui-->
-    <div *ngIf="visible">
-      <select class="form-control" id="videoproj" name="videoproj" [(ngModel)]="salle.videoprojecteur">
-        <option *ngFor="let vp of videoprojecteurs" [value]="vp"
-                [attr.selected]="salle.videoprojecteur == vp ? true : null">{{vp.code}}
-        </option>
+    <div>
+      <select class="form-control" id="videoproj" name="videoproj" [(ngModel)]="salle.videoprojecteur.id">
+        <option *ngFor="let vp of videoprojecteurs" [value]="vp.id" [attr.selected]="salle.videoprojecteur.id ? true : null">{{vp.code}}</option>
       </select>
       <!--
       <select [(ngModel)]="passenger.Title">
@@ -46,12 +44,13 @@
           </select>
       -->
 
-      <ng-template #sansVideo>
+     <!-- <ng-template #sansVideo>
         dispo
-      </ng-template>
+      </ng-template> -->
+
     </div>
 
-  </div>
+
 
   <div>
     <button class="btn btn-success" (click)="save()">Enregistrer</button>
