@@ -30,9 +30,7 @@ export class FormateurEditComponent implements OnInit {
       this.formateurService.update(this.formateur).subscribe(result => {
         this.router.navigate(['/formateur', 'modif', this.formateur.nom]);
       });
-    }
-    else {
-      console.log('ok');
+    } else {
       this.formateurService.insert(this.formateur).subscribe(result => {
         this.router.navigate(['/formateur', 'ajout', this.formateur.nom]);
       });
