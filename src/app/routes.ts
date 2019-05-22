@@ -27,6 +27,9 @@ import {FormationEditComponent} from './formation-edit/formation-edit.component'
 import {FormationComponent} from "./formation/formation.component";
 import {TechnicienComponent} from './technicien/technicien.component';
 import {TechnicienEditComponent} from './technicien-edit/technicien-edit.component';
+import {GestionnaireComponent} from './gestionnaire/gestionnaire.component';
+import {GestionnaireEditComponent} from './gestionnaire-edit/gestionnaire-edit.component';
+
 
 
 export const routes: Routes = [{path: 'home', component: WelcomeComponent},
@@ -57,6 +60,13 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'formateur', component: FormateurComponent},
   { path : 'formateur/:action/:nom', component: FormateurComponent},
   { path : 'formateur/:id', component: FormateurEditComponent},
+  { path : 'gestionnaires', component: GestionnaireComponent},
+  { path : 'gestionnaires/:action/:nom', component: GestionnaireComponent},
+  { path : 'gestionnaire/edit', component: GestionnaireEditComponent},
+  { path : 'gestionnaire/edit/:id', component: GestionnaireEditComponent},
+  { path : 'formateurs', component: FormateurComponent},
+  { path : 'formateurs/:action/:nom', component: FormateurComponent},
+  { path : 'formateur/edit/:id', component: FormateurEditComponent},
   { path : 'formateur/edit', component: FormateurEditComponent},
   { path : 'modules',  component: ModulesComponent},
   { path : 'module',  component: ModulesComponent},

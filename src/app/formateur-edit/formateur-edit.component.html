@@ -1,10 +1,13 @@
-
 <form (ngSubmit)="save()" #monForm="ngForm">
-  <div *ngIf="formateur.id">
-    <h1>Modifier un formateur</h1>
+  <div class="form-group">
+    <label>Nom</label>
+    <input name="nom" [(ngModel)]="formateur.nom" required class="form-control" #nom="ngModel">
   </div>
-  <div *ngIf="!formateur.id">
-    <h1>Ajouter un formateur</h1>
+  <div *ngIf="nom.dirty && nom.invalid" class="alert-danger">
+    *information obligatoire </div>
+  <div>
+    <label>Prénom</label>
+    <input type="text" name="prenom" [(ngModel)]="formateur.prenom" required class="form-control" #prenom="ngModel">
   </div>
 
 

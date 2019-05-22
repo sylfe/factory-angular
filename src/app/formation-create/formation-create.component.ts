@@ -27,7 +27,7 @@ export class FormationCreateComponent implements OnInit {
   }
   save() {
     this.formationService.insert(this.formation).subscribe(result => {
-      this.router.navigate(['/formations', 'ajouté', this.formation.id]);
+      this.router.navigate(['/formation/edit', this.formation.id]);
     });
   }
 }
