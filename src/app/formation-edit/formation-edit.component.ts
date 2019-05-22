@@ -58,4 +58,3 @@ export class FormationEditComponent implements OnInit {
     });
   }
 }
-}
