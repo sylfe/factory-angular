@@ -34,20 +34,16 @@
 
     <div *ngIf="salleAvecVideo == true; else sansVideo">
       <select class="form-control" id="videoproj" name="videoproj" [(ngModel)]="salle.videoprojecteur">
+        <option *ngFor="let vp of videoprojecteurs" [value]="vp" [attr.selected]="salle.videoprojecteur == vp ? true : null">{{vp.code}}
+        </option>
+      </select>
         <!--
         <select [(ngModel)]="passenger.Title">
         <option *ngFor="let title of titleArray" [value]="title.Value" [attr.selected]="passenger.Title==title.Text ? true : null"> {{title.Text}}
         </option>
             </select>
         -->
-
-        <select class="form-control" id="matiere" name="matiere" required [(ngModel)]="module.matiere">
-          <option *ngFor="let matiere of matieres" [value]="matiere">{{matiere.nom}}</option>
-        </select>
-
-        <option *ngFor="let vp of videoprojecteurs" [value]="vp.code" [attr.selected]="salle.videoprojecteur == vp ? true : null">{{vp.code}}
-        </option>
-      </select>
+             
       <ng-template #sansVideo>
         Dispo
       </ng-template>
