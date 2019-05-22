@@ -39,9 +39,8 @@ export class SalleService {
       'id': salle.id,
       'code': salle.code,
       'coutJournee': salle.coutJournee,
-      'disponibilite': salle.videoprojecteur,
+ //     'videoprojecteur': salle.videoprojecteur,
       'capacite': salle.capacite,
-
     }
     return this.http.post(`${this.url}/new`, v, this.httpOptions);
   }
