@@ -10,7 +10,7 @@ import {Technicien} from '../model/technicien';
 })
 export class TechnicienComponent implements OnInit {
 
-  private technicien: Technicien[];
+  private techniciens: Technicien[];
   private message: string = null;
 
   constructor(private technicienService: TechnicienService, private activatedRoute: ActivatedRoute) { }
@@ -18,7 +18,7 @@ export class TechnicienComponent implements OnInit {
 
   list() {
     this.technicienService.list().subscribe(data => {
-      this.technicien = data;
+      this.techniciens = data;
       console.log('ok');
     }, error => {
       console.log(error);
