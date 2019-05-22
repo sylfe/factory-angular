@@ -7,7 +7,7 @@ import {Formateur} from './model/formateur';
 @Injectable({
   providedIn: 'root'
 })
-export class FormateurService implements CanActivate {
+export class FormateurService {
 
   private url = 'http://10.0.0.205:8080/la-factory/rest/user/formateur';
   private headers: HttpHeaders;
@@ -51,9 +51,6 @@ export class FormateurService implements CanActivate {
     return this.http.post(this.url, f, {headers : this.headers});
   }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return undefined;
-  }
 
 
 }
