@@ -14,6 +14,9 @@ import {VideoProjecteurEditComponent} from './videoprojecteur-edit/videoprojecte
 import {FormateurComponent} from './formateur/formateur.component';
 import {FormateurEditComponent} from './formateur-edit/formateur-edit.component';
 import {MatiereEditComponent} from './matiere-edit/matiere-edit.component';
+import {TestPageComponent} from './test-page/test-page.component';
+import {AccessAdminService} from './access-admin.service';
+import {TestComponentComponent} from './test-component/test-component.component';
 
 
 export const routes: Routes = [{path: 'home', component: WelcomeComponent},
@@ -39,5 +42,7 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'user/:action/:nom', component: UserComponent},
   { path : 'formateurs', component: FormateurComponent},
   { path : 'formateur/:id', component: FormateurEditComponent},
-  { path : 'formateur/ajouter', component: FormateurEditComponent},
+  { path : 'formateur/edit', component: FormateurEditComponent},
+  { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
+  { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];

@@ -40,9 +40,17 @@
 
   <div class="input-group mb-3">
     <label class="input-group-text">Stagiaire</label>
-    <input [(ngModel)]="ordinateur.stagiaires" type="radio" name="disponibilite" value="true">Oui
-    <input [(ngModel)]="ordinateur.stagiaires" type="radio" name="disponibilite" value="false">Non
+    <input type="radio" name="stagiaires" ng-model="dispo" value="nondisponible">Oui
+    <input [(ngModel)]="ordinateur.stagiaires" type="radio" name="stagiaires" value="disponible">Non
+
+
+    <select id="listestagiaires">
+      <option [(ngModel)]="ordinateur.stagiaires" name="stagiaires" value=stagiaire.nom>AFFICHER LA LISTE DES STAGIAIRE SI "OUI" </option>
+    </select>
   </div>
+
+
   <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
   <button  class="btn btn-secondary" [routerLink]="['/ordinateurs']" routerLinkActive="active">Retour</button>
 </form>
+
