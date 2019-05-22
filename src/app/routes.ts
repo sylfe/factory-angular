@@ -70,6 +70,7 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'formation/:action/:titre', component: FormationEditComponent},
   { path : 'formation/create', component: FormationCreateComponent},
   { path : 'formation/edit', component: FormationEditComponent},
+  { path : 'formation/edit/:id', component: FormationEditComponent},
   { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
   { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];
