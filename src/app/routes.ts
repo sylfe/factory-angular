@@ -20,6 +20,8 @@ import {TestComponentComponent} from './test-component/test-component.component'
 import {AccessFormateurService} from './access-formateur.service';
 import {AccessTechnicienService} from './access-technicien.service';
 import {AccessGestionnaireService} from './access-gestionnaire.service';
+import {ModulesComponent} from './modules/modules.component';
+import {ModulesEditComponent} from './modules-edit/modules-edit.component';
 
 
 export const routes: Routes = [{path: 'home', component: WelcomeComponent},
@@ -49,6 +51,9 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'formateur', component: FormateurComponent},
   { path : 'formateur/:id', component: FormateurEditComponent},
   { path : 'formateur/edit', component: FormateurEditComponent},
+  { path : 'modules',  component: ModulesComponent},
+  { path : 'module',  component: ModulesComponent},
+  { path : 'module/edit', component: ModulesEditComponent},
   { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
   { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];
