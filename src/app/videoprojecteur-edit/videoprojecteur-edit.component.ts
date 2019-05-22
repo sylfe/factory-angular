@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {VideoProjecteurService} from '../video-projecteur.service';
 import {VideoProjecteur} from '../model/videoProjecteur';
+import {Salle} from '../model/salle';
+import {SalleService} from '../salle.service';
 
 @Component({
   selector: 'app-videoprojecteur-edit',
@@ -12,9 +14,11 @@ export class VideoProjecteurEditComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
               private videoprojecteurService: VideoProjecteurService,
+              private salleService: SalleService,
               private router: Router) { }
 
   private videoprojecteur: VideoProjecteur = new VideoProjecteur();
+  private salles: Salle[];
 
 
   ngOnInit() {
