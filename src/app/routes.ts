@@ -42,7 +42,7 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'users/:action/:nom', component: UserComponent},
   { path : 'formateur', component: FormateurComponent},
   { path : 'formateur/:id', component: FormateurEditComponent},
-  { path : 'formateur/ajouter', component: FormateurEditComponent},
+  { path : 'formateur/edit', component: FormateurEditComponent},
   { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
   { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];
