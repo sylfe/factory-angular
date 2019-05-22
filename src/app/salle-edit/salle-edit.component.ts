@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SalleService} from '../salle.service';
 import {Salle} from '../model/salle';
+import {VideoProjecteur} from "../model/videoProjecteur";
 
 @Component({
   selector: 'app-salle-edit',
@@ -15,6 +16,7 @@ export class SalleEditComponent implements OnInit {
               private router: Router) { }
 
   private salle: Salle = new Salle();
+  private videoprojecteurs: VideoProjecteur[];
 
 
   ngOnInit() {
