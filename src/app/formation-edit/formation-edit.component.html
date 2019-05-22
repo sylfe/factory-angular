@@ -34,11 +34,7 @@
     </div>
     <div class="col-3 d-flex justify-content-center">
       <select *ngFor="let formateur of formateurs" name="listeFormateur">
-        <option value="">Formateur 1</option>
-        <option value="">Formateur 1</option>
-        <option value="">Formateur 2</option>
-        <option value="">Formateur 3</option>
-        <option value="">Formateur 4</option>
+        <option value="">{{formateur.nom}}</option>
       </select>
     </div>
   </div>
