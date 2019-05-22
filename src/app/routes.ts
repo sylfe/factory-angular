@@ -24,7 +24,8 @@ import {ModulesComponent} from './modules/modules.component';
 import {ModulesEditComponent} from './modules-edit/modules-edit.component';
 import {FormationCreateComponent} from './formation-create/formation-create.component';
 import {FormationEditComponent} from './formation-edit/formation-edit.component';
-import {FormationComponent} from "./formation/formation.component";
+import {FormationComponent} from './formation/formation.component';
+
 
 
 export const routes: Routes = [{path: 'home', component: WelcomeComponent},
