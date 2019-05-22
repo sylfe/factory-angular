@@ -12,7 +12,7 @@ export class AccessAdminService implements CanActivate{
   constructor(private router: Router) { }
 
   canActivate() {
-
+    this.isAdmin = false;
     const hey = JSON.parse(sessionStorage.getItem('droits'));
     for(const d in hey) {
       if(hey[d]['droit'] == 'DROIT_ADMIN') {
