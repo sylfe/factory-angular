@@ -4,7 +4,7 @@
     <input name="nom" [(ngModel)]="matiere.nom" required class="form-control" #nom="ngModel">
   </div>
   <div *ngIf="nom.dirty && nom.invalid" class="alert-danger">
-    *information obligatoire (s'affiche si le champ a été touché et n'est pas valide</div>
+    *information obligatoire </div>
   <div>
     <label>Niveau</label>
     <input type="text" name="niveau" [(ngModel)]="matiere.niveau" required class="form-control" #niveau="ngModel">
