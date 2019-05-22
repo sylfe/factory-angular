@@ -53,7 +53,7 @@ export class MatiereEditComponent implements OnInit {
   send() {
     if (this.matiere.id) {
       this.matiereService.update(this.matiere).subscribe(result => {
-          this.router.navigate(['/matieres']);
+          this.router.navigate(['/matieres', 'modifié', this.matiere.nom]);
         }, error => {
           console.log(error);
         }
@@ -61,7 +61,7 @@ export class MatiereEditComponent implements OnInit {
     } else {
       console.log('ok');
       this.matiereService.insert(this.matiere).subscribe(result => {
-          this.router.navigate(['/matieres']);
+          this.router.navigate(['/matieres', 'ajouté', this.matiere.nom]);
         }, error => {
           console.log(error);
         }
