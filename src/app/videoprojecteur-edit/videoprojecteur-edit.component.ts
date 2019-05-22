@@ -33,12 +33,12 @@ export class VideoProjecteurEditComponent implements OnInit {
 
     if (this.videoprojecteur.id) {
       this.videoprojecteurService.update(this.videoprojecteur).subscribe(result => {
-        this.router.navigate(['/videoprojecteurs', 'modifié', this.videoprojecteur.code]);
+        this.router.navigate(['/videoprojecteur', 'modifié', this.videoprojecteur.code]);
 
       });
     } else {
       this.videoprojecteurService.insert(this.videoprojecteur).subscribe(result => {
-        this.router.navigate(['/videoprojecteurs', 'ajouté', this.videoprojecteur.code]);
+        this.router.navigate(['/videoprojecteur', 'ajouté', this.videoprojecteur.code]);
       });
 
     }

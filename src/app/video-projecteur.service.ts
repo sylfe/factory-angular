@@ -42,7 +42,7 @@ export class VideoProjecteurService {
       'salle': videopro.salle,
 
     }
-    return this.http.post(`${this.url}/new`, v, this.httpOptions);
+    return this.http.post(`${this.url}`, v, this.httpOptions);
   }
 
   public update(videopro: VideoProjecteur): Observable<any> {

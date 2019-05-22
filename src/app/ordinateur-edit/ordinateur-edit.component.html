@@ -1,11 +1,11 @@
 
 <form (ngSubmit)="send()" #monForm="ngForm">
-  <ng-container *ngIf="ordinateur.id"; else ajouter>
+  <div *ngIf="ordinateur.id">
     <h1>Modifier un ordinateur</h1>
-  </ng-container>
-  <ng-template #ajouter>
+  </div>
+  <div *ngIf="!ordinateur.id">
     <h1>Ajouter un ordinateur</h1>
-  </ng-template>
+  </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text">id</label>

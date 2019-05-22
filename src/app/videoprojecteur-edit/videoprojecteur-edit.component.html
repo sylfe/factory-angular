@@ -1,11 +1,11 @@
 
 <form (ngSubmit)="save()" #monForm="ngForm">
-  <ng-container *ngIf="videoprojecteur.id"; else ajouter>
+  <div *ngIf="videoprojecteur.id">
     <h1>Modifier un videoprojecteur</h1>
-  </ng-container>
-  <ng-template #ajouter>
+  </div>
+  <div *ngIf="!videoprojecteur.id">
     <h1>Ajouter un videoprojecteur</h1>
-  </ng-template>
+  </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text">id</label>
