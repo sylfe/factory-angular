@@ -34,6 +34,9 @@ export class MatiereEditComponent implements OnInit {
 
   send() {
     this.matiereService.insert(this.matiere).subscribe( data => {
-      console.log('ok')}, error => { console.log(error);} );
+      this.router.navigate(['/matieres']);
+      }, error => {console.log(error);
+    }
+      );
   }
 }
