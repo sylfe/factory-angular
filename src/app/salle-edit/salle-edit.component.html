@@ -1,5 +1,5 @@
 
-<form (ngSubmit)="save()" #monForm="ngForm">
+<div class="form-group">
   <ng-container *ngIf="salle.id"; else ajouter>
     <h1>Modifier une salle</h1>
   </ng-container>
@@ -32,6 +32,6 @@
     <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="true">Oui
     <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="false">Non
   </div> -->
-  <button type="submit" class="btn btn-success" [disabled]="monForm.invalid" (click)="save()">Enregistrer</button>
+  <button type="submit" class="btn btn-success" (click)="save()">Enregistrer</button>
   <button  class="btn btn-secondary" [routerLink]="['/salles']" routerLinkActive="active">Retour</button>
-</form>
+</divform>
