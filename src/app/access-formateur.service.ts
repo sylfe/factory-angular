@@ -17,6 +17,9 @@ export class AccessFormateurService {
       if(hey[d]['droit'] == 'DROIT_FORMATEUR') {
         this.isAdmin = true;
       }
+      if(hey[d]['droit'] == 'DROIT_ADMIN') {
+        this.isAdmin = true;
+      }
     }
     if(this.isAdmin){ return true };
     this.router.navigate(['/']);
