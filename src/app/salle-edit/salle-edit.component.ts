@@ -42,5 +42,12 @@ export class SalleEditComponent implements OnInit {
       });
     }
   }
+
+video(){
+  if (this.salleAvecVideo == true) {
+
+    this.salle.videoprojecteur = ;
+  }
+}
 }
 
