@@ -34,6 +34,8 @@ import {AccessGestionnaireService} from './access-gestionnaire.service';
 import {AccessTechnicienService} from './access-technicien.service';
 import { ModulesEditComponent } from './modules-edit/modules-edit.component';
 import { FormationComponent } from './formation/formation.component';
+import { TechnicienComponent } from './technicien/technicien.component';
+import { TechnicienEditComponent } from './technicien/technicien-edit/technicien-edit.component';
 
 
 @NgModule({
@@ -62,6 +64,9 @@ import { FormationComponent } from './formation/formation.component';
     TestComponentComponent,
     ModulesEditComponent,
     FormationComponent
+    ModulesEditComponent,
+    TechnicienComponent,
+    TechnicienEditComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
