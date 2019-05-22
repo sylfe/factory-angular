@@ -45,6 +45,7 @@ export class UserService implements CanActivate {
   public login(user: User) {
     sessionStorage.setItem('isLoggedIn', 'true');
     sessionStorage.setItem('login', user.email);
+    sessionStorage.setItem('droits', JSON.stringify(user.droits));
     this._isLogged = true;
   }
 

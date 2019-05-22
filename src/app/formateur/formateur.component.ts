@@ -19,6 +19,7 @@ export class FormateurComponent implements OnInit {
   list() {
     this.formateurService.list().subscribe(data => {
       this.formateurs = data;
+      console.log('ok');
     }, error => {
       console.log(error);
     });
