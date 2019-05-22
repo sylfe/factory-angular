@@ -18,6 +18,7 @@ export class FormateurService implements CanActivate {
       'Content-Type': 'application/json',
       'Authorization': 'Basic ' + btoa(`benjamin@benjamin.fr:benjamin`)
     });
+    this.httpOptions = { headers: this.headers};
   }
 
   private _isLogged = false;
@@ -60,7 +61,7 @@ export class FormateurService implements CanActivate {
 
 
   public list(): Observable<any> {
-    return this.http.get(this.url, { headers: this.headers});
+    return this.http.get( `${this.url}s`, this.httpOptions);
   }
 
   public delete(id: number): Observable<any> {
