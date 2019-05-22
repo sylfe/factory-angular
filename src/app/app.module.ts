@@ -38,6 +38,8 @@ import { TechnicienComponent } from './technicien/technicien.component';
 import { TechnicienEditComponent } from './technicien-edit/technicien-edit.component';
 import { GestionnaireComponent } from './gestionnaire/gestionnaire.component';
 import { GestionnaireEditComponent } from './gestionnaire-edit/gestionnaire-edit.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
 
@@ -74,7 +76,15 @@ import { GestionnaireEditComponent } from './gestionnaire-edit/gestionnaire-edit
     GestionnaireEditComponent
   ],
   imports: [
-    BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    ReactiveFormsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [UserService, MatieresService, ModulesService, AccessAdminService,
     AccessFormateurService, AccessGestionnaireService, AccessTechnicienService],
