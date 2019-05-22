@@ -1,41 +1,39 @@
 
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Nom</span>
+<form (ngSubmit)="save()" #monForm="ngForm">
+  <div *ngIf="formateur.id">
+    <h1>Modifier un formateur</h1>
   </div>
-  <input [(ngModel)]="formateur.nom" type="text" class="form-control" placeholder="Nom" aria-label="Username" aria-describedby="basic-addon1">
+  <div *ngIf="!formateur.id">
+    <h1>Ajouter un formateur</h1>
+  </div>
+
+
+  <div class="input-group mb-3">
+  <label class="input-group-text">Nom</label>
+  <input [(ngModel)]="formateur.nom" type="text" class="form-control" placeholder="Nom" required>
 </div>
 <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Prenom</span>
-  </div>
-  <input [(ngModel)]="formateur.prenom" type="text" class="form-control" placeholder="Prenom" aria-label="Username" aria-describedby="basic-addon1">
+  <label class="input-group-text">Prenom</label>
+  <input [(ngModel)]="formateur.prenom" type="text" class="form-control" placeholder="Prenom" required>
 </div>
 <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Adresse</span>
-  </div>
-  <input [(ngModel)]="formateur.adresse" type="text" class="form-control" placeholder="Adresse" aria-label="Username" aria-describedby="basic-addon1">
+  <label class="input-group-text">Adress</label>
+  <input [(ngModel)]="formateur.adresse" type="text" class="form-control" placeholder="Adresse" required>
 </div>
 <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Email</span>
-  </div>
-  <input [(ngModel)]="formateur.email" type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+  <label class="input-group-text">E-mail</label>
+  <input [(ngModel)]="formateur.email" type="text" class="form-control" placeholder="Email" required>
 </div>
 <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Mot de passe</span>
-  </div>
-  <input [(ngModel)]="formateur.motDePasse" type="text" class="form-control" placeholder="Mot de passe" aria-label="Username" aria-describedby="basic-addon1">
+  <label class="input-group-text">Mot de passe</label>
+  <input [(ngModel)]="formateur.motDePasse" type="text" class="form-control" placeholder="Mot de passe" required>
 </div>
 <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Telephone</span>
-  </div>
-  <input [(ngModel)]="formateur.telephone" type="text" class="form-control" placeholder="Telephone" aria-label="Username" aria-describedby="basic-addon1">
+  <label class="input-group-text">Téléphone</label>
+  <input [(ngModel)]="formateur.telephone" type="text" class="form-control" placeholder="Telephone" required>
 </div>
 <div>
-  <button class="btn btn-success"(click)="save()" >Enregistrer</button>
-  <a class="btn btn-light" [routerLink]="['/formateur']" routerLinkActive="active">Retour</a>
+  <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
+  <button class="btn btn-secondary"  [routerLink]="['/formateurs']" routerLinkActive="active">Retour</button>
 </div>
+</form>

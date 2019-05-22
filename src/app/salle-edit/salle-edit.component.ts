@@ -17,7 +17,7 @@ export class SalleEditComponent implements OnInit {
 
   private salle: Salle = new Salle();
   private videoprojecteurs: VideoProjecteur[];
-
+  private salleAvecVideo: boolean;
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {

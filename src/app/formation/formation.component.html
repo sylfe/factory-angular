@@ -1,0 +1,25 @@
+<h1>Liste des formations</h1>
+<div *ngIf="message" class="alert-success">
+  {{message}}
+</div>
+<button [routerLink]="['/formation/create']" class="btn btn-info" routerLinkActive="active">Ajouter une nouvelle formation</button>
+<table class="table table-striped">
+  <thead>
+  <th>ID</th>
+  <th>titre</th>
+  <th>Date de début</th>
+  <th>Date de fin</th>
+
+  </thead>
+  <tr *ngFor="let ftn of formations">
+    <td>{{ftn.id}}</td>
+    <td>{{ftn.titre}}</td>
+    <td>{{ftn.dateDebut}}</td>
+    <td>{{ftn.dateFin}}</td>
+
+    <td><button class="btn btn-warning" [routerLink]="['/formation/edit',ftn.id]" routerLinkActive="active">modifier</button>&nbsp;
+      <button class="btn btn-danger" (click)="delete(ftn.id)">Supprimer</button></td>
+  </tr>
+
+
+</table>
