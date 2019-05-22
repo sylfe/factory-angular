@@ -13,7 +13,8 @@
   <th>Disque Dur (Go)</th>
   <th>ANNEE ACHAT</th>
   <th>DISPONIBILITE</th>
-  <th>ACTION</th>
+  <th>EDITER</th>
+  <th>SUPPRIMER</th>
   </thead>
   <tr *ngFor="let ordi of ordinateurs">
     <td>{{ordi.id}}</td>
@@ -24,8 +25,8 @@
     <td>{{ordi.quantiteDD}}</td>
     <td>{{ordi.anneeAchat}}</td>
     <td>{{ordi.stagiaires}}</td>
-    <td><button class="btn btn-warning" [routerLink]="['/ordinateur',ordi.id]" routerLinkActive="active">modifier</button>&nbsp;
-      <button class="btn btn-danger" (click)="delete(ordi.id)">Supprimer</button></td>
+    <td><button class="btn btn-warning" [routerLink]="['/ordinateur',ordi.id]" routerLinkActive="active">EDITER</button>&nbsp;</td>
+      <td><button class="btn btn-danger" (click)="delete(ordi.id)">SUPPRIMER</button></td>
   </tr>
 
 </table>

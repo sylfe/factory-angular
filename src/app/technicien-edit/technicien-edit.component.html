@@ -10,28 +10,40 @@
 
   <div class="input-group mb-3">
     <label class="input-group-text">Nom</label>
-    <input [(ngModel)]="technicien.nom" type="text" class="form-control" placeholder="Nom" required>
+    <input [(ngModel)]="technicien.nom" type="text" class="form-control" name="nom" placeholder="Nom" required #nom="ngModel">
   </div>
+  <div *ngIf="nom.dirty && nom.invalid" class="alert-danger">*information obligatoire </div>
+
   <div class="input-group mb-3">
     <label class="input-group-text">Prenom</label>
-    <input [(ngModel)]="technicien.prenom" type="text" class="form-control" placeholder="Prenom" required>
+    <input [(ngModel)]="technicien.prenom" type="text" class="form-control" name="prenom" placeholder="Prenom" required #prenom="ngModel">
   </div>
+  <div *ngIf="prenom.dirty && prenom.invalid" class="alert-danger">*information obligatoire </div>
+
   <div class="input-group mb-3">
     <label class="input-group-text">Adress</label>
-    <input [(ngModel)]="technicien.adresse" type="text" class="form-control" placeholder="Adresse" required>
+    <input [(ngModel)]="technicien.adresse" type="text" class="form-control" name="adresse" placeholder="Adresse" required #adresse="ngModel">
   </div>
+  <div *ngIf="adresse.dirty && adresse.invalid" class="alert-danger">*information obligatoire </div>
+
   <div class="input-group mb-3">
     <label class="input-group-text">E-mail</label>
-    <input [(ngModel)]="technicien.email" type="text" class="form-control" placeholder="Email" required>
+    <input [(ngModel)]="technicien.email" type="text" class="form-control"  name="email" placeholder="Email" required #email="ngModel">
   </div>
+  <div *ngIf="email.dirty && email.invalid" class="alert-danger">*information obligatoire </div>
+
   <div class="input-group mb-3">
     <label class="input-group-text">Mot de passe</label>
-    <input [(ngModel)]="technicien.motDePasse" type="text" class="form-control" placeholder="Mot de passe" required>
+    <input [(ngModel)]="technicien.motDePasse" type="text" class="form-control"  name="motDePasse" placeholder="Mot de passe" required #motDePasse="ngModel">
   </div>
+  <div *ngIf="motDePasse.dirty && motDePasse.invalid" class="alert-danger">*information obligatoire </div>
+
   <div class="input-group mb-3">
     <label class="input-group-text">Téléphone</label>
-    <input [(ngModel)]="technicien.telephone" type="text" class="form-control" placeholder="Telephone" required>
+    <input [(ngModel)]="technicien.telephone" type="text" class="form-control"  name="telephone" placeholder="Telephone" required #telephone="ngModel">
   </div>
+  <div *ngIf="telephone.dirty && telephone.invalid" class="alert-danger">*information obligatoire </div>
+
   <div>
     <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
     <button class="btn btn-secondary"  [routerLink]="['/techniciens']" routerLinkActive="active">Retour</button>
