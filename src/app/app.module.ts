@@ -34,7 +34,8 @@ import {AccessGestionnaireService} from './access-gestionnaire.service';
 import {AccessTechnicienService} from './access-technicien.service';
 import { ModulesEditComponent } from './modules-edit/modules-edit.component';
 import { TechnicienComponent } from './technicien/technicien.component';
-import { TechnicienEditComponent } from './technicien/technicien-edit/technicien-edit.component';
+import {TechnicienEditComponent} from './technicien-edit/technicien-edit.component';
+
 
 
 @NgModule({
