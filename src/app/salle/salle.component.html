@@ -18,7 +18,7 @@
     <td>{{salle.coutJournee}}</td>
     <td>{{salle.capacite}}</td>
     <td>{{salle.videoprojecteur.id}}</td>
-    <td><button class="btn btn-warning" [routerLink]="['/salle',salle.id]" routerLinkActive="active">modifier</button>&nbsp;
+    <td><button class="btn btn-warning" [routerLink]="['/salle',salle.id]" routerLinkActive="active">modifier</button>
       <button class="btn btn-danger" (click)="delete(salle.id)">Supprimer</button></td>
   </tr>
 
