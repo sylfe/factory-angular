@@ -2,7 +2,7 @@
 <div *ngIf="message" class="alert-success">
   {{message}}
 </div>
-<button [routerLink]="['/videoprojecteurs/edit']" class="btn btn-info" routerLinkActive="active">Ajouter un nouveau vidéo-projecteur</button>
+<button [routerLink]="['/videoprojecteur/edit']" class="btn btn-info" routerLinkActive="active">Ajouter un nouveau vidéo-projecteur</button>
 <table class="table table-striped">
   <thead>
   <th>ID</th>
@@ -16,9 +16,8 @@
     <td>{{videopro.code}}</td>
     <td>{{videopro.coutJournee}}</td>
     <td>{{videopro.salle}}</td>
-    <td><button class="btn btn-warning" [routerLink]="['/videoprojecteurs',videopro.id]" routerLinkActive="active">modifier</button>&nbsp;
+    <td><button class="btn btn-warning" [routerLink]="['/videoprojecteur',videopro.id]" routerLinkActive="active">modifier</button>&nbsp;
       <button class="btn btn-danger" (click)="delete(videopro.id)">Supprimer</button></td>
   </tr>
 
-  <button [routerLink]="['/videoprojecteurs/edit']" class="btn btn-info" routerLinkActive="active">Ajouter un nouveau vidéo-projecteur</button>
 </table>
