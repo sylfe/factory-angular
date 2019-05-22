@@ -6,8 +6,10 @@
       <li class="nav-item"><a [routerLink]="['/videoprojecteurs']" routerLink='Active' class="nav-link">video-proj</a></li>
       <li class="nav-item"><a [routerLink]="['/salles']" routerLink='Active' class="nav-link">salles</a></li>
       <li class="nav-item"><a [routerLink]="['/formateur']" routerLink='Active' class="nav-link">formateur</a></li>
+      <li class="nav-item"><a [routerLink]="['/matieres']" routerLink='Active' class="nav-link">matieres</a></li>
       <li class="nav-item"><a [routerLink]="['/users']" routerLink='Active' class="nav-link">liste de users</a></li>
       <li class="nav-item"><a [routerLink]="['/user']" routerLink='Active' class="nav-link">editer un user</a></li>
+
 
       <ng-container *ngIf="!authentification.isLogged; else connect2">
         <!-- lien secure -->
