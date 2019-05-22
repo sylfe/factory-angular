@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpHeaders} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
@@ -17,7 +17,6 @@ export class MatiereEditComponent implements OnInit {
   private monForm: FormGroup;
 
 
-
   private message = 'pseudo et/ou mot de passe incorrect(s)';
 
 
@@ -25,18 +24,49 @@ export class MatiereEditComponent implements OnInit {
               private router: Router, private matiereService: MatieresService) {
 
   }
+
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       if (params.error) {
         this.message = 'il faut vous connecter pour aller sur cette page';
-      }});
+      };
+
+
+      if (params.id) {
+        this.matiereService.findById(params.id).subscribe(data => {
+          this.matiere = data;
+        });
+      }
+
+
+    });
   }
 
+  //send() {
+  // this.matiereService.insert(this.matiere).subscribe( data => {
+  //   this.router.navigate(['/matieres']);
+  //  }, error => {console.log(error);
+  // }
+  //   );
+  //}
+
   send() {
-    this.matiereService.insert(this.matiere).subscribe( data => {
-      this.router.navigate(['/matieres']);
-      }, error => {console.log(error);
-    }
+    if (this.matiere.id) {
+      this.matiereService.update(this.matiere).subscribe(result => {
+          this.router.navigate(['/matieres', 'modifié', this.matiere.nom]);
+        }, error => {
+          console.log(error);
+        }
       );
+    } else {
+      console.log('ok');
+      this.matiereService.insert(this.matiere).subscribe(result => {
+          this.router.navigate(['/matieres', 'ajouté', this.matiere.nom]);
+        }, error => {
+          console.log(error);
+        }
+      );
+    }
   }
+
 }

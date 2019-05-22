@@ -32,6 +32,8 @@
     <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="true">Oui
     <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="false">Non
   </div> -->
-  <button type="submit" class="btn btn-success" (click)="save()">Enregistrer</button>
-  <button  class="btn btn-secondary" [routerLink]="['/salles']" routerLinkActive="active">Retour</button>
+  <div>
+  <button class="btn btn-success" (click)="save()">Enregistrer</button>
+  <a class="btn btn-secondary" [routerLink]="['/salles']" routerLinkActive="active">Retour</a>
+  </div>
 </div>
