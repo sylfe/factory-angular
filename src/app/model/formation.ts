@@ -5,10 +5,18 @@ import {Module} from "./module";
 
 export class Formation {
 
-  constructor(private _id?: number, private _dateDebut?: Date, private _dateFin?: Date, private _version?: number,
+  constructor(private _id?: number, private _titre?: string, private _dateDebut?: Date, private _dateFin?: Date, private _version?: number,
               private _gestionnaire?: Gestionnaire, private _salle?: Salle, private _modules?: Module[], private _stagiaires?: Stagiaire[]) {
   }
 
+
+  get titre(): string {
+    return this._titre;
+  }
+
+  set titre(value: string) {
+    this._titre = value;
+  }
 
   get id(): number {
     return this._id;
