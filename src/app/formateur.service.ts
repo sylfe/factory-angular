@@ -12,7 +12,6 @@ export class FormateurService implements CanActivate {
   private url = 'http://10.0.0.205:8080/la-factory/rest/user/formateur';
   private headers: HttpHeaders;
   private httpOptions: any;
-  private htttpH: any;
 
   constructor(private http: HttpClient, private router: Router) {
     this.headers = new HttpHeaders({
@@ -61,7 +60,7 @@ export class FormateurService implements CanActivate {
 
 
   public list(): Observable<any> {
-    return this.http.get(this.url, this.httpOptions);
+    return this.http.get(this.url, { headers: this.headers});
   }
 
   public delete(id: number): Observable<any> {
