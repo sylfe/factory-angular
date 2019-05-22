@@ -14,6 +14,9 @@ import {VideoProjecteurEditComponent} from './videoprojecteur-edit/videoprojecte
 import {FormateurComponent} from './formateur/formateur.component';
 import {FormateurEditComponent} from './formateur-edit/formateur-edit.component';
 import {MatiereEditComponent} from './matiere-edit/matiere-edit.component';
+import {TestPageComponent} from './test-page/test-page.component';
+import {AccessAdminService} from './access-admin.service';
+import {TestComponentComponent} from './test-component/test-component.component';
 
 
 export const routes: Routes = [{path: 'home', component: WelcomeComponent},
@@ -22,22 +25,24 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'matieres', component: MatieresComponent},
   { path : 'matiere/edit', component: MatiereEditComponent},
   { path : 'ordinateurs', component: OrdinateursComponent},
-  { path : 'ordinateurs/:action/:nom', component: OrdinateursComponent},
-  { path : 'ordinateurs/edit', component: OrdinateurEditComponent},
-  { path : 'ordinateurs/:id', component: OrdinateurEditComponent},
+  { path : 'ordinateur/:action/:nom', component: OrdinateursComponent},
+  { path : 'ordinateur/edit', component: OrdinateurEditComponent},
+  { path : 'ordinateur/:id', component: OrdinateurEditComponent},
   { path : 'salles', component: SalleComponent},
-  { path : 'salles/:action/:nom', component: SalleComponent},
-  { path : 'salles/edit', component: SalleEditComponent},
-  { path : 'salles/:id', component: SalleEditComponent},
+  { path : 'salle/:action/:nom', component: SalleComponent},
+  { path : 'salle/edit', component: SalleEditComponent},
+  { path : 'salle/:id', component: SalleEditComponent},
   { path : 'videoprojecteurs', component: VideoProjecteursComponent},
-  { path : 'videoprojecteurs/:action/:nom', component: VideoProjecteursComponent},
-  { path : 'videoprojecteurs/edit', component: VideoProjecteurEditComponent},
-  { path : 'videoprojecteurs/:id', component: VideoProjecteurEditComponent},
+  { path : 'videoprojecteur/:action/:nom', component: VideoProjecteursComponent},
+  { path : 'videoprojecteur/edit', component: VideoProjecteurEditComponent},
+  { path : 'videoprojecteur/:id', component: VideoProjecteurEditComponent},
   { path : 'materiel/edit', component: MaterielEditComponent},
   { path : 'user', component: UserEditerComponent},
   { path : 'users', component: UserComponent},
-  { path : 'users/:action/:nom', component: UserComponent},
-  { path : 'formateur', component: FormateurComponent},
+  { path : 'user/:action/:nom', component: UserComponent},
+  { path : 'formateurs', component: FormateurComponent},
   { path : 'formateur/:id', component: FormateurEditComponent},
-  { path : 'formateur/ajouter', component: FormateurEditComponent},
+  { path : 'formateur/edit', component: FormateurEditComponent},
+  { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
+  { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];

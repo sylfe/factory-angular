@@ -2,14 +2,14 @@
 <div *ngIf="message" class="alert-success">
   {{message}}
 </div>
-<button [routerLink]="['/salles/edit']" class="btn btn-info" routerLinkActive="active">Ajouter une nouvelle salle</button>
+<button [routerLink]="['/salle/edit']" class="btn btn-info" routerLinkActive="active">Ajouter une nouvelle salle</button>
 <table class="table table-striped">
   <thead>
   <th>ID</th>
   <th>CODE</th>
-  <th>COÛT/JOUR</th>
+  <th>COÛT(€)/JOUR</th>
   <th>CAPACITE</th>
-  <th>DISPONIBILITE</th>
+ <!-- <th>VIDEOPROJECTEUR</th> -->
   <th>ACTION</th>
   </thead>
   <tr *ngFor="let salle of salles">
@@ -17,10 +17,9 @@
     <td>{{salle.code}}</td>
     <td>{{salle.coutJournee}}</td>
     <td>{{salle.capacite}}</td>
-    <td>{{salle.videoprojecteur}}</td>
+  <!--  <td>{{salle.videoprojecteur.id}}</td> -->
     <td><button class="btn btn-warning" [routerLink]="['/salles',salle.id]" routerLinkActive="active">modifier</button>&nbsp;
       <button class="btn btn-danger" (click)="delete(salle.id)">Supprimer</button></td>
   </tr>
 
-  <button [routerLink]="['/salles/edit']" class="btn btn-info" routerLinkActive="active">Ajouter une nouvelle salle</button>
 </table>

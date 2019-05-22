@@ -1,5 +1,4 @@
 import {Materiel} from './materiel';
-import {Stagiaire} from "./stagiaire";
 import {VideoProjecteur} from "./videoProjecteur";
 
 export class Salle extends Materiel {

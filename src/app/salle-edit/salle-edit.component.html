@@ -12,25 +12,26 @@
     <input [(ngModel)]="salle.id" readonly placeholder="ID généré automatiquement" name="id">
   </div>
   <div class="input-group mb-3">
-    <label class="input-group-text" type="text">code</label>
+    <label class="input-group-text" type="text">Code</label>
     <input [(ngModel)]="salle.code" name="code">
   </div>
 
   <div class="input-group mb-3">
-    <label class="input-group-text" type="text">coût(€)/jour</label>
+    <label class="input-group-text" type="text">Coût(€)/jour</label>
     <input [(ngModel)]="salle.coutJournee" name="coutJournee">
   </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text" type="number" >Capacité(pers.)</label>
-    <input [(ngModel)]="salle.capacite"name="capacite">
+    <input [(ngModel)]="salle.capacite" name="capacite">
   </div>
 
+  <!--
   <div class="input-group mb-3">
     <label class="input-group-text">Vidéo-projecteur</label>
     <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="true">Oui
     <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="false">Non
-  </div>
-  <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
+  </div> -->
+  <button type="submit" class="btn btn-success" [disabled]="monForm.invalid" (click)="save()">Enregistrer</button>
   <button  class="btn btn-secondary" [routerLink]="['/salles']" routerLinkActive="active">Retour</button>
 </form>
