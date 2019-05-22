@@ -11,6 +11,7 @@ import {Formateur} from '../model/formateur';
 export class FormateurEditComponent implements OnInit {
 
   private formateur: Formateur = new Formateur();
+
   constructor(private activedRoute: ActivatedRoute,
               private formateurService: FormateurService,
               private router: Router) { }
@@ -28,7 +29,7 @@ export class FormateurEditComponent implements OnInit {
   save() {
     if (this.formateur.id) {
       this.formateurService.update(this.formateur).subscribe(result => {
-        this.router.navigate(['/formateur', 'modifé', this.formateur.nom]);
+        this.router.navigate(['/formateur', 'modifié', this.formateur.nom]);
       });
     } else {
       this.formateurService.insert(this.formateur).subscribe(result => {

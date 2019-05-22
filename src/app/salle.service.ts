@@ -7,7 +7,8 @@ import {Salle} from './model/salle';
   providedIn: 'root'
 })
 export class SalleService {
-  private url = 'http://10.0.0.205:8080/la-factory/rest/salle';
+//  private url = 'http://10.0.0.205:8080/la-factory/rest/salle';
+  private url = 'http://localhost:8080/la-factory/rest/salle';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -39,7 +40,7 @@ export class SalleService {
       'id': salle.id,
       'code': salle.code,
       'coutJournee': salle.coutJournee,
-      'videoprojecteur': salle.videoprojecteur,
+      'videoprojecteur': { id : salle.videoprojecteur.id},
       'capacite': salle.capacite,
     }
     return this.http.post(`${this.url}`, v, this.httpOptions);

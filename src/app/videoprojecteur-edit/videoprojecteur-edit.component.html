@@ -9,17 +9,19 @@
 
   <div class="input-group mb-3">
     <label class="input-group-text">id</label>
-    <input [(ngModel)]="videoprojecteur.id" readonly placeholder="ID généré automatiquement" name="id">
+    <input [(ngModel)]="videoprojecteur.id" readonly placeholder="ID généré automatiquement" required name="id" class="form-control">
   </div>
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">code</label>
-    <input [(ngModel)]="videoprojecteur.code" name="code">
+    <input [(ngModel)]="videoprojecteur.code" name="code"class="form-control" #code="ngModel" required>
   </div>
+  <div *ngIf="code.dirty && code.invalid" class="alert-danger">*champ obligatoire </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">coût(€)/jour</label>
-    <input [(ngModel)]="videoprojecteur.coutJournee" name="coutJournee">
+    <input [(ngModel)]="videoprojecteur.coutJournee" name="coutJournee" required class="form-control" #coutJournee="ngModel" required>
   </div>
+  <div *ngIf="coutJournee.dirty && coutJournee.invalid" class="alert-danger">*champ obligatoire </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text">Salle</label>

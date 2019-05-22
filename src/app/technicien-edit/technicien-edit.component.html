@@ -10,27 +10,27 @@
 
   <div class="input-group mb-3">
     <label class="input-group-text">Nom</label>
-    <input [(ngModel)]="technicien.nom" type="text" class="form-control" placeholder="Nom" required>
+    <input [(ngModel)]="technicien.nom" type="text" class="form-control" name="nom" placeholder="Nom" required>
   </div>
   <div class="input-group mb-3">
     <label class="input-group-text">Prenom</label>
-    <input [(ngModel)]="technicien.prenom" type="text" class="form-control" placeholder="Prenom" required>
+    <input [(ngModel)]="technicien.prenom" type="text" class="form-control" name="prenom" placeholder="Prenom" required>
   </div>
   <div class="input-group mb-3">
     <label class="input-group-text">Adress</label>
-    <input [(ngModel)]="technicien.adresse" type="text" class="form-control" placeholder="Adresse" required>
+    <input [(ngModel)]="technicien.adresse" type="text" class="form-control" name="adresse" placeholder="Adresse" required>
   </div>
   <div class="input-group mb-3">
     <label class="input-group-text">E-mail</label>
-    <input [(ngModel)]="technicien.email" type="text" class="form-control" placeholder="Email" required>
+    <input [(ngModel)]="technicien.email" type="text" class="form-control"  name="email" placeholder="Email" required>
   </div>
   <div class="input-group mb-3">
     <label class="input-group-text">Mot de passe</label>
-    <input [(ngModel)]="technicien.motDePasse" type="text" class="form-control" placeholder="Mot de passe" required>
+    <input [(ngModel)]="technicien.motDePasse" type="text" class="form-control"  name="motDePasse" placeholder="Mot de passe" required>
   </div>
   <div class="input-group mb-3">
     <label class="input-group-text">Téléphone</label>
-    <input [(ngModel)]="technicien.telephone" type="text" class="form-control" placeholder="Telephone" required>
+    <input [(ngModel)]="technicien.telephone" type="text" class="form-control"  name="telephone" placeholder="Telephone" required>
   </div>
   <div>
     <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
