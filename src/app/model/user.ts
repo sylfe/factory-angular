@@ -4,7 +4,7 @@ export class User {
 
   constructor(private _id?: number, private _nom?: string, private _prenom?: string, private _adresse?: string,
               private _email?: string, private _telephone?: string, private _motDePasse?: string,
-              private _version?: number, private _droits?: PersonneDroit[]) {}
+              private _version?: number, private _droits?: any[]) {}
 
   get id(): number {
     return this._id;
@@ -71,11 +71,11 @@ export class User {
   }
 
 
-  get droits(): PersonneDroit[] {
+  get droits(): any[] {
     return this._droits;
   }
 
-  set droits(value: PersonneDroit[]) {
+  set droits(value: any[]) {
     this._droits = value;
   }
 }
