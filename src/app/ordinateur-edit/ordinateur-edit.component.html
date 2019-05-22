@@ -9,33 +9,36 @@
 
   <div class="input-group mb-3">
     <label class="input-group-text">id</label>
-    <input [(ngModel)]="ordinateur.id" readonly placeholder="ID généré automatiquement" name="id">
+    <input [(ngModel)]="ordinateur.id" readonly placeholder="ID généré automatiquement" name="id" #nom="ngModel">
   </div>
+    <div *ngIf="nom.dirty && nom.invalid" class="alert-danger">
+      *champ vide/non valide </div>
+
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">code</label>
-    <input [(ngModel)]="ordinateur.code" name="code">
+    <input [(ngModel)]="ordinateur.code" name="code"  required>
   </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">coût(€)/jour</label>
-    <input [(ngModel)]="ordinateur.coutJournee"  name="coutJournee">
+    <input [(ngModel)]="ordinateur.coutJournee"  name="coutJournee" required>
   </div>
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">Processeur</label>
-    <input [(ngModel)]="ordinateur.processeur" name="processeur">
+    <input [(ngModel)]="ordinateur.processeur" name="processeur" required>
   </div>
 
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">RAM (Go)</label>
-    <input [(ngModel)]="ordinateur.quantiteRAM" name="quantiteRAM">
+    <input [(ngModel)]="ordinateur.quantiteRAM" name="quantiteRAM" required>
   </div>
   <div class="input-group mb-3">
     <label class="input-group-text" type="text">Disque dur(Go)</label>
-    <input [(ngModel)]="ordinateur.quantiteDD" name="quantiteDD">
+    <input [(ngModel)]="ordinateur.quantiteDD" name="quantiteDD" required>
   </div>
   <div class="input-group mb-3">
     <label class="input-group-text">Année d'achat</label>
-    <input [(ngModel)]="ordinateur.anneeAchat" type="text" name="anneeAchat">
+    <input [(ngModel)]="ordinateur.anneeAchat" type="text" name="anneeAchat" required>
   </div>
 
   <div class="input-group mb-3">
