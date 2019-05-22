@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Formation} from "../model/formation";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormationService} from "../formation.service";
@@ -10,8 +9,8 @@ import {FormationService} from "../formation.service";
   styleUrls: ['./formation-create.component.css']
 })
 export class FormationCreateComponent implements OnInit {
- private formation: Formation = new Formation();
-  private nouvelleFormation: FormGroup;
+  private formation: Formation = new Formation();
+
 
 
   constructor(private activatedRoute: ActivatedRoute, private formationService: FormationService, private router: Router) {
@@ -27,14 +26,9 @@ export class FormationCreateComponent implements OnInit {
     });
   }
   save() {
-    if(this.formation.id) {
-      this.formationService.update(this.formation).subscribe( result => {
-        this.router.navigate(['/formations', 'modifié', this.formation.titre]);
-      });
-    } else {
-      this.formationService.insert(this.formation).subscribe(result => {
-        this.router.navigate(['/produits', 'ajouté', this.formation.titre]);
-      });
-    }
+    this.formationService.insert(this.formation).subscribe(result => {
+      this.router.navigate(['/formations', 'ajouté', this.formation.id]);
+    });
   }
 }
+

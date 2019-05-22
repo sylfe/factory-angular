@@ -19,7 +19,6 @@ export class FormateurComponent implements OnInit {
   list() {
     this.formateurService.list().subscribe(data => {
       this.formateurs = data;
-      console.log('ok');
     }, error => {
       console.log(error);
     });
@@ -29,7 +28,7 @@ export class FormateurComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       if (params.nom) {
-        this.message = `formateur ${params.nom} ${params.action}`;
+        this.message = `Le formateur ${params.nom} a bien été ${params.action}`;
       }
     });
     this.list();

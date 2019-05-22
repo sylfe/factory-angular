@@ -1,6 +1,5 @@
-
 <div class="form-group">
-  <ng-container *ngIf="salle.id"; else ajouter>
+  <ng-container *ngIf="salle.id" ; else ajouter>
     <h1>Modifier une salle</h1>
   </ng-container>
   <ng-template #ajouter>
@@ -22,18 +21,36 @@
   </div>
 
   <div class="input-group mb-3">
-    <label class="input-group-text" type="number" >Capacité(pers.)</label>
+    <label class="input-group-text" type="number">Capacité(pers.)</label>
     <input [(ngModel)]="salle.capacite" name="capacite">
   </div>
 
-  <!--
+
   <div class="input-group mb-3">
-    <label class="input-group-text">Vidéo-projecteur</label>
-    <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="true">Oui
-    <input [(ngModel)]="salle.videoprojecteur" type="radio" name="disponibilite" value="false">Non
-  </div> -->
-  <div>
-  <button class="btn btn-success" (click)="save()">Enregistrer</button>
-  <a class="btn btn-secondary" [routerLink]="['/salles']" routerLinkActive="active">Retour</a>
+    <label class="input-group-text">Vidéoprojecteur</label>
+    <input [(ngModel)]="salleAvecVideo" type="radio" name="videoprojecteur" value="true">Oui
+    <input [(ngModel)]="salleAvecVideo" type="radio" name="videoprojecteur" value="false">Non
+
+
+    <div *ngIf="salleAvecVideo == true">
+      <select [(ngModel)]="salle.videoprojecteur">
+        <!--
+        <select [(ngModel)]="passenger.Title">
+        <option *ngFor="let title of titleArray" [value]="title.Value" [attr.selected]="passenger.Title==title.Text ? true : null"> {{title.Text}}
+        </option>
+            </select>
+        -->
+        <option *ngFor="let vp of videoprojecteurs" [value]="vp" [attr.selected]="salle.videoprojecteur == vp ? true : null">{{vp.code}}
+        </option>
+      </select>
+
+    </div>
+
   </div>
+
+  <div>
+    <button class="btn btn-success" (click)="save()">Enregistrer</button>
+    <a class="btn btn-secondary" [routerLink]="['/salles']" routerLinkActive="active">Retour</a>
+  </div>
+
 </div>

@@ -28,13 +28,11 @@ export class FormateurEditComponent implements OnInit {
   save() {
     if (this.formateur.id) {
       this.formateurService.update(this.formateur).subscribe(result => {
-        this.router.navigate(['/formateur', 'modifié', this.formateur.nom]);
+        this.router.navigate(['/formateur', 'modif', this.formateur.nom]);
       });
-    }
-    else {
-      console.log('ok');
-      this.formateurService.insert(this.formateur).subscribe( result => {
-        this.router.navigate(['/formateur', 'ajouté', this.formateur.nom]);
+    } else {
+      this.formateurService.insert(this.formateur).subscribe(result => {
+        this.router.navigate(['/formateur', 'ajout', this.formateur.nom]);
       });
     }
   }

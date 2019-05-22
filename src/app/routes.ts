@@ -22,6 +22,9 @@ import {AccessTechnicienService} from './access-technicien.service';
 import {AccessGestionnaireService} from './access-gestionnaire.service';
 import {ModulesComponent} from './modules/modules.component';
 import {ModulesEditComponent} from './modules-edit/modules-edit.component';
+import {FormationCreateComponent} from './formation-create/formation-create.component';
+import {FormationEditComponent} from './formation-edit/formation-edit.component';
+import {FormationComponent} from "./formation/formation.component";
 
 
 export const routes: Routes = [{path: 'home', component: WelcomeComponent},
@@ -50,11 +53,17 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'users', component: UserComponent},
   { path : 'user/:action/:nom', component: UserComponent},
   { path : 'formateur', component: FormateurComponent},
+  { path : 'formateur/:modif/:nom', component: FormateurComponent},
+  { path : 'formateur/:ajout/:nom', component: FormateurComponent},
   { path : 'formateur/:id', component: FormateurEditComponent},
   { path : 'formateur/edit', component: FormateurEditComponent},
   { path : 'modules',  component: ModulesComponent},
   { path : 'module',  component: ModulesComponent},
   { path : 'module/edit', component: ModulesEditComponent},
+  { path : 'formations', component: FormationComponent},
+  { path : 'formation/:action/:titre', component: FormationEditComponent},
+  { path : 'formation/create', component: FormationCreateComponent},
+  { path : 'formation/edit/:id', component: FormationEditComponent},
   { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
   { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];
