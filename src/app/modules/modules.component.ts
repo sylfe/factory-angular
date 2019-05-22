@@ -5,6 +5,8 @@ import {Module} from '../model/module';
 import {Matiere} from '../model/matiere';
 import {MatieresService} from '../matieres.service';
 import {ModulesService} from '../modules.service';
+import {Ordinateur} from '../model/ordinateur';
+import {OrdinateurService} from '../ordinateur.service';
 
 @Component({
   selector: 'app-modules',
@@ -14,30 +16,31 @@ import {ModulesService} from '../modules.service';
 export class ModulesComponent implements OnInit {
 
 
-  private module: Module = new Module();
-  private monForm: FormGroup;
-  private matieres: Matiere[] = [];
-  private moduleService: ModulesService;
+  private modules: Module[];
+  private message: string = null;
 
 
+  constructor(private moduleService: ModulesService, private activatedRoute: ActivatedRoute) { }
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private router: Router, private matiereService: MatieresService) {
-  //  this.matiereService.list().subscribe(rez => this.matieres = rez);
-    this.matieres.push(new Matiere(1, 'nom',
-      'niveau', 'objectif', 'prerequis', 'contenu', 10, null, null));
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      if (params.nom) {
+        this.message = `L'ordinateur "${params.nom}" a été ${params.action}`;
+      }
+    });
+    this.list();
   }
 
-
-
-
-  ngOnInit(): void {
+  delete(id: number) {
+    this.moduleService.delete(id).subscribe(result => {
+        this.list();
+      }
+    );
   }
 
-  send() {
-    console.log(this.module);
-    this.moduleService.insert(this.module).subscribe(result => {
-      console.log('ok');
+  list() {
+    this.moduleService.list().subscribe(data => {
+      this.modules = data;
     }, error => {
       console.log(error);
     });

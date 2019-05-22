@@ -34,18 +34,31 @@ export class UserService implements CanActivate {
 
   public authentication(user: User): Observable<any> {
     const headers: HttpHeaders = new HttpHeaders({
-        'Content-Type': 'application/json',
-       'Authorization': 'Basic ' + btoa(`${user.email}:${user.motDePasse}`)
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ' + btoa(`${user.email}:${user.motDePasse}`)
       }
     );
-    return this.http.get('http://localhost:8080/la-factory/rest/login', {headers: headers});
+    return this.http.get('http://localhost:8080/la-factory/rest/login', { headers: headers });
 
   }
 
   public login(user: User) {
     sessionStorage.setItem('isLoggedIn', 'true');
     sessionStorage.setItem('login', user.email);
-    sessionStorage.setItem('droits', JSON.stringify(user.droits));
+    let us: User;
+    this.findByEmail(user.email).subscribe( result => {
+      us = result;
+      console.log(us);
+      sessionStorage.setItem('droits', JSON.stringify(us.droits));
+      console.log(sessionStorage.getItem('droits'));
+      console.log(JSON.parse(sessionStorage.getItem('droits'))[0]['droit']);
+      const hey = JSON.parse(sessionStorage.getItem('droits'));
+      for(const d in hey){
+          console.log(hey[d]['droit']);
+        }
+
+    })
+
     this._isLogged = true;
   }
 
@@ -68,6 +81,10 @@ export class UserService implements CanActivate {
     return this.verifLog();
   }
 
+
+  public findByEmail(email): Observable<any> {
+    return this.http.get(`${this.url}/${email}`, this.httpOptions);
+  }
 
   public list(): Observable<any> {
     return this.http.get(this.url, this.httpOptions);

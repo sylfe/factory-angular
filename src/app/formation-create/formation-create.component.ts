@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {FormateurService} from '../formateur.service';
-import {Formation} from '../model/formation';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Formation} from "../model/formation";
+import {ActivatedRoute, Router} from "@angular/router";
+import {FormationService} from "../formation.service";
 
 @Component({
   selector: 'app-formation-create',
@@ -9,33 +10,31 @@ import {Formation} from '../model/formation';
   styleUrls: ['./formation-create.component.css']
 })
 export class FormationCreateComponent implements OnInit {
+ private formation: Formation = new Formation();
+  private nouvelleFormation: FormGroup;
 
-  private formation: Formation = new Formation();
-  constructor(private activedRoute: ActivatedRoute,
-              private formationService: FormationService,
-              private router: Router) { }
+
+  constructor(private activatedRoute: ActivatedRoute, private formationService: FormationService, private router: Router) {
+  }
 
   ngOnInit() {
-    this.activedRoute.params.subscribe( params => {
-      if (params.id) {
-        this.formationService.findById(params.id).subscribe( data => {
+    this.activatedRoute.params.subscribe( params => {
+      if(params.id) {
+        this.formationService.findById(params.id).subscribe(data => {
           this.formation = data;
         });
       }
     });
   }
-
   save() {
-    if (this.formation.id) {
-      this.formationService.update(this.formation).subscribe(result => {
-        this.router.navigate(['/formation', 'modifié', this.formation.titre]);
+    if(this.formation.id) {
+      this.formationService.update(this.formation).subscribe( result => {
+        this.router.navigate(['/formations', 'modifié', this.formation.titre]);
       });
     } else {
-      console.log('ok');
-      this.formationService.insert(this.formation).subscribe( result => {
-        this.router.navigate(['/formateur', 'ajouté', this.formateur.nom]);
+      this.formationService.insert(this.formation).subscribe(result => {
+        this.router.navigate(['/produits', 'ajouté', this.formation.titre]);
       });
     }
   }
-
 }
