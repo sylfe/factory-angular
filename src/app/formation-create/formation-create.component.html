@@ -1,1 +1,28 @@
+<body>
+<h1> Nouvelle formation</h1>
+<div>
 
+  <form class="container">
+    <div class="form-group row">
+      <label>Titre de la formation</label>
+      <input class="form-control " name="titre" [(ngModel)]="formation.titre" required #titre="ngModel">
+      <!--  <div class="alert " *ngIf="titre.dirty && titre.invalid">*information obligatoire</div> -->
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Date de début :</label>
+      <div class="col-10">
+        <input class="form-control form-control" type="date" name="dateDebut" value="AAAA-MM-JJ" [(ngModel)]="formation.dateDebut" required #dateDebut="ngModel">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Date de fin :</label>
+      <div class="col-10">
+        <input class="form-control form-control" type="date" name="dateFin" value="AAAA-MM-JJ" [(ngModel)]="formation.dateFin" required #dateFin="ngModel">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success btn-block">Créer la formation</button>
+
+  </form>
+</div>
+</body>
