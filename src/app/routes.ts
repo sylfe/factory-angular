@@ -25,6 +25,8 @@ import {ModulesEditComponent} from './modules-edit/modules-edit.component';
 import {FormationCreateComponent} from './formation-create/formation-create.component';
 import {FormationEditComponent} from './formation-edit/formation-edit.component';
 import {FormationComponent} from './formation/formation.component';
+import {GestionnaireComponent} from './gestionnaire/gestionnaire.component';
+import {GestionnaireEditComponent} from './gestionnaire-edit/gestionnaire-edit.component';
 
 
 
@@ -53,6 +55,10 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'user', component: UserEditerComponent},
   { path : 'users', component: UserComponent},
   { path : 'user/:action/:nom', component: UserComponent},
+  { path : 'gestionnaires', component: GestionnaireComponent},
+  { path : 'gestionnaires/:action/:nom', component: GestionnaireComponent},
+  { path : 'gestionnaire/edit', component: GestionnaireEditComponent},
+  { path : 'gestionnaire/edit/:id', component: GestionnaireEditComponent},
   { path : 'formateur', component: FormateurComponent},
   { path : 'formateur/:modif/:nom', component: FormateurComponent},
   { path : 'formateur/:ajout/:nom', component: FormateurComponent},
@@ -64,7 +70,7 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'formations', component: FormationComponent},
   { path : 'formation/:action/:titre', component: FormationEditComponent},
   { path : 'formation/create', component: FormationCreateComponent},
-  { path : 'formation/edit/:id', component: FormationEditComponent},
+  { path : 'formation/edit', component: FormationEditComponent},
   { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
   { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];
