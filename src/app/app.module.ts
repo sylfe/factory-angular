@@ -63,7 +63,7 @@ import { TechnicienEditComponent } from './technicien/technicien-edit/technicien
     TestPageComponent,
     TestComponentComponent,
     ModulesEditComponent,
-    FormationComponent
+    FormationComponent,
     ModulesEditComponent,
     TechnicienComponent,
     TechnicienEditComponent
