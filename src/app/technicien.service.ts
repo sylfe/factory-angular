@@ -3,13 +3,14 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Matiere} from './model/matiere';
 import {Technicien} from './model/technicien';
+import {Droit} from './model/droit.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TechnicienService {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/matiere';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/technicien';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -51,7 +52,7 @@ export class TechnicienService {
       'adresse': technicien.adresse,
       'prenom': technicien.prenom,
       'telephone': technicien.telephone,
-      'droits': [{ 'droit': }]
+ 'droits': technicien.droits
     };
     return this.http.post( `${this.url}`, p, this.httpOptions );
   }

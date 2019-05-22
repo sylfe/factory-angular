@@ -1,3 +1,27 @@
-<p>
-  technicien works!
-</p>
+<div *ngIf="message" class="alert alert-info">{{message}}</div>
+
+<table class="table">
+  <thead>
+  <th>id</th>
+  <th>nom</th>
+  <th>prenom</th>
+  <th>adresse</th>
+  <th>email</th>
+  <th>telephone</th>
+  <th>mot de passe</th>
+  <th>editer</th>
+  <th>supprimer</th>
+  </thead>
+  <tr *ngFor="let t of technicien">
+    <td> {{ t.id }}  </td>
+    <td> {{ t.nom }}  </td>
+    <td>   {{ t.prenom }}  </td>
+    <td>   {{ t.adresse }}    </td>
+    <td>   {{ t.email }}    </td>
+    <td>   {{ t.telephone }}    </td>
+    <td>   {{ t.motDePasse }}    </td>
+    <td> <a class="btn btn-warning" [routerLink]="['/technicien', t.id]" routerLinkActive="active"> Editer </a>  </td>
+    <td> <button class="btn btn-danger" (click)="delete(t.id)">Supprimer</button> </td>
+  </tr>
+</table>
+<a class="btn btn-info" [routerLink]="['/technicien/edit']" routerLinkActive="active"> Ajouter </a>

@@ -9,7 +9,7 @@ import {FormationService} from "../formation.service";
   styleUrls: ['./formation-create.component.css']
 })
 export class FormationCreateComponent implements OnInit {
- private formation: Formation = new Formation();
+  private formation: Formation = new Formation();
 
 
 
@@ -26,14 +26,9 @@ export class FormationCreateComponent implements OnInit {
     });
   }
   save() {
-    if(this.formation.id) {
-      this.formationService.update(this.formation).subscribe( result => {
-        this.router.navigate(['/formation-edit', 'modifié', this.formation.titre]);
-      });
-    } else {
-      this.formationService.insert(this.formation).subscribe(result => {
-        this.router.navigate(['/formations', 'ajouté', this.formation.titre]);
-      });
-    }
+    this.formationService.insert(this.formation).subscribe(result => {
+      this.router.navigate(['/formations', 'ajouté', this.formation.id]);
+    });
   }
 }
+
