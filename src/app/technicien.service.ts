@@ -52,7 +52,7 @@ export class TechnicienService {
       'adresse': technicien.adresse,
       'prenom': technicien.prenom,
       'telephone': technicien.telephone,
- 'droits': technicien.droits,
+ 'droits': technicien.droits
     };
     return this.http.post( `${this.url}`, p, this.httpOptions );
   }
