@@ -17,7 +17,7 @@
     <td>{{ftn.dateDebut}}</td>
     <td>{{ftn.dateFin}}</td>
 
-    <td><button class="btn btn-warning" [routerLink]="['/formation/edit',ftn.id]" routerLinkActive="active">modifier</button>&nbsp;
+    <td><button class="btn btn-warning" [routerLink]="['/formation/create',ftn.id]" routerLinkActive="active">modifier</button>&nbsp;
       <button class="btn btn-danger" (click)="delete(ftn.id)">Supprimer</button></td>
   </tr>
 
