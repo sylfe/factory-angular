@@ -26,21 +26,31 @@
   </div>
 
 
-
   <div class="input-group mb-3">
     <label class="input-group-text">Vidéoprojecteur</label>
-    <input [(ngModel)]="salle.videoprojecteur" type="radio" name="videoprojecteur" value="true">Oui
-    <input [(ngModel)]="salle.videoprojecteur" type="radio" name="videoprojecteur" value="false">Non
+    <input [(ngModel)]="salleAvecVideo" type="radio" name="videoprojecteur" value="true">Oui
+    <input [(ngModel)]="salleAvecVideo" type="radio" name="videoprojecteur" value="false">Non
 
 
-    <div *ngIf="salle.videoprojecteur == true">
-      <select [(ngModel)]="videoprojecteur">
-        <option *ngFor="let vp of videoprojecteurs" [value]="vp.id">{{vp.code}}</option>
+    <div *ngIf="salleAvecVideo == true">
+      <select [(ngModel)]="salle.videoprojecteur">
+        <!--
+        <select [(ngModel)]="passenger.Title">
+        <option *ngFor="let title of titleArray" [value]="title.Value" [attr.selected]="passenger.Title==title.Text ? true : null"> {{title.Text}}
+        </option>
+            </select>
+        -->
+        <option *ngFor="let vp of videoprojecteurs" [value]="vp" [attr.selected]="salle.videoprojecteur == vp ? true : null">{{vp.code}}
+        </option>
       </select>
-    </div>
-    <div>
-      <button class="btn btn-success" (click)="save()">Enregistrer</button>
-      <a class="btn btn-secondary" [routerLink]="['/salles']" routerLinkActive="active">Retour</a>
+
     </div>
 
   </div>
+
+  <div>
+    <button class="btn btn-success" (click)="save()">Enregistrer</button>
+    <a class="btn btn-secondary" [routerLink]="['/salles']" routerLinkActive="active">Retour</a>
+  </div>
+
+</div>
