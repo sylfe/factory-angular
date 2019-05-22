@@ -28,6 +28,10 @@ import { FormationEditComponent } from './formation-edit/formation-edit.componen
 import {FormateurEditComponent} from './formateur-edit/formateur-edit.component';
 import { TestPageComponent } from './test-page/test-page.component';
 import { TestComponentComponent } from './test-component/test-component.component';
+import {AccessAdminService} from './access-admin.service';
+import {AccessFormateurService} from './access-formateur.service';
+import {AccessGestionnaireService} from './access-gestionnaire.service';
+import {AccessTechnicienService} from './access-technicien.service';
 
 
 @NgModule({
@@ -58,7 +62,8 @@ import { TestComponentComponent } from './test-component/test-component.componen
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, ReactiveFormsModule
   ],
-  providers: [UserService, MatieresService, ModulesService],
+  providers: [UserService, MatieresService, ModulesService, AccessAdminService,
+    AccessFormateurService, AccessGestionnaireService, AccessTechnicienService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
