@@ -85,7 +85,7 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
 
   { path : 'stagiaires', component: StagiaireComponent},
   { path : 'stagiaire/:action/:nom', component: StagiaireComponent},
-  { path : 'stagiaire/edit/:id', component: StagiaireEditComponent},
+  { path : 'stagiaire/:id', component: StagiaireEditComponent},
   { path : 'stagiaire/edit', component: StagiaireEditComponent},
 
   { path : 'techniciens', component: TechnicienComponent},
