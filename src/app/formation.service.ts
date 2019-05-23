@@ -17,7 +17,7 @@ export class FormationService {
 
     this.headers = new HttpHeaders({
       'Content-Type': 'application/JSON',
-      'Authorization': 'Basic ' + btoa('benjamin@benjamin.fr:benjamin')
+      'Authorization': 'Basic ' + btoa('karen@karen.fr:karen')
     });
 
     this.httpOptions = {headers: this.headers};
@@ -36,6 +36,10 @@ export class FormationService {
     return this.http.get(`${this.url}/${id}`, this.httpOptions);
   }
 
+  public findByTitre(titre: string): Observable<any> {
+    return this.http.get(`${this.url}/${titre}`, this.httpOptions);
+  }
+
   public update(formation: Formation): Observable<any> {
     return this.http.put(`${this.url}/${formation.id}`, formation, this.httpOptions);
   }
@@ -44,9 +48,10 @@ export class FormationService {
     const f = {
       'titre': formation.titre,
       'dateDebut': formation.dateDebut,
-      'dateFin': formation.dateFin,
+      'dateFin': formation.dateFin
     }
-    return this.http.post(this.url, f, {
+    return this.http.post(`${this.url}`, f, {
+      headers: this.headers,
       observe: 'response'
     });
   }
