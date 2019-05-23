@@ -32,6 +32,7 @@ import {StagiaireComponent} from './stagiaire/stagiaire.component';
 import {StagiaireEditComponent} from './stagiaire-edit/stagiaire-edit.component';
 import {AdministrateurComponent} from './administrateur/administrateur.component';
 import {AdministrateurEditComponent} from './administrateur-edit/administrateur-edit.component';
+import {OrdinateurDispoComponent} from './ordinateur-dispo/ordinateur-dispo.component';
 
 
 
@@ -87,7 +88,7 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
 
   { path : 'stagiaires', component: StagiaireComponent},
   { path : 'stagiaire/:action/:nom', component: StagiaireComponent},
-  { path : 'stagiaire/edit/:id', component: StagiaireEditComponent},
+  { path : 'stagiaire/:id', component: StagiaireEditComponent},
   { path : 'stagiaire/edit', component: StagiaireEditComponent},
 
   { path : 'techniciens', component: TechnicienComponent},
@@ -100,7 +101,7 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'administrateur/edit', component: AdministrateurEditComponent},
   { path : 'administrateur/:id', component: AdministrateurEditComponent},
 
-  { path : 'test', component: TestPageComponent},
+  { path : 'test', component: OrdinateurDispoComponent},
   { path : 'testinit', component: TestComponentComponent},
 
   { path: '', redirectTo: 'home', pathMatch: 'full'}];

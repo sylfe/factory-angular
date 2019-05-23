@@ -24,6 +24,9 @@ export class OrdinateurService {
   public list(): Observable<any> {
     return this.http.get(this.url, this.httpOptions);
   }
+  public listStagiaire(): Observable<any> {
+    return this.http.get(`${this.url}/stagiaire`, this.httpOptions);
+  }
 
   public delete(id: number): Observable<any> {
     return this.http.delete(`${this.url}/${id}`, this.httpOptions);

@@ -16,7 +16,6 @@ export class ModulesService {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization' : 'Basic ' + btoa('benjamin@benjamin.fr:benjamin'),
-      'Access-Control-Allow-Origin' : '*'
     });
     this.httpOptions = { headers: this.headers};
   }
@@ -52,10 +51,15 @@ export class ModulesService {
       'dateDebut' : module.dateDebut,
       'matiere' : {
         'id' : module.matiere.id
+      },
+      'formateur': {
+        'id' : module.formateur.id
+      },
+      'formation': {
+        'id': module.formation.id
       }
-      // 'formateur': {},
-      // 'formation': {}
     };
-    return this.http.post( `${this.url}/insert`, p, this.httpOptions );
+    console.log(p);
+    return this.http.post( `${this.url}`, p, this.httpOptions );
   }
 }
