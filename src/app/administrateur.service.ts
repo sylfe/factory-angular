@@ -3,13 +3,14 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {Administrateur} from './model/administrateur';
+import {urlEnCours} from './urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdministrateurService {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/user/administrateur';
+  private url = urlEnCours + '/la-factory/rest/user/administrateur';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -17,7 +18,7 @@ export class AdministrateurService {
   constructor(private http: HttpClient, private router: Router) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Basic ' + btoa(`benjamin@benjamin.fr:benjamin`)
+      'Authorization': 'Basic ' + btoa(sessionStorage.getItem('basic'))
     });
     this.httpOptions = {headers: this.headers};
   }
