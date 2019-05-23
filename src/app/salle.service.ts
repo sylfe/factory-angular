@@ -17,7 +17,7 @@ export class SalleService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/JSON',
-      'Authorization': 'Basic ' + btoa(sessionStorage.getItem('basic'))
+      'Authorization': 'Basic ' + sessionStorage.getItem('basic')
     });
 
     this.httpOptions = {headers: this.headers};

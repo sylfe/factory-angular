@@ -18,7 +18,7 @@ export class FormationService {
 
     this.headers = new HttpHeaders({
       'Content-Type': 'application/JSON',
-      'Authorization': 'Basic ' + btoa(sessionStorage.getItem('basic'))
+      'Authorization': 'Basic ' + sessionStorage.getItem('basic')
     });
 
     this.httpOptions = {headers: this.headers};
@@ -26,7 +26,7 @@ export class FormationService {
   }
 
   public list(): Observable<any> {
-    return this.http.get(this.url, {headers: this.headers});
+    return this.http.get(this.url + '/salle', {headers: this.headers});
   }
 
   public delete(id: number): Observable<any> {
@@ -34,7 +34,7 @@ export class FormationService {
   }
 
   public findById(id): Observable<any> {
-    return this.http.get(`${this.url}/${id}` + '/salle', this.httpOptions);
+    return this.http.get(`${this.url}/${id}` , this.httpOptions);
   }
 
   public findByTitre(titre: string): Observable<any> {
