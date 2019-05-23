@@ -1,50 +1,50 @@
-<body>
 
-<div>
 
-  <form class="container" #FormFormation="ngForm">
+  <form #FormFormation="ngForm">
     <div *ngIf="formation.id">
       <h1>Modifier une formation</h1>
     </div>
     <div *ngIf="!formation.id">
       <h1>Nouvelle formation</h1>
-      <div class="form-group row">
-        <label>Titre de la formation</label>
-        <input class="form-control" type="text" name="titre" placeholder="Titre " [(ngModel)]="formation.titre" required #titre="ngModel">
+
+      <div class="input-group mb-3">
+        <label class="input-group-text">id</label>
+        <input class="form-control" [(ngModel)]="formation.id" readonly placeholder="ID généré automatiquement" name="id">
+      </div>
+      <div class="input-group mb-3">
+        <label class="input-group-text">Titre de la formation</label>
+        <input class="form-control" type="text" name="titre" placeholder="Titre" [(ngModel)]="formation.titre" required #titre="ngModel">
       </div>
       <div class="alert alert-danger" *ngIf="titre.dirty && titre.invalid">*information obligatoire</div>
-      <div class="form-group row">
-        <label class="col-2 col-form-label">Date de début :</label>
-        <div class="col-10">
-          <input class="form-control form-control" type="date" name="dateDebut" value="AAAA-MM-JJ" [(ngModel)]="formation.dateDebut" required #dateDebut="ngModel">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label class="col-2 col-form-label">Date de fin :</label>
-        <div class="col-10">
-          <input class="form-control form-control" type="date" name="dateFin" value="AAAA-MM-JJ" [(ngModel)]="formation.dateFin" required #dateFin="ngModel">
-        </div>
-        <span class="alert alert-danger" *ngIf="checkDate()">Les dates ne conviennent pas</span>
+
+      <div class="input-group mb-3">
+        <label class="input-group-text">Date de début</label>
+
+          <input class="form-control" type="date" name="dateDebut" value="AAAA-MM-JJ" [(ngModel)]="formation.dateDebut" required #dateDebut="ngModel">
         <div class="alert alert-danger" *ngIf="dateDebut.dirty && dateDebut.invalid">*information obligatoire</div>
       </div>
-      <!--choix de la salle-->
-      <div class="row justify-content-center m-2">
-        <div class="col-3 text-center">
-          <label> Choix de la salle </label>
-        </div>
-        <div class="col-3 d-flex justify-content-center">
-          <select name="listeSalle">
-            <option *ngFor="let salle of salles" value="">{{salle.code}}</option>
-          </select>
-        </div>
+
+      <div class="input-group mb-3">
+        <label class="input-group-text">Date de fin</label>
+
+          <input class="form-control" type="date" name="dateFin" value="AAAA-MM-JJ" [(ngModel)]="formation.dateFin" required #dateFin="ngModel">
+        <div class="alert alert-danger" *ngIf="dateFin.dirty && dateFin.invalid">*information obligatoire</div>
+        <span class="alert alert-danger" *ngIf="checkDate()">Les dates ne conviennent pas</span>
+
       </div>
+      <!--choix de la salle-->
+
+        <div class="input-group mb-3">
+          <label class="input-group-text">Salle attribuée</label>
+        <select class="form-control" type="text"  name="salle" [(ngModel)]="formation.salle.id">
+          <option *ngFor="let salle of salles" [value]="salle.id" [attr.selected]="formation.salle.id ? true : null">{{salle.id}} . {{salle.code}}</option>
+        </select>
+        </div>
+
       <div>
         <button type="submit" class="btn btn-success btn-block"  [disabled]="FormFormation.invalid" [disabled]="verif" (click)="save()">Valider</button>
         <a [routerLink]="['/formations']" routerLinkActive="active" class="btn btn-warning btn-block">Retour</a>
       </div>
     </div>
   </form>
-</div>
-</body>
-
 

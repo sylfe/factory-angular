@@ -7,20 +7,23 @@
   <thead>
   <th>ID</th>
   <th>TITRE</th>
+  <th>SALLE</th>
   <th>DATE DE DEBUT</th>
   <th>DATE DE FIN</th>
+  <th>EDITER</th>
   <th>EDITER</th>
   <th>SUPPRIMER</th>
 
   </thead>
-  <tr *ngFor="let ftn of formations">
-    <td>{{ftn.id}}</td>
-    <td>{{ftn.titre}}</td>
-    <td>{{ftn.dateDebut}}</td>
-    <td>{{ftn.dateFin}}</td>
-
-    <td><button class="btn btn-warning" [routerLink]="['/formation/edit',ftn.id]" routerLinkActive="active">EDITER</button>&nbsp;</td>
-     <td> <button class="btn btn-danger" (click)="delete(ftn.id)">SUPPRIMER</button></td>
+  <tr *ngFor="let formation of formations">
+    <td>{{formation.id}}</td>
+    <td>{{formation.titre}}</td>
+    <td>Salle {{formation.salle?.id}} . {{formation.salle?.code}}</td>
+    <td>{{formation.dateDebut}}</td>
+    <td>{{formation.dateFin}}</td>
+    <td><button class="btn btn-warning" [routerLink]="['/formation/create',formation.id]" routerLinkActive="active">LA FORMATION</button>&nbsp;</td>
+    <td> <button class="btn btn-warning" [routerLink]="['/formation/edit',formation.id]" routerLinkActive="active">LES MODULES</button>&nbsp;</td>
+     <td> <button class="btn btn-danger" (click)="delete(formation.id)">SUPPRIMER</button></td>
   </tr>
 
 

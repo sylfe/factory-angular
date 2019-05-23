@@ -3,20 +3,21 @@ import {CanActivate, Router} from '@angular/router';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Matiere} from './model/matiere';
+import {urlEnCours} from './urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MatieresService {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/matiere';
+  private url = urlEnCours + '/la-factory/rest/matiere';
   private headers: HttpHeaders;
   private httpOptions: any;
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization' : 'Basic ' + btoa('benjamin@benjamin.fr:benjamin'),
+      'Authorization' : 'Basic ' + sessionStorage.getItem('basic'),
       'Access-Control-Allow-Origin' : '*'
     });
     this.httpOptions = { headers: this.headers};
