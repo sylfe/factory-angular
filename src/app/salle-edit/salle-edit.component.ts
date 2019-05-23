@@ -19,8 +19,9 @@ export class SalleEditComponent implements OnInit {
   }
 
   private salle: Salle = new Salle();
+  private videoprojecteur0: VideoProjecteur = new VideoProjecteur();
   private videoprojecteurs: VideoProjecteur[];
-  private salleAvecVideo: boolean;
+  private salleAvecVideo = false;
   private pasVideop: VideoProjecteur = new VideoProjecteur(null, null, null, null);
 
   ngOnInit() {
@@ -29,6 +30,17 @@ export class SalleEditComponent implements OnInit {
 
         this.salleService.findById(params.id).subscribe(data => {
           this.salle = data;
+
+          if (this.salle.videoprojecteur) {
+            this.salleAvecVideo = true;
+            this.videoprojecteur0 = new VideoProjecteur(
+              this.salle.videoprojecteur.id,
+              this.salle.videoprojecteur.version,
+              this.salle.videoprojecteur.code,
+              this.salle.videoprojecteur.coutJournee
+            );
+          }
+
           console.log(this.salle);
         });
       }
@@ -37,10 +49,13 @@ export class SalleEditComponent implements OnInit {
       this.videoprojecteurs = result;
     });
     this.salle.videoprojecteur = new VideoProjecteur();
+
   }
 
 
   save() {
+    console.log(this.salle);
+
     if (this.salle.id) {
       this.salleService.update(this.salle).subscribe(result => {
         this.router.navigate(['/salle', 'modifiée', this.salle.code]);
@@ -58,7 +73,7 @@ export class SalleEditComponent implements OnInit {
     if(this.salleAvecVideo === false){
       this.salleAvecVideo = false;
       console.log('clic sur false : ' + this.salle.videoprojecteur.id);
-      this.salle.videoprojecteur.id = 0;
+      this.salle.videoprojecteur.id = this.pasVideop.id;
       console.log('après clic : ' + this.salle.videoprojecteur.id);
     } else {
       this.salleAvecVideo = true;
