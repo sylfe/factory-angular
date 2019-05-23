@@ -1,0 +1,18 @@
+.h1 {
+  color: #75e9c2;
+}
+
+.h3 {
+  color: whitesmoke;
+  text-align: center;
+}
+
+body {
+  background: rgb(47,58,89);
+  background: linear-gradient(351deg, rgba(47,58,89,0.9821288378632703) 0%, rgba(9,69,121,1) 32%, rgba(93,223,192,1) 100%);
+  background-cover: cover;
+}
+
+p {
+  color: white;
+}
