@@ -53,6 +53,7 @@ import {SalleService} from './salle.service';
 import {StagiaireService} from './stagiaire.service';
 import {TechnicienService} from './technicien.service';
 import {VideoProjecteurService} from './video-projecteur.service';
+import { OrdinateurDispoComponent } from './ordinateur-dispo/ordinateur-dispo.component';
 
 
 
@@ -89,7 +90,8 @@ import {VideoProjecteurService} from './video-projecteur.service';
     StagiaireComponent,
     StagiaireEditComponent,
     AdministrateurComponent,
-    AdministrateurEditComponent
+    AdministrateurEditComponent,
+    OrdinateurDispoComponent
   ],
   imports: [
     BrowserModule,
