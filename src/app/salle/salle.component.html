@@ -9,7 +9,7 @@
   <th>CODE</th>
   <th>COÛT(€)/JOUR</th>
   <th>CAPACITE</th>
- <th>VIDEOPROJECTEUR</th>
+  <th>VIDEOPROJECTEUR</th>
   <th>EDITER</th>
   <th>SUPPRIMER</th>
   </thead>
@@ -19,8 +19,8 @@
     <td>{{salle.coutJournee}}</td>
     <td>{{salle.capacite}}</td>
     <td>{{salle.videoprojecteur?.id}}</td>
-    <td><button class="btn btn-warning" [routerLink]="['/salle',salle.id]" routerLinkActive="active">modifier</button></td>
-    <td>      <button class="btn btn-danger" (click)="delete(salle.id)">Supprimer</button></td>
+    <td><button class="btn btn-warning" [routerLink]="['/salle',salle.id]" routerLinkActive="active">Modifier</button></td>
+    <td><button class="btn btn-danger" (click)="delete(salle.id)">Supprimer</button></td>
   </tr>
 
 </table>

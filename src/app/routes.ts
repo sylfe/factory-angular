@@ -34,6 +34,7 @@ import {StagiaireEditComponent} from './stagiaire-edit/stagiaire-edit.component'
 
 
 export const routes: Routes = [{path: 'home', component: WelcomeComponent},
+  {path: 'welcome', component: WelcomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'login/:error', component: LoginComponent},
   { path : 'matieres', component: MatieresComponent, canActivate: [AccessFormateurService]},
