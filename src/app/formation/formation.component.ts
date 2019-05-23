@@ -30,10 +30,10 @@ private salles: Salle[];
         this.message = `La formation "${params.titre}" a été ${params.action}`;
       }
     });
-    this.list();
     this.salleService.list().subscribe(result => {
       this.salles = result;
     });
+    this.list();
   }
 
   delete(id: number) {

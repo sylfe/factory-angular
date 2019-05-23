@@ -17,7 +17,7 @@ export class MatieresService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization' : 'Basic ' + btoa(sessionStorage.getItem('basic')),
+      'Authorization' : 'Basic ' + sessionStorage.getItem('basic'),
       'Access-Control-Allow-Origin' : '*'
     });
     this.httpOptions = { headers: this.headers};
