@@ -40,11 +40,11 @@ export class SalleEditComponent implements OnInit {
   save() {
     if (this.salle.id) {
       this.salleService.update(this.salle).subscribe(result => {
-        this.router.navigate(['/salles', 'modifiée', this.salle.code]);
+        this.router.navigate(['/salle', 'modifiée', this.salle.code]);
       });
     } else {
       this.salleService.insert(this.salle).subscribe(result => {
-        this.router.navigate(['/salles', 'ajoutée', this.salle.code]);
+        this.router.navigate(['/salle', 'ajoutée', this.salle.code]);
       });
     }
   }

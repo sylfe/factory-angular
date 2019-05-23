@@ -15,7 +15,8 @@ export class AppComponent {
   logout() {
     this.authentification.logout();
     sessionStorage.clear();
-    this.router.navigate(['/']);
+    console.log('je suis logout');
+    this.router.navigate(['/welcome']);
   }
 
   constructor(private authentification: UserService, private router: Router) {
