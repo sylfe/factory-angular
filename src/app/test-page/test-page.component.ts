@@ -11,8 +11,8 @@ export class TestPageComponent implements OnInit {
 
   private date: Date = new Date();
   private today: number = Date.now();
-  private monthStart: Date;
-  private monthEnd: Date;
+  private monthStart: Date = new Date();
+  private monthEnd: Date = new Date();
 
   private days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
   private days30 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
@@ -25,29 +25,35 @@ export class TestPageComponent implements OnInit {
   constructor( private formationService: FormationService) { }
 
   ngOnInit() {
-    this.date.setMonth(4);
-    this.monthStart.setMonth(1);
-    this.monthStart.setDate(1);
-    this.formationService.findById(1).subscribe( rez => {
+    this.formationService.findById(5).subscribe( rez => {
       this.formation = rez;
       console.log(rez);
-      this.monthStart = this.formation.dateDebut;
-      this.monthEnd = this.formation.dateFin;
-    })
-    let monthNow = this.monthStart.getMonth();
-    while (monthNow <= this.monthEnd.getMonth()){
+      this.monthStart = new Date(this.formation.dateDebut);
+      console.log(this.monthStart);
+      this.monthEnd = new Date(this.formation.dateFin);
+      let monthNow = this.monthStart.getMonth();
+      while (monthNow <= this.monthEnd.getMonth()) {
 
-      this.monthFormation.push(monthNow);
-      monthNow ++;
-    }
-    console.log('months'+this.monthFormation);
+        this.monthFormation.push(monthNow);
+        monthNow ++;
+      }
+      console.log('months' + this.monthFormation);
+    })
+
   }
 
   tempDate(day, month){
     let d = new Date();
+    d.setMonth(month);
     d.setDate(day);
-
     return d;
+  }
+
+  monthTest(month) {
+    if (this.month31.indexOf(month) > -1){
+      return true;
+    }
+    return false;
   }
 
 }
