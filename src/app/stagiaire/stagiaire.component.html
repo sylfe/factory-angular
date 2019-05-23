@@ -9,7 +9,6 @@
   <th>ADRESSE</th>
   <th>EMAIL</th>
   <th>TELEPHONE</th>
-  <th>MOT DE PASSE</th>
   <th>ORDINATEUR</th>
   <th>EDITER</th>
   <th>SUPPRIMER</th>
@@ -21,8 +20,7 @@
     <td> {{ f.adresse }}    </td>
     <td> {{ f.email }}    </td>
     <td> {{ f.telephone }}    </td>
-    <td> {{ f.motDePasse }}    </td>
-    <td> {{ f.ordinateur}}    </td>
+    <td> {{ f.ordinateur?.code}}    </td>
 
     <td><a class="btn btn-warning" [routerLink]="['/stagiaire', f.id]" routerLinkActive="active"> EDITER </a></td>
     <td>
