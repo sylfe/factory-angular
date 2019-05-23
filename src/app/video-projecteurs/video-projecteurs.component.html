@@ -9,15 +9,16 @@
   <th>CODE</th>
   <th>COÛT/JOUR</th>
   <th>SALLE</th>
-  <th>ACTION</th>
+  <th>EDITER</th>
+  <th>SUPPRIMER</th>
   </thead>
   <tr *ngFor="let videopro of videoProjecteurs">
     <td>{{videopro.id}}</td>
     <td>{{videopro.code}}</td>
     <td>{{videopro.coutJournee}}</td>
     <td>{{videopro.salle}}</td>
-    <td><button class="btn btn-warning" [routerLink]="['/videoprojecteur',videopro.id]" routerLinkActive="active">modifier</button>&nbsp;
-      <button class="btn btn-danger" (click)="delete(videopro.id)">Supprimer</button></td>
+    <td><button class="btn btn-warning" [routerLink]="['/videoprojecteur',videopro.id]" routerLinkActive="active">modifier</button>&nbsp;</td>
+      <td><button class="btn btn-danger" (click)="delete(videopro.id)">Supprimer</button></td>
   </tr>
 
 </table>

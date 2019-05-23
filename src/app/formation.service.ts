@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Formation} from "./model/formation";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,15 @@ export class FormationService {
   private headers: HttpHeaders;
   private httpOptions: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
+
     this.headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa('constance@constance.fr:constance')
-      }
-    );
+      'Content-Type': 'application/JSON',
+      'Authorization': 'Basic ' + btoa('benjamin@benjamin.fr:benjamin')
+    });
+
     this.httpOptions = {headers: this.headers};
+
   }
 
   public list(): Observable<any> {

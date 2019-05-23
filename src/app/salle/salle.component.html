@@ -10,16 +10,17 @@
   <th>COÛT(€)/JOUR</th>
   <th>CAPACITE</th>
  <th>VIDEOPROJECTEUR</th>
-  <th>ACTION</th>
+  <th>EDITER</th>
+  <th>SUPPRIMER</th>
   </thead>
   <tr *ngFor="let salle of salles">
     <td>{{salle.id}}</td>
     <td>{{salle.code}}</td>
     <td>{{salle.coutJournee}}</td>
     <td>{{salle.capacite}}</td>
-    <td>{{salle.videoprojecteur.id}}</td>
-    <td><button class="btn btn-warning" [routerLink]="['/salle',salle.id]" routerLinkActive="active">modifier</button>
-      <button class="btn btn-danger" (click)="delete(salle.id)">Supprimer</button></td>
+    <td>{{salle.videoprojecteur?.id}}</td>
+    <td><button class="btn btn-warning" [routerLink]="['/salle',salle.id]" routerLinkActive="active">modifier</button></td>
+    <td>      <button class="btn btn-danger" (click)="delete(salle.id)">Supprimer</button></td>
   </tr>
 
 </table>

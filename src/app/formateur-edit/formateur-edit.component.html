@@ -1,40 +1,45 @@
 <form (ngSubmit)="save()" #monForm="ngForm">
-  <div class="form-group">
-    <label>Nom</label>
-    <input name="nom" [(ngModel)]="formateur.nom" required class="form-control" #nom="ngModel">
+  <div *ngIf="formateur.id">
+    <h1>Modifier un formateur</h1>
   </div>
-  <div *ngIf="nom.dirty && nom.invalid" class="alert-danger">
-    *information obligatoire </div>
-  <div>
-    <label>Prénom</label>
-    <input type="text" name="prenom" [(ngModel)]="formateur.prenom" required class="form-control" #prenom="ngModel">
+  <div *ngIf="!formateur.id">
+    <h1>Ajouter un formateur</h1>
   </div>
-
-
   <div class="input-group mb-3">
   <label class="input-group-text">Nom</label>
-  <input [(ngModel)]="formateur.nom" type="text" class="form-control" name="nom" placeholder="Nom" required>
+  <input [(ngModel)]="formateur.nom" type="text" class="form-control" name="nom" placeholder="Nom" required #nom="ngModel">
 </div>
+  <div *ngIf="nom.dirty && nom.invalid" class="alert-danger">*information obligatoire </div>
+
 <div class="input-group mb-3">
   <label class="input-group-text">Prenom</label>
-  <input [(ngModel)]="formateur.prenom" type="text" class="form-control" name="prenom" placeholder="Prenom" required>
+  <input [(ngModel)]="formateur.prenom" type="text" class="form-control" name="prenom" placeholder="Prenom" required #prenom="ngModel">
 </div>
+  <div *ngIf="prenom.dirty && prenom.invalid" class="alert-danger">*information obligatoire </div>
 <div class="input-group mb-3">
   <label class="input-group-text">Adresse</label>
-  <input [(ngModel)]="formateur.adresse" type="text" class="form-control" name="adresse" placeholder="Adresse" required>
+  <input [(ngModel)]="formateur.adresse" type="text" class="form-control" name="adresse" placeholder="Adresse" required #adresse="ngModel">
 </div>
+  <div *ngIf="adresse.dirty && adresse.invalid" class="alert-danger">*information obligatoire </div>
+
 <div class="input-group mb-3">
   <label class="input-group-text">E-mail</label>
-  <input [(ngModel)]="formateur.email" type="text" class="form-control" name="email" placeholder="Email" required>
+  <input [(ngModel)]="formateur.email" type="text" class="form-control" name="email" placeholder="Email" required #email="ngModel">
 </div>
+  <div *ngIf="email.dirty && email.invalid" class="alert-danger">*information obligatoire </div>
+
 <div class="input-group mb-3">
   <label class="input-group-text">Mot de passe</label>
-  <input [(ngModel)]="formateur.motDePasse" type="text" class="form-control" name="motDePasse" placeholder="Mot de passe" required>
+  <input [(ngModel)]="formateur.motDePasse" type="text" class="form-control" name="motDePasse" placeholder="Mot de passe" required #motDePasse="ngModel">
 </div>
+  <div *ngIf="motDePasse.dirty && motDePasse.invalid" class="alert-danger">*information obligatoire </div>
+
 <div class="input-group mb-3">
   <label class="input-group-text">Téléphone</label>
-  <input [(ngModel)]="formateur.telephone" type="text" class="form-control" name="telephone" placeholder="Telephone" required>
+  <input [(ngModel)]="formateur.telephone" type="text" class="form-control" name="telephone" placeholder="Telephone" required #telephone="ngModel">
 </div>
+  <div *ngIf="telephone.dirty && telephone.invalid" class="alert-danger">*information obligatoire </div>
+
 <div>
   <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
   <button class="btn btn-secondary"  [routerLink]="['/formateur']" routerLinkActive="active">Retour</button>

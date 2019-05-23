@@ -6,9 +6,11 @@
 <table class="table table-striped">
   <thead>
   <th>ID</th>
-  <th>titre</th>
-  <th>Date de début</th>
-  <th>Date de fin</th>
+  <th>TITRE</th>
+  <th>DATE DE DEBUT</th>
+  <th>DATE DE FIN</th>
+  <th>EDITER</th>
+  <th>SUPPRIMER</th>
 
   </thead>
   <tr *ngFor="let ftn of formations">
@@ -17,8 +19,8 @@
     <td>{{ftn.dateDebut}}</td>
     <td>{{ftn.dateFin}}</td>
 
-    <td><button class="btn btn-warning" [routerLink]="['/formation/edit',ftn.id]" routerLinkActive="active">modifier</button>&nbsp;
-      <button class="btn btn-danger" (click)="delete(ftn.id)">Supprimer</button></td>
+    <td><button class="btn btn-warning" [routerLink]="['/formation/edit',ftn.id]" routerLinkActive="active">EDITER</button>&nbsp;</td>
+     <td> <button class="btn btn-danger" (click)="delete(ftn.id)">SUPPRIMER</button></td>
   </tr>
 
 
