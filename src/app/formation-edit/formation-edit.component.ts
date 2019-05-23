@@ -120,6 +120,6 @@ export class FormationEditComponent implements OnInit {
   }
 
   goPDF() {
-    this.router.navigate(['/formation', 'ajouté', this.formation.titre]);
+    this.router.navigate(['/planning', this.formation.id]);
   }
 }
