@@ -41,6 +41,18 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { StagiaireComponent } from './stagiaire/stagiaire.component';
 import { StagiaireEditComponent } from './stagiaire-edit/stagiaire-edit.component';
+import { AdministrateurComponent } from './administrateur/administrateur.component';
+import { AdministrateurEditComponent } from './administrateur-edit/administrateur-edit.component';
+import {AdministrateurService} from './administrateur.service';
+import {FormationService} from './formation.service';
+import {GestionnaireService} from './gestionnaire.service';
+import {FormateurService} from './formateur.service';
+import {MaterielService} from './materiel.service';
+import {OrdinateurService} from './ordinateur.service';
+import {SalleService} from './salle.service';
+import {StagiaireService} from './stagiaire.service';
+import {TechnicienService} from './technicien.service';
+import {VideoProjecteurService} from './video-projecteur.service';
 
 
 
@@ -75,7 +87,9 @@ import { StagiaireEditComponent } from './stagiaire-edit/stagiaire-edit.componen
     GestionnaireComponent,
     GestionnaireEditComponent,
     StagiaireComponent,
-    StagiaireEditComponent
+    StagiaireEditComponent,
+    AdministrateurComponent,
+    AdministrateurEditComponent
   ],
   imports: [
     BrowserModule,
@@ -88,8 +102,11 @@ import { StagiaireEditComponent } from './stagiaire-edit/stagiaire-edit.componen
       useFactory: adapterFactory
     })
   ],
-  providers: [UserService, MatieresService, ModulesService, AccessAdminService,
-    AccessFormateurService, AccessGestionnaireService, AccessTechnicienService],
+  providers: [AccessAdminService,
+    AccessFormateurService, AccessGestionnaireService, AccessTechnicienService,
+    AdministrateurService, FormateurService, FormationService, GestionnaireService,
+    MaterielService,  MatieresService, ModulesService, OrdinateurService,
+    SalleService, StagiaireService, TechnicienService, UserService, VideoProjecteurService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
