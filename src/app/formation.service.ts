@@ -37,6 +37,10 @@ export class FormationService {
     return this.http.get(`${this.url}/${id}` , this.httpOptions);
   }
 
+  public findByIdModules(id): Observable<any> {
+    return this.http.get(`${this.url}/${id}/modules` , this.httpOptions);
+  }
+
   public findByTitre(titre: string): Observable<any> {
     return this.http.get(`${this.url}/${titre}`, this.httpOptions);
   }
