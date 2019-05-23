@@ -9,7 +9,7 @@
       <label> Choix de la matière </label>
     </div>
     <div class="col-3 d-flex justify-content-center">
-      <select  name="listeMatieres">
+      <select  name="listeMatieres" [(ngModel)]="module.matiere">
         <option *ngFor="let matiere of matieres" value="{{matiere.id}}">{{matiere.nom}}</option>
       </select>
     </div>
@@ -22,7 +22,7 @@
       <label> Choix de la date </label>
     </div>
     <div class="col-3 d-flex justify-content-center">
-      <input type="date" name="" value="">
+      <input type="date" name="" value="" [(ngModel)]="module.dateDebut">
     </div>
   </div>
   <!-- CHOIX DE LA DATE -->
@@ -33,15 +33,15 @@
       <label> Choix du formateur </label>
     </div>
     <div class="col-3 d-flex justify-content-center">
-      <select name="listeFormateur">
-        <option *ngFor="let formateur of formateurs" value="">{{formateur.nom}}</option>
+      <select name="listeFormateur" [(ngModel)]="module.formateur">
+        <option *ngFor="let formateur of formateurs" value="{{formateur.id}}">{{formateur.nom}}</option>
       </select>
     </div>
   </div>
   <!-- CHOIX DU FORMATEUR -->
 
   <div class="row justify-content-center">
-    <button class="btn btn-success m-2" type="button" name="button">Ajouter ce Module</button>
+    <button class="btn btn-success m-2" type="button" name="button" (click)="add()">Ajouter ce Module</button>
     <button class="btn btn-info m-2" type="button" name="button">Fin du planning</button>
   </div>
 
@@ -70,9 +70,9 @@
   <tbody>
   <tr *ngFor="let module of modules">
     <td>{{module.id}}</td>
-    <td>{{module.nom}}</td>
-    <td><button class="btn btn-secondary" [routerLink]="['/produit', produit.id]" routerLinkActive="active">Editer</button></td>
-    <td><button class="btn btn-danger" (click)="delete(produit.id)">Supprimer</button></td>
+    <td>{{module.matiere.nom}}</td>
+<!--    <td><button class="btn btn-secondary" [routerLink]="['/produit', produit.id]" routerLinkActive="active">Editer</button></td>-->
+    <td><button class="btn btn-danger" (click)="delete(module.id)">Supprimer</button></td>
   </tr>
   </tbody>
 </table>
