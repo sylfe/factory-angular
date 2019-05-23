@@ -30,6 +30,8 @@ import {GestionnaireComponent} from './gestionnaire/gestionnaire.component';
 import {GestionnaireEditComponent} from './gestionnaire-edit/gestionnaire-edit.component';
 import {StagiaireComponent} from './stagiaire/stagiaire.component';
 import {StagiaireEditComponent} from './stagiaire-edit/stagiaire-edit.component';
+import {AdministrateurComponent} from './administrateur/administrateur.component';
+import {AdministrateurEditComponent} from './administrateur-edit/administrateur-edit.component';
 
 
 
@@ -92,6 +94,11 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'technicien/:action/:nom', component: TechnicienComponent},
   { path : 'technicien/edit', component: TechnicienEditComponent},
   { path : 'technicien/:id', component: TechnicienEditComponent},
+
+  { path : 'administrateurs', component: AdministrateurComponent},
+  { path : 'administrateur/:action/:nom', component: AdministrateurComponent},
+  { path : 'administrateur/edit', component: AdministrateurEditComponent},
+  { path : 'administrateur/edit/:id', component: AdministrateurEditComponent},
 
   { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
   { path : 'testinit', component: TestComponentComponent},
