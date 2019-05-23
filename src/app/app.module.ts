@@ -54,6 +54,7 @@ import {StagiaireService} from './stagiaire.service';
 import {TechnicienService} from './technicien.service';
 import {VideoProjecteurService} from './video-projecteur.service';
 import { OrdinateurDispoComponent } from './ordinateur-dispo/ordinateur-dispo.component';
+import { SalleDispoComponent } from './salle-dispo/salle-dispo.component';
 
 
 
@@ -91,7 +92,8 @@ import { OrdinateurDispoComponent } from './ordinateur-dispo/ordinateur-dispo.co
     StagiaireEditComponent,
     AdministrateurComponent,
     AdministrateurEditComponent,
-    OrdinateurDispoComponent
+    OrdinateurDispoComponent,
+    SalleDispoComponent
   ],
   imports: [
     BrowserModule,
