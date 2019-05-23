@@ -43,9 +43,6 @@ export class FormationEditComponent implements OnInit {
           //console.log(this.formation);
           this.module.formation = this.formation;
          // console.log('blabla' + this.module.formation.id);
-          this.listMatiere();
-          this.listFormateur();
-          this.listModule();
         });
       }
     });
@@ -120,5 +117,9 @@ export class FormationEditComponent implements OnInit {
     }, error => {
       console.log('error');
     });
+  }
+
+  goPDF() {
+    this.router.navigate(['/formation', 'ajouté', this.formation.titre]);
   }
 }

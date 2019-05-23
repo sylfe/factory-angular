@@ -3,13 +3,15 @@ import {FormationService} from '../formation.service';
 import {Formation} from '../model/formation';
 import {ModulesService} from '../modules.service';
 import {Module} from '../model/module';
-
+import {ActivatedRoute, Router} from '@angular/router';
 @Component({
-  selector: 'app-test-page',
-  templateUrl: './test-page.component.html',
-  styleUrls: ['./test-page.component.css']
+  selector: 'app-planning-vue',
+  templateUrl: './planning-vue.component.html',
+  styleUrls: ['./planning-vue.component.css']
 })
-export class TestPageComponent implements OnInit {
+export class PlanningVueComponent implements OnInit {
+
+
 
   private date: Date = new Date();
   private today: number = Date.now();
@@ -25,29 +27,35 @@ export class TestPageComponent implements OnInit {
   private monthFormation = [];
   private formation: Formation;
   private modules: Module[] = []
-  constructor( private formationService: FormationService, private moduleService: ModulesService) { }
+  constructor( private formationService: FormationService, private moduleService: ModulesService,
+               private activeRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.formationService.findByIdModules(1).subscribe( rez => {
-      this.formation = rez;
-      console.log(rez);
-      for (let module of this.formation.modules){
-        this.moduleService.findByIdMatiere(module.id).subscribe( rez => {
-          this.modules.push(rez);
+    this.activeRoute.params.subscribe( params => {
+      if(params.id){
+        this.formationService.findByIdModules(params.id).subscribe( rez => {
+          this.formation = rez;
+          console.log(rez);
+          for (let module of this.formation.modules){
+            this.moduleService.findByIdMatiere(module.id).subscribe( rez => {
+              this.modules.push(rez);
+            })
+          }
+          this.monthStart = new Date(this.formation.dateDebut);
+          console.log(this.monthStart);
+          this.monthEnd = new Date(this.formation.dateFin);
+          let monthNow = this.monthStart.getMonth();
+          while (monthNow <= this.monthEnd.getMonth()) {
+
+            this.monthFormation.push(monthNow);
+            monthNow ++;
+          }
+          console.log('months' + this.monthFormation);
+          console.log(this.formation.modules[0]);
         })
       }
-      this.monthStart = new Date(this.formation.dateDebut);
-      console.log(this.monthStart);
-      this.monthEnd = new Date(this.formation.dateFin);
-      let monthNow = this.monthStart.getMonth();
-      while (monthNow <= this.monthEnd.getMonth()) {
-
-        this.monthFormation.push(monthNow);
-        monthNow ++;
-      }
-      console.log('months' + this.monthFormation);
-      console.log(this.formation.modules[0]);
     })
+
 
   }
 

@@ -55,6 +55,7 @@ import {TechnicienService} from './technicien.service';
 import {VideoProjecteurService} from './video-projecteur.service';
 import { OrdinateurDispoComponent } from './ordinateur-dispo/ordinateur-dispo.component';
 import { SalleDispoComponent } from './salle-dispo/salle-dispo.component';
+import { PlanningVueComponent } from './planning-vue/planning-vue.component';
 
 
 
@@ -93,7 +94,8 @@ import { SalleDispoComponent } from './salle-dispo/salle-dispo.component';
     AdministrateurComponent,
     AdministrateurEditComponent,
     OrdinateurDispoComponent,
-    SalleDispoComponent
+    SalleDispoComponent,
+    PlanningVueComponent
   ],
   imports: [
     BrowserModule,

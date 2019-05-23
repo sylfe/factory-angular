@@ -135,16 +135,16 @@ h6{
     </div>
 
     <!-- Modules + Formateurs -->
-    <div class="col-6 border border-black">
+    <div  class="col-6 border border-black">
 
-      <div class="row">
+      <div *ngFor="let mod of modules" class="row">
 
         <!-- Modules -->
         <div class="col-6">
 
           <div class="row">
             <div class="fiveDays col-md-12 text-center bkg-1 border-right border-bottom border-black d-flex align-items-center justify-content-center">
-              <h6>{{formation.modules[0].id}}{{formation.modules[0].dateDebut}}</h6>
+              <h6>ID {{mod.id}}, {{mod.dateDebut}},  {{mod.matiere.nom}}</h6>
             </div>
           </div>
 
@@ -156,7 +156,7 @@ h6{
           <div class="row">
             <div class="fiveDays col-md-12 border-right border-bottom border-black d-flex align-items-center justify-content-center">
               <div class="text-center">
-                <h5>Jérémy</h5>
+                <h5>{{mod.formateur.nom}}</h5>
               </div>
             </div>
           </div>

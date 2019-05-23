@@ -24,7 +24,7 @@
 
 <div class="input-group mb-3">
   <label class="input-group-text">E-mail</label>
-  <input [(ngModel)]="formateur.email" type="text" class="form-control" name="email" placeholder="Email" required #email="ngModel">
+  <input [(ngModel)]="formateur.email" type="email" class="form-control" name="email" placeholder="Email" required #email="ngModel">
 </div>
   <div *ngIf="email.dirty && email.invalid" class="alert-danger">*information obligatoire </div>
 

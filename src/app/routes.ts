@@ -33,6 +33,7 @@ import {StagiaireEditComponent} from './stagiaire-edit/stagiaire-edit.component'
 import {AdministrateurComponent} from './administrateur/administrateur.component';
 import {AdministrateurEditComponent} from './administrateur-edit/administrateur-edit.component';
 import {OrdinateurDispoComponent} from './ordinateur-dispo/ordinateur-dispo.component';
+import {PlanningVueComponent} from './planning-vue/planning-vue.component';
 
 
 
@@ -100,6 +101,8 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'administrateur/:action/:nom', component: AdministrateurComponent},
   { path : 'administrateur/edit', component: AdministrateurEditComponent},
   { path : 'administrateur/:id', component: AdministrateurEditComponent},
+
+  { path : 'planning/:id', component: PlanningVueComponent},
 
   { path : 'test', component: OrdinateurDispoComponent},
   { path : 'test2', component: TestPageComponent},
