@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Ordinateur} from '../model/ordinateur';
 import {OrdinateurService} from '../ordinateur.service';
+import {StagiaireService} from '../stagiaire.service';
 
 @Component({
   selector: 'app-ordinateurs',
@@ -13,7 +14,7 @@ export class OrdinateursComponent implements OnInit {
   private message: string = null;
 
 
-  constructor(private ordinateurService: OrdinateurService, private activatedRoute: ActivatedRoute) { }
+  constructor(private ordinateurService: OrdinateurService, private stagiaireService: StagiaireService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
