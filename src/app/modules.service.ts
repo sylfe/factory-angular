@@ -2,20 +2,21 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Module} from './model/module';
+import {urlEnCours} from './urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ModulesService {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/module';
+  private url = urlEnCours + '/la-factory/rest/module';
   private headers: HttpHeaders;
   private httpOptions: any;
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization' : 'Basic ' + btoa('benjamin@benjamin.fr:benjamin'),
+      'Authorization' : 'Basic ' + sessionStorage.getItem('basic'),
     });
     this.httpOptions = { headers: this.headers};
   }
@@ -33,7 +34,7 @@ export class ModulesService {
   }
 
   public findById(id: number): Observable<any> {
-    return this.http.get(`${this.url}/${id}`, this.httpOptions);
+    return this.http.get(`${this.url}/${id}` + '/matiere/formation/formateur', this.httpOptions);
   }
 
 
@@ -60,6 +61,6 @@ export class ModulesService {
       }
     };
     console.log(p);
-    return this.http.post( `${this.url}`, p, this.httpOptions );
+    return this.http.post( `${this.url}` + '/matiere/formation/formateur', p, this.httpOptions );
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Salle} from './model/salle';
@@ -28,7 +28,7 @@ export class SalleService {
   }
 
   public delete(id: number): Observable<any> {
-    return this.http.delete(`${this.url}/${id}`, this.httpOptions );
+    return this.http.delete(`${this.url}/${id}`, this.httpOptions);
   }
 
   public findById(id): Observable<any> {
@@ -37,18 +37,51 @@ export class SalleService {
 
 
   public insert(salle: Salle): Observable<any> {
-    const v = {
-      'id': salle.id,
-      'code': salle.code,
-      'coutJournee': salle.coutJournee,
-      'videoprojecteur': { id : salle.videoprojecteur.id},
-      'capacite': salle.capacite,
+    if (salle.videoprojecteur.id > 0) {
+      console.log("Avec videoproj");
+      const v = {
+        'id': salle.id,
+        'code': salle.code,
+        'coutJournee': salle.coutJournee,
+        'videoprojecteur': {id: salle.videoprojecteur.id},
+        'capacite': salle.capacite
+      };
+      return this.http.post(`${this.url}`, v, this.httpOptions);
+    } else {
+      console.log("Sans videoproj");
+      const v = {
+        'id': salle.id,
+        'code': salle.code,
+        'coutJournee': salle.coutJournee,
+        'videoprojecteur': null,
+        'capacite': salle.capacite
+      };
+      return this.http.post(`${this.url}`, v, this.httpOptions);
     }
-    return this.http.post(`${this.url}`, v, this.httpOptions);
   }
 
   public update(salle: Salle): Observable<any> {
-    return this.http.put(`${this.url}/${salle.id}`, salle, this.httpOptions);
+    if (salle.videoprojecteur.id > 0) {
+      console.log("Avec videoproj");
+      const v = {
+        'id': salle.id,
+        'code': salle.code,
+        'coutJournee': salle.coutJournee,
+        'videoprojecteur': {id: salle.videoprojecteur.id},
+        'capacite': salle.capacite
+      };
+      return this.http.put(`${this.url}/${salle.id}`, salle, this.httpOptions);
+    } else {
+      console.log("Sans videoproj");
+      const v = {
+        'id': salle.id,
+        'code': salle.code,
+        'coutJournee': salle.coutJournee,
+        'videoprojecteur': null,
+        'capacite': salle.capacite
+      };
+      return this.http.put(`${this.url}/${salle.id}`, salle, this.httpOptions);
+    }
   }
 
 
