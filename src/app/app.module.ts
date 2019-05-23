@@ -90,7 +90,7 @@ import { OrdinateurDispoComponent } from './ordinateur-dispo/ordinateur-dispo.co
     StagiaireComponent,
     StagiaireEditComponent,
     AdministrateurComponent,
-    AdministrateurEditComponent
+    AdministrateurEditComponent,
     OrdinateurDispoComponent
   ],
   imports: [
