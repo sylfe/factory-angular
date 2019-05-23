@@ -3,18 +3,23 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {User} from './model/user';
 import {Observable} from 'rxjs';
 import {CanActivate, Router} from '@angular/router';
+import {FormateurService} from './formateur.service';
+import {GestionnaireService} from './gestionnaire.service';
+import {TechnicienService} from './technicien.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService implements CanActivate {
 
-  private url = 'http://localhost:8080/la-factory/rest/user';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/user';
   private headers: HttpHeaders;
   private httpOptions: any;
 
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router,
+              private formateurService: FormateurService, private gestionnaireService: GestionnaireService,
+              private technicienService: TechnicienService) {
 
     this.headers = new HttpHeaders({
       'Content-Type': 'application/JSON',
@@ -45,16 +50,28 @@ export class UserService implements CanActivate {
   public login(user: User) {
     sessionStorage.setItem('isLoggedIn', 'true');
     sessionStorage.setItem('login', user.email);
+    sessionStorage.setItem('mdp', user.motDePasse);
+    sessionStorage.setItem('basic', btoa(user.email + ':' + user.motDePasse));
     let us: User;
     this.findByEmail(user.email).subscribe( result => {
       us = result;
+      this.gestionnaireService.findById(us.id).subscribe( rez => {
+        sessionStorage.setItem('gestionnaire', 'true');
+      })
+      this.technicienService.findById(us.id).subscribe( rez => {
+        sessionStorage.setItem('technicien', 'true');
+      })
+      this.formateurService.findById(us.id).subscribe( rez => {
+        sessionStorage.setItem('formateur', 'true');
+      })
       console.log(us);
       sessionStorage.setItem('droits', JSON.stringify(us.droits));
       console.log(sessionStorage.getItem('droits'));
       console.log(JSON.parse(sessionStorage.getItem('droits'))[0]['droit']);
       const hey = JSON.parse(sessionStorage.getItem('droits'));
-      for(const d in hey){
+      for(const d in hey) {
           console.log(hey[d]['droit']);
+          if(hey[d]['droit'] == 'DROIT_ADMIN') { sessionStorage.setItem('admin', 'true');}
         }
 
     })
