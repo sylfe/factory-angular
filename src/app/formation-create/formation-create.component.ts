@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Formation} from "../model/formation";
-import {ActivatedRoute, Router} from "@angular/router";
-import {FormationService} from "../formation.service";
+import {Formation} from '../model/formation';
+import {ActivatedRoute, Router} from '@angular/router';
+import {FormationService} from '../formation.service';
+import {SalleService} from '../salle.service';
+import {Salle} from '../model/salle';
+
 
 @Component({
   selector: 'app-formation-create',
@@ -10,9 +13,9 @@ import {FormationService} from "../formation.service";
 })
 export class FormationCreateComponent implements OnInit {
   private formation: Formation = new Formation();
-
+private salles: Salle[];
 private verif: boolean;
-  constructor(private activatedRoute: ActivatedRoute, private formationService: FormationService, private router: Router) {
+ constructor(private activatedRoute: ActivatedRoute, private formationService: FormationService,  private salleService: SalleService, private router: Router) {
   }
 
   ngOnInit() {
@@ -23,7 +26,9 @@ private verif: boolean;
         });
       }
     });
+    this.listSalle();
   }
+
 
   save() {
     if (this.formation.id) {
@@ -50,4 +55,14 @@ private verif: boolean;
       return this.verif;
     }
   }
+
+  listSalle() {
+    this.salleService.list().subscribe( data => {
+      this.salles = data;
+      console.log(this.salles);
+    }, error => {
+      console.log('error');
+    });
+  }
+
 }
