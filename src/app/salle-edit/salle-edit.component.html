@@ -1,5 +1,5 @@
 <div class="form-group">
-  <ng-container *ngIf="salle.id" ; else ajouter>
+  <ng-container *ngIf="salle.id; else ajouter">
     <h1>Modifier une salle</h1>
   </ng-container>
   <ng-template #ajouter>
@@ -28,6 +28,7 @@
   <!--
     <div class="input-group mb-3">
       <label class="input-group-text">Vidéoprojecteur</label>
+      <button [(ngModel)]="salleAvecVideo" type="radio" name="videoprojecteur" value="true" (click)="video()">Oui</button>
       <button [(ngModel)]="salleAvecVideo" type="radio" name="videoprojecteur" value="false" (click)="video()">Non</button>
     </div>
   -->
