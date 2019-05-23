@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormationService} from '../formation.service';
 import {SalleService} from '../salle.service';
 import {Salle} from '../model/salle';
-import {until} from "selenium-webdriver";
+import {until} from 'selenium-webdriver';
 import elementIsSelected = until.elementIsSelected;
 import {VideoProjecteur} from "../model/videoProjecteur";
 
@@ -32,7 +32,6 @@ private verif: boolean;
     this.salleService.list().subscribe(result => {
       this.salles = result;
     });
-    this.formation.salle = new Salle();
     this.listSalle();
   }
 

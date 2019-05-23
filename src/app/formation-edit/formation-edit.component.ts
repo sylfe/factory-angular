@@ -19,10 +19,9 @@ export class FormationEditComponent implements OnInit {
   private matieres: Matiere[];
   private formateurs: Formateur[];
   private modules: Module[];
+
   //Le module qu'on est entrain de créer:
   private module: Module = new Module();
-  //La matière qu'on a sélectionné:
-  private matiere: Matiere = new Matiere();
 
   private formation: Formation = new Formation();
 
@@ -41,9 +40,9 @@ export class FormationEditComponent implements OnInit {
           console.log(data.id)
           console.log('tryfind');
           this.formation = data;
-          console.log(this.formation);
+          //console.log(this.formation);
           this.module.formation = this.formation;
-          console.log('blabla' + this.module.formation.id);
+         // console.log('blabla' + this.module.formation.id);
 
         });
       }
@@ -79,13 +78,15 @@ export class FormationEditComponent implements OnInit {
   add() {
     //this.module.formation = this.formation;
     this.send();
-    this.listModule();
   }
 
   send() {
-      console.log('ok');
+      console.log('Voici le module sauvé dans la base: ');
       console.log(this.module);
+      console.log('Son formateur: ' + this.module.formateur.nom);
+      console.log('Sa matière: ' + this.module.matiere.nom);
       this.moduleService.insert(this.module).subscribe(result => {
+        this.listModule();
         }, error => {
           console.log(error);
         }
