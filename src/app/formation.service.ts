@@ -33,7 +33,7 @@ export class FormationService {
   }
 
   public findById(id): Observable<any> {
-    return this.http.get(`${this.url}/${id}`, this.httpOptions);
+    return this.http.get(`${this.url}/${id}` + '/salle', this.httpOptions);
   }
 
   public findByTitre(titre: string): Observable<any> {
