@@ -16,7 +16,7 @@
   </div>
 
   <div class="input-group mb-3">
-    <label class="input-group-text" type="text">Coût(€)/jour</label>
+    <label class="input-group-text" type="text">Coût(€/jour)</label>
     <input [(ngModel)]="salle.coutJournee" name="coutJournee">
   </div>
 
@@ -25,31 +25,22 @@
     <input [(ngModel)]="salle.capacite" name="capacite">
   </div>
 
-  <!--
-    <div class="input-group mb-3">
-      <label class="input-group-text">Vidéoprojecteur</label>
-      <button [(ngModel)]="salleAvecVideo" type="radio" name="videoprojecteur" value="true" (click)="video()">Oui</button>
-      <button [(ngModel)]="salleAvecVideo" type="radio" name="videoprojecteur" value="false" (click)="video()">Non</button>
-    </div>
-  -->
 
-  <!-- liste déroulante des vidéoproj -->
-  <div>
+  <div class="input-group mb-3">
+    <label class="input-group-text">Vidéoprojecteur</label>
+   <button [(ngModel)]="salleAvecVideo" name="videoprojecteur" value="true" (click)="video()">Oui</button>
+    <button [(ngModel)]="salleAvecVideo" name="videoprojecteur" value="false" (click)="video()">Non</button>
+  </div>
+
+
+  <div *ngIf="salleAvecVideo == true">
     <select class="form-control" id="videoproj" name="videoproj" [(ngModel)]="salle.videoprojecteur.id">
-      <option [value]="null">Non</option>
+      <option [value]="pasVideop.id" [attr.selected]="salle.videoprojecteur.id ? true : null">Non</option>
       <option *ngFor="let vp of videoprojecteurs" [value]="vp.id" [attr.selected]="salle.videoprojecteur.id ? true : null">{{vp.id}}. {{vp.code}}</option>
     </select>
   </div>
-  <!--
-  <select [(ngModel)]="passenger.Title">
-  <option *ngFor="let title of titleArray" [value]="title.Value" [attr.selected]="passenger.Title==title.Text ? true : null"> {{title.Text}}
-  </option>
-      </select>
-  -->
 
-  <!-- <ng-template #sansVideo>
-     dispo
-   </ng-template> -->
+
 
   <div>
     <button class="btn btn-success" (click)="save()">Enregistrer</button>
