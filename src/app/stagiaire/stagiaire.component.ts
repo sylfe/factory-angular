@@ -22,6 +22,7 @@ export class StagiaireComponent implements OnInit {
   list() {
     this.stagiaireService.list().subscribe(data => {
       this.stagiaires = data;
+      console.log(this.stagiaires);
     }, error => {
       console.log(error);
     });
@@ -40,6 +41,7 @@ export class StagiaireComponent implements OnInit {
       }
     });
     this.list();
+    console.log('coucou');
   }
 
   delete(id: number) {
