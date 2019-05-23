@@ -47,6 +47,7 @@ private verif: boolean;
         console.log(result.headers);
         console.log(result);
        //this.router.navigate(['/formation/edit', this.formation.id]);
+        this.router.navigate(['/formations']);
       });
 
     }
