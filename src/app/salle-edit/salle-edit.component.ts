@@ -68,16 +68,15 @@ export class SalleEditComponent implements OnInit {
   }
 
 
-  video() {
+  video(){
     console.log('J\'ai cliqué sur : ' + this.salleAvecVideo);
-    if (this.salleAvecVideo) {
+    if(this.salleAvecVideo === false){
       this.salleAvecVideo = false;
       console.log('clic sur false : ' + this.salle.videoprojecteur.id);
-      this.salle.videoprojecteur = this.pasVideop;
+      this.salle.videoprojecteur.id = this.pasVideop.id;
       console.log('après clic : ' + this.salle.videoprojecteur.id);
     } else {
       this.salleAvecVideo = true;
-      this.salle.videoprojecteur = new VideoProjecteur();
       console.log('clic sur true : ' + this.salleAvecVideo);
     }
   }
