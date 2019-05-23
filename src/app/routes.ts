@@ -98,9 +98,9 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'administrateurs', component: AdministrateurComponent},
   { path : 'administrateur/:action/:nom', component: AdministrateurComponent},
   { path : 'administrateur/edit', component: AdministrateurEditComponent},
-  { path : 'administrateur/edit/:id', component: AdministrateurEditComponent},
+  { path : 'administrateur/:id', component: AdministrateurEditComponent},
 
   { path : 'test', component: TestPageComponent},
   { path : 'testinit', component: TestComponentComponent},
-  
+
   { path: '', redirectTo: 'home', pathMatch: 'full'}];

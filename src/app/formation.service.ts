@@ -51,8 +51,8 @@ export class FormationService {
       'dateFin': formation.dateFin
     }
     return this.http.post(`${this.url}`, f, {
-      observe: 'response',
-      headers: this.headers
+      headers: this.headers,
+      observe: 'response'
     });
   }
 }

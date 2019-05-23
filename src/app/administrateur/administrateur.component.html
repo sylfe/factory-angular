@@ -21,7 +21,7 @@
     <td>   {{ a.email }}    </td>
     <td>   {{ a.telephone }}    </td>
     <td>   {{ a.motDePasse }}    </td>
-    <td> <a class="btn btn-warning" [routerLink]="['/administrateur/edit', a.id]" routerLinkActive="active"> Editer </a>  </td>
+    <td> <a class="btn btn-warning" [routerLink]="['/administrateur/', a.id]" routerLinkActive="active"> Editer </a>  </td>
     <td> <button class="btn btn-danger" (click)="delete(a.id)">Supprimer</button> </td>
   </tr>
 </table>
