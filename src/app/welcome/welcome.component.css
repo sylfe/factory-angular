@@ -8,7 +8,6 @@ img {
   left: 0;
   width: 60%;
 }
-.toto{
 
 .h3 {
   color: whitesmoke;
@@ -25,6 +24,7 @@ p {
   color: white;
 }
 
+.toto {
   text-align: center;
   text-color: black;
   margin-left: auto;
