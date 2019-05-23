@@ -22,7 +22,7 @@ export class ModulesService {
   }
 
   public list(): Observable<any> {
-    return this.http.get(this.url, this.httpOptions);
+    return this.http.get(this.url + '/matiere/formation/formateur', this.httpOptions);
   }
 
   public findByFormation(id: number): Observable<any> {
@@ -34,7 +34,7 @@ export class ModulesService {
   }
 
   public findById(id: number): Observable<any> {
-    return this.http.get(`${this.url}/${id}`, this.httpOptions);
+    return this.http.get(`${this.url}/${id}` + '/matiere/formation/formateur', this.httpOptions);
   }
 
   public findByIdMatiere(id: number): Observable<any> {
@@ -65,6 +65,6 @@ export class ModulesService {
       }
     };
     console.log(p);
-    return this.http.post( `${this.url}`, p, this.httpOptions );
+    return this.http.post( `${this.url}` + '/matiere/formation/formateur', p, this.httpOptions );
   }
 }
