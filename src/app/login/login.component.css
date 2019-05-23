@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+}
+img{
+  -webkit-transition:-webkit-transform .9s;
+  transition:transform .9s;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+img:hover{
+  -webkit-transform:rotate(540deg);
+  transform:rotate(540deg);
+}
