@@ -1,0 +1,14 @@
+img {
+  background-image: url("http://www.gif.ovh/french-gif/Informaticien%20Gif/Informaticien%20Gif%20(23).gif");
+  position: fixed;
+  height: 60%;
+  left: 0;
+  width: 60%;
+}
+.toto{
+
+  text-align: center;
+  text-color: black;
+  margin-left: auto;
+  margin-right: auto;
+}
