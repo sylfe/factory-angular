@@ -43,7 +43,9 @@ export class FormationEditComponent implements OnInit {
           //console.log(this.formation);
           this.module.formation = this.formation;
          // console.log('blabla' + this.module.formation.id);
-
+          this.listMatiere();
+          this.listFormateur();
+          this.listModule();
         });
       }
     });
