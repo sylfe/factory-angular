@@ -33,9 +33,29 @@ export class FormationCreateComponent implements OnInit {
     } else {
       this.formationService.insert(this.formation).subscribe(result => {
         console.log(result);
-        this.router.navigate(['/formation', 'edit', result.id]);
-        
+        console.log(result.headers.location);
+       // this.router.navigate(['/formation/edit', this.formation.id]);
+        this.router.navigate(['/formations']);
       });
+
+    }
+  }
+
+  check() {
+    for ( const f in this.formationService.list()) {
+
+      if ( f === this.formation.titre) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+  checkDate() {
+    if (this.formation.dateDebut > this.formation.dateFin) {
+      return true;
+    } else {
+      return false;
     }
   }
 }

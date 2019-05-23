@@ -94,12 +94,12 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'technicien/:action/:nom', component: TechnicienComponent},
   { path : 'technicien/edit', component: TechnicienEditComponent},
   { path : 'technicien/:id', component: TechnicienEditComponent},
+  { path : 'test', component: TestPageComponent},
 
   { path : 'administrateurs', component: AdministrateurComponent},
   { path : 'administrateur/:action/:nom', component: AdministrateurComponent},
   { path : 'administrateur/edit', component: AdministrateurEditComponent},
   { path : 'administrateur/edit/:id', component: AdministrateurEditComponent},
 
-  { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
   { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];
