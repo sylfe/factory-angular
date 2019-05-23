@@ -12,17 +12,17 @@
        </div>
       </li>
 -->
-      <li class="nav-item"><a [routerLink]="['/ordinateurs']" routerLink='Active' class="nav-link">ordinateurs</a></li>
-      <li class="nav-item"><a [routerLink]="['/videoprojecteurs']" routerLink='Active' class="nav-link">video-proj</a></li>
-      <li class="nav-item"><a [routerLink]="['/salles']" routerLink='Active' class="nav-link">salles</a></li>
-      <li class="nav-item"><a [routerLink]="['/formations']" routerLink='Active' class="nav-link">formations</a></li>
-      <li class="nav-item"><a [routerLink]="['/techniciens']" routerLink='Active' class="nav-link">techniciens</a></li>
-      <li class="nav-item"><a [routerLink]="['/formateurs']" routerLink='Active' class="nav-link">formateurs</a></li>
-      <li class="nav-item"><a [routerLink]="['/gestionnaires']" routerLink='Active' class="nav-link">gestionnaires</a></li>
-      <li class="nav-item"><a [routerLink]="['/administrateurs']" routerLink='Active' class="nav-link">administrateurs</a></li>
-      <li class="nav-item"><a [routerLink]="['/stagiaires']" routerLink='Active' class="nav-link">stagiaires</a></li>
-      <li class="nav-item"><a [routerLink]="['/matieres']" routerLink='Active' class="nav-link">matieres</a></li>
-      <li class="nav-item"><a [routerLink]="['/test2']" routerLink='Active' class="nav-link">test</a></li>
+      <li class="nav-item"><a [routerLink]="['/ordinateurs']" routerLink='Active' class="nav-link">Ordinateurs</a></li>
+      <li class="nav-item"><a [routerLink]="['/videoprojecteurs']" routerLink='Active' class="nav-link">Videoprojecteurs</a></li>
+      <li class="nav-item"><a [routerLink]="['/salles']" routerLink='Active' class="nav-link">Salles</a></li>
+      <li class="nav-item"><a [routerLink]="['/matieres']" routerLink='Active' class="nav-link">Matières</a></li>
+      <li class="nav-item"><a [routerLink]="['/formations']" routerLink='Active' class="nav-link">Formations</a></li>
+      <li class="nav-item"><a [routerLink]="['/techniciens']" routerLink='Active' class="nav-link">Techniciens</a></li>
+      <li class="nav-item"><a [routerLink]="['/formateurs']" routerLink='Active' class="nav-link">Formateurs</a></li>
+      <li class="nav-item"><a [routerLink]="['/gestionnaires']" routerLink='Active' class="nav-link">Gestionnaires</a></li>
+      <li class="nav-item"><a [routerLink]="['/administrateurs']" routerLink='Active' class="nav-link">Administrateurs</a></li>
+      <li class="nav-item"><a [routerLink]="['/stagiaires']" routerLink='Active' class="nav-link">Stagiaires</a></li>
+      <li class="nav-item"><a [routerLink]="['/test2']" routerLink='Active' class="nav-link">Test</a></li>
 
       <!--      <li class="nav-item dropdown">-->
 <!--        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User</a>-->
@@ -37,13 +37,13 @@
       <ng-container *ngIf="!authentification.isLogged; else connect2">
         <!-- lien secure -->
         <li class="nav-item">
-        <a [routerLink]="['/login']" routerLinkActive="active" class="nav-link">login</a></li>
+        <a [routerLink]="['/login']" routerLinkActive="active" class="nav-link">Login</a></li>
 
       </ng-container>
 
       <ng-template #connect2>
         <li class="nav-item">
-        <button class="btn btn-dark nav-link" (click)="logout()">log out</button></li>
+        <button class="btn btn-dark nav-link" (click)="logout()">Log out</button></li>
       </ng-template>
 
 
