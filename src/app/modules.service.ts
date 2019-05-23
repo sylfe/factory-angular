@@ -22,7 +22,7 @@ export class ModulesService {
   }
 
   public list(): Observable<any> {
-    return this.http.get(this.url, this.httpOptions);
+    return this.http.get(this.url + '/matiere/formation/formateur', this.httpOptions);
   }
 
   public findByFormation(id: number): Observable<any> {
@@ -36,7 +36,6 @@ export class ModulesService {
   public findById(id: number): Observable<any> {
     return this.http.get(`${this.url}/${id}` + '/matiere/formation/formateur', this.httpOptions);
   }
-
 
   public login(options): Observable<any> {
     return this.http.get(`${this.url}/1`, options);
