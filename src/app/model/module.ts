@@ -5,9 +5,10 @@ import {Formation} from "./formation";
 
 export class Module {
 
+  private _matiere: Matiere = new Matiere();
+  private _formateur: Formateur = new Formateur();
 
-  constructor(private _id?: number, private _dateDebut?: Date, private _matiere?: Matiere,
-              private _formateur?: Formateur, private _formation?: Formation, private _version?: number) {
+  constructor(private _id?: number, private _dateDebut?: Date, private _formation?: Formation, private _version?: number) {
   }
 
 
