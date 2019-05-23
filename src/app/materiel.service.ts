@@ -7,7 +7,7 @@ import {Materiel} from './model/materiel';
   providedIn: 'root'
 })
 export class MaterielService {
-  private url = 'http://localhost:8080/la-factory/rest/materiel';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/materiel';
   private headers: HttpHeaders;
   private httpOptions: any;
 

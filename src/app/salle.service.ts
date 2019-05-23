@@ -8,7 +8,7 @@ import {Salle} from './model/salle';
 })
 export class SalleService {
 //  private url = 'http://10.0.0.205:8080/la-factory/rest/salle';
-  private url = 'http://localhost:8080/la-factory/rest/salle';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/salle';
   private headers: HttpHeaders;
   private httpOptions: any;
 

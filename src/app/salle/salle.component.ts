@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {SalleService} from '../salle.service';
 import {Salle} from '../model/salle';
+import {VideoProjecteur} from '../model/videoProjecteur';
+import {VideoProjecteurService} from '../video-projecteur.service';
 
 @Component({
   selector: 'app-salle',
@@ -10,10 +12,12 @@ import {Salle} from '../model/salle';
 })
 export class SalleComponent implements OnInit {
   private salles: Salle[];
+  private videoprojecteurs: VideoProjecteur[];
   private message: string = null;
 
 
-  constructor(private salleService: SalleService, private activatedRoute: ActivatedRoute) { }
+  constructor(private salleService: SalleService, private videoprojecteurService: VideoProjecteurService,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -22,6 +26,10 @@ export class SalleComponent implements OnInit {
       }
     });
     this.list();
+
+    this.videoprojecteurService.list().subscribe(result => {
+      this.videoprojecteurs = result;
+    });
   }
 
   delete(id: number) {
@@ -29,6 +37,7 @@ export class SalleComponent implements OnInit {
         this.list();
       }
     );
+
   }
 
   list() {

@@ -8,7 +8,7 @@ import {Module} from './model/module';
 })
 export class ModulesService {
 
-  private url = 'http://localhost:8080/la-factory/rest/module';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/module';
   private headers: HttpHeaders;
   private httpOptions: any;
 

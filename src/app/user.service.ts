@@ -12,7 +12,7 @@ import {TechnicienService} from './technicien.service';
 })
 export class UserService implements CanActivate {
 
-  private url = 'http://localhost:8080/la-factory/rest/user';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/user';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -57,13 +57,13 @@ export class UserService implements CanActivate {
       us = result;
       this.gestionnaireService.findById(us.id).subscribe( rez => {
         sessionStorage.setItem('gestionnaire', 'true');
-      })
+      });
       this.technicienService.findById(us.id).subscribe( rez => {
         sessionStorage.setItem('technicien', 'true');
-      })
+      });
       this.formateurService.findById(us.id).subscribe( rez => {
         sessionStorage.setItem('formateur', 'true');
-      })
+      });
       console.log(us);
       sessionStorage.setItem('droits', JSON.stringify(us.droits));
       console.log(sessionStorage.getItem('droits'));
