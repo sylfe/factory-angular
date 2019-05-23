@@ -1,16 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="collapse navbar-collapse" id="navbarText">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active"><a [routerLink]="['/']" routerLink='Active' class="nav-link">home</a></li>
-<!--      <li class="nav-item dropdown" dropdown>-->
-<!--        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Materiel</a>-->
-<!--        <div class="dropdown-menu dropdown dropdown-primary" role="menu" >-->
-<!--          <a [routerLink]="['/ordinateurs']" routerLink='Active' class="dropdown-item">ordinateurs</a>-->
-<!--          <a [routerLink]="['/videoprojecteurs']" routerLink='Active' class="dropdown-item">video-proj</a>-->
-<!--          <a [routerLink]="['/salles']" routerLink='Active' class="dropdown-item">salles</a>-->
-<!--        </div>-->
-<!--      </li>-->
-
+<!--
+      <li class="nav-item dropdown" dropdown>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Materiels</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a [routerLink]="['/ordinateurs']" routerLink='Active' class="dropdown-item">ordinateurs</a>
+          <a [routerLink]="['/videoprojecteurs']" routerLink='Active' class="dropdown-item">video-proj</a>
+         <a [routerLink]="['/salles']" routerLink='Active' class="dropdown-item">salles</a>
+       </div>
+      </li>
+-->
       <li class="nav-item"><a [routerLink]="['/ordinateurs']" routerLink='Active' class="nav-link">ordinateurs</a></li>
       <li class="nav-item"><a [routerLink]="['/videoprojecteurs']" routerLink='Active' class="nav-link">video-proj</a></li>
       <li class="nav-item"><a [routerLink]="['/salles']" routerLink='Active' class="nav-link">salles</a></li>
@@ -20,6 +21,7 @@
       <li class="nav-item"><a [routerLink]="['/techniciens']" routerLink='Active' class="nav-link">techniciens</a></li>
       <li class="nav-item"><a [routerLink]="['/formateurs']" routerLink='Active' class="nav-link">formateur</a></li>
       <li class="nav-item"><a [routerLink]="['/gestionnaires']" routerLink='Active' class="nav-link">gestionnaires</a></li>
+      <li class="nav-item"><a [routerLink]="['/stagiaires']" routerLink='Active' class="nav-link">stagiaires</a></li>
       <li class="nav-item"><a [routerLink]="['/matieres']" routerLink='Active' class="nav-link">matieres</a></li>
 <!--      <li class="nav-item dropdown">-->
 <!--        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User</a>-->
@@ -47,7 +49,16 @@
     </ul>
   </div>
 </nav>
-
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">Action</button>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>
 <div class="container">
   <router-outlet></router-outlet>
 
