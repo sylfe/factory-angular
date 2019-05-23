@@ -25,6 +25,10 @@ export class VideoProjecteurService {
     return this.http.get(this.url, this.httpOptions);
   }
 
+  public listLibre(): Observable<any> {
+    return this.http.get(`${this.url}/libre`, this.httpOptions);
+  }
+
   public delete(id: number): Observable<any> {
     return this.http.delete(`${this.url}/${id}`, this.httpOptions );
   }

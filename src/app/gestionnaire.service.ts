@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
-import {Formateur} from './model/formateur';
 import {Gestionnaire} from './model/gestionnaire';
 
 @Injectable({
