@@ -4,6 +4,8 @@ import {Stagiaire} from '../model/stagiaire';
 import { StagiaireService} from '../stagiaire.service';
 import {OrdinateurService} from '../ordinateur.service';
 import {Ordinateur} from '../model/ordinateur';
+import {FormationService} from '../formation.service';
+import {Formation} from '../model/formation';
 
 @Component({
   selector: 'app-stagiaire',
@@ -15,8 +17,12 @@ export class StagiaireComponent implements OnInit {
   private stagiaires: Stagiaire[];
   private message: string = null;
   private ordinateurs: Ordinateur[];
+  private formations: Formation[];
 
-  constructor(private stagiaireService: StagiaireService, private ordinateurService: OrdinateurService, private activatedRoute: ActivatedRoute) { }
+  constructor(private stagiaireService: StagiaireService,
+              private ordinateurService: OrdinateurService,
+              private formationService: FormationService,
+              private activatedRoute: ActivatedRoute) { }
 
 
   list() {
@@ -28,6 +34,11 @@ export class StagiaireComponent implements OnInit {
     });
     this.ordinateurService.list().subscribe(result => {
       this.ordinateurs = result;
+    }, error => {
+      console.log(error);
+    });
+    this.formationService.list().subscribe(result2 => {
+      this.formations = result2;
     }, error => {
       console.log(error);
     });
