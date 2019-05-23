@@ -3,10 +3,8 @@
 }
 img {
   background-image: url("http://www.gif.ovh/french-gif/Informaticien%20Gif/Informaticien%20Gif%20(23).gif");
-  position: fixed;
-  height: 60%;
-  left: 0;
   width: 60%;
+  height: 60%;
 }
 
 .h3 {
@@ -14,7 +12,7 @@ img {
   text-align: center;
 }
 
-body {
+.welcome {
   background: rgb(47,58,89);
   background: linear-gradient(351deg, rgba(47,58,89,0.9821288378632703) 0%, rgba(9,69,121,1) 32%, rgba(93,223,192,1) 100%);
   background-cover: cover;
