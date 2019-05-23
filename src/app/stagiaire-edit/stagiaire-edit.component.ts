@@ -4,6 +4,8 @@ import {Stagiaire} from '../model/stagiaire';
 import {StagiaireService} from '../stagiaire.service';
 import {OrdinateurService} from '../ordinateur.service';
 import {Ordinateur} from '../model/ordinateur';
+import {Formation} from '../model/formation';
+import {FormationService} from '../formation.service';
 
 @Component({
   selector: 'app-stagiaire-edit',
@@ -14,11 +16,12 @@ export class StagiaireEditComponent implements OnInit {
 
   private stagiaire: Stagiaire = new Stagiaire();
   private ordinateurs: Ordinateur[] ;
-  private ordinateur: Ordinateur= new Ordinateur();
+  private formations: Formation[];
 
   constructor(private activedRoute: ActivatedRoute,
               private stagiaireService: StagiaireService,
               private ordinateurService: OrdinateurService,
+              private formationService: FormationService,
               private router: Router) { }
 
   ngOnInit() {
@@ -35,6 +38,11 @@ export class StagiaireEditComponent implements OnInit {
   list() {
     this.ordinateurService.list().subscribe(data => {
       this.ordinateurs = data;
+    }, error => {
+      console.log(error);
+    });
+    this.formationService.list().subscribe(data2 => {
+      this.formations = data2;
     }, error => {
       console.log(error);
     });
