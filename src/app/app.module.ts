@@ -41,6 +41,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { StagiaireComponent } from './stagiaire/stagiaire.component';
 import { StagiaireEditComponent } from './stagiaire-edit/stagiaire-edit.component';
+import { OrdinateurDispoComponent } from './ordinateur-dispo/ordinateur-dispo.component';
 
 
 
@@ -75,7 +76,8 @@ import { StagiaireEditComponent } from './stagiaire-edit/stagiaire-edit.componen
     GestionnaireComponent,
     GestionnaireEditComponent,
     StagiaireComponent,
-    StagiaireEditComponent
+    StagiaireEditComponent,
+    OrdinateurDispoComponent
   ],
   imports: [
     BrowserModule,

@@ -30,6 +30,7 @@ import {GestionnaireComponent} from './gestionnaire/gestionnaire.component';
 import {GestionnaireEditComponent} from './gestionnaire-edit/gestionnaire-edit.component';
 import {StagiaireComponent} from './stagiaire/stagiaire.component';
 import {StagiaireEditComponent} from './stagiaire-edit/stagiaire-edit.component';
+import {OrdinateurDispoComponent} from './ordinateur-dispo/ordinateur-dispo.component';
 
 
 
@@ -92,6 +93,6 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'technicien/:action/:nom', component: TechnicienComponent},
   { path : 'technicien/edit', component: TechnicienEditComponent},
   { path : 'technicien/:id', component: TechnicienEditComponent},
-  { path : 'test', component: TestPageComponent},
+  { path : 'test', component: OrdinateurDispoComponent},
   { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];
