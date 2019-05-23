@@ -28,18 +28,25 @@
 
   <div class="input-group mb-3">
     <label class="input-group-text">Vidéoprojecteur</label>
-   <button [(ngModel)]="salleAvecVideo" name="videoprojecteur" value="true" (click)="video()">Oui</button>
-    <button [(ngModel)]="salleAvecVideo" name="videoprojecteur" value="false" (click)="video()">Non</button>
+
+    <ng-container *ngIf="salleAvecVideo; else sansVideo">
+      <button name="videoprojecteurNon" (click)="video()">Non</button>
+    </ng-container>
+    <ng-template #sansVideo>
+      <button name="videoprojecteurOui" (click)="video()">Oui</button>
+    </ng-template>
   </div>
 
 
-  <div *ngIf="salleAvecVideo == true">
+  <div *ngIf="salleAvecVideo">
     <select class="form-control" id="videoproj" name="videoproj" [(ngModel)]="salle.videoprojecteur.id">
-      <option [value]="pasVideop.id" [attr.selected]="salle.videoprojecteur.id ? true : null">Non</option>
-      <option *ngFor="let vp of videoprojecteurs" [value]="vp.id" [attr.selected]="salle.videoprojecteur.id ? true : null">{{vp.id}}. {{vp.code}}</option>
+      <option *ngIf="videoprojecteur0.id" [value]="videoprojecteur0.id"
+              [attr.selected]="salle.videoprojecteur.id" selected>-> {{videoprojecteur0.id}}
+        . {{videoprojecteur0.code}}</option>
+      <option *ngFor="let vp of videoprojecteurs" [value]="vp.id"
+              [attr.selected]="salle.videoprojecteur.id ? true : null">{{vp.id}}. {{vp.code}}</option>
     </select>
   </div>
-
 
 
   <div>
