@@ -16,7 +16,7 @@ export class FormateurService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Basic ' + btoa(sessionStorage.getItem('basic'))
+      'Authorization': 'Basic ' + sessionStorage.getItem('basic')
     });
     this.httpOptions = { headers: this.headers};
   }
