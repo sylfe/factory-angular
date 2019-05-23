@@ -11,7 +11,7 @@ import {FormationService} from "../formation.service";
 export class FormationCreateComponent implements OnInit {
   private formation: Formation = new Formation();
 
-
+private verif: boolean;
   constructor(private activatedRoute: ActivatedRoute, private formationService: FormationService, private router: Router) {
   }
 
@@ -32,30 +32,22 @@ export class FormationCreateComponent implements OnInit {
       });
     } else {
       this.formationService.insert(this.formation).subscribe(result => {
+        console.log(result.headers);
         console.log(result);
-        console.log(result.headers.location);
+        console.log(result.headers.location.keys());
        // this.router.navigate(['/formation/edit', this.formation.id]);
         this.router.navigate(['/formations']);
       });
 
     }
   }
-
-  check() {
-    for ( const f in this.formationService.list()) {
-
-      if ( f === this.formation.titre) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }
   checkDate() {
     if (this.formation.dateDebut > this.formation.dateFin) {
-      return true;
+     this.verif = true;
+     return this.verif;
     } else {
-      return false;
+      this.verif = false;
+      return this.verif;
     }
   }
 }
