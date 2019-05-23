@@ -58,7 +58,7 @@ export class SalleEditComponent implements OnInit {
     if(this.salleAvecVideo === false){
       this.salleAvecVideo = false;
       console.log('clic sur false : ' + this.salle.videoprojecteur.id);
-      this.salle.videoprojecteur.id = 0;
+      this.salle.videoprojecteur.id = this.pasVideop.id;
       console.log('après clic : ' + this.salle.videoprojecteur.id);
     } else {
       this.salleAvecVideo = true;
