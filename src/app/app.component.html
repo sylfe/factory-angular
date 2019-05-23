@@ -21,6 +21,7 @@
       <li class="nav-item"><a [routerLink]="['/techniciens']" routerLink='Active' class="nav-link">techniciens</a></li>
       <li class="nav-item"><a [routerLink]="['/formateurs']" routerLink='Active' class="nav-link">formateur</a></li>
       <li class="nav-item"><a [routerLink]="['/gestionnaires']" routerLink='Active' class="nav-link">gestionnaires</a></li>
+      <li class="nav-item"><a [routerLink]="['/administrateurs']" routerLink='Active' class="nav-link">administrateurs</a></li>
       <li class="nav-item"><a [routerLink]="['/stagiaires']" routerLink='Active' class="nav-link">stagiaires</a></li>
       <li class="nav-item"><a [routerLink]="['/matieres']" routerLink='Active' class="nav-link">matieres</a></li>
 <!--      <li class="nav-item dropdown">-->
@@ -49,16 +50,7 @@
     </ul>
   </div>
 </nav>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <button class="dropdown-item" type="button">Action</button>
-    <button class="dropdown-item" type="button">Another action</button>
-    <button class="dropdown-item" type="button">Something else here</button>
-  </div>
-</div>
+
 <div class="container">
   <router-outlet></router-outlet>
 

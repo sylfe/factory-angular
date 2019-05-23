@@ -1,0 +1,28 @@
+<h1>Liste des administrateurs</h1>
+<div *ngIf="message" class="alert alert-info">{{message}}</div>
+<a class="btn btn-info" [routerLink]="['/administrateur/edit']" routerLinkActive="active"> Ajouter un nouvel administrateur</a>
+<table class="table">
+  <thead>
+  <th>ID</th>
+  <th>NOM</th>
+  <th>PRENOM</th>
+  <th>ADRESSE</th>
+  <th>EMAIL</th>
+  <th>TELEPHONE</th>
+  <th>MOT DE PASSE</th>
+  <th>EDITER</th>
+  <th>SUPPRIMER</th>
+  </thead>
+  <tr *ngFor="let a of administrateurs">
+    <td> {{ a.id }}  </td>
+    <td> {{ a.nom }}  </td>
+    <td>   {{ a.prenom }}  </td>
+    <td>   {{ a.adresse }}    </td>
+    <td>   {{ a.email }}    </td>
+    <td>   {{ a.telephone }}    </td>
+    <td>   {{ a.motDePasse }}    </td>
+    <td> <a class="btn btn-warning" [routerLink]="['/administrateur/', a.id]" routerLinkActive="active"> Editer </a>  </td>
+    <td> <button class="btn btn-danger" (click)="delete(a.id)">Supprimer</button> </td>
+  </tr>
+</table>
+

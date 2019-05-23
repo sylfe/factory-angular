@@ -1,29 +1,50 @@
 <body>
-<h1> Nouvelle formation</h1>
+
 <div>
 
-  <form class="container">
-    <div class="form-group row">
-      <label>Titre de la formation</label>
-      <input class="form-control " name="titre" [(ngModel)]="formation.titre" required #titre="ngModel">
-      <!--  <div class="alert " *ngIf="titre.dirty && titre.invalid">*information obligatoire</div> -->
+  <form class="container" #FormFormation="ngForm">
+    <div *ngIf="formation.id">
+      <h1>Modifier une formation</h1>
     </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label">Date de début :</label>
-      <div class="col-10">
-        <input class="form-control form-control" type="date" name="dateDebut" value="AAAA-MM-JJ" [(ngModel)]="formation.dateDebut" required #dateDebut="ngModel">
+    <div *ngIf="!formation.id">
+      <h1>Nouvelle formation</h1>
+      <div class="form-group row">
+        <label>Titre de la formation</label>
+        <input class="form-control" type="text" name="titre" placeholder="Titre " [(ngModel)]="formation.titre" required #titre="ngModel">
+      </div>
+      <div class="alert alert-danger" *ngIf="titre.dirty && titre.invalid">*information obligatoire</div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Date de début :</label>
+        <div class="col-10">
+          <input class="form-control form-control" type="date" name="dateDebut" value="AAAA-MM-JJ" [(ngModel)]="formation.dateDebut" required #dateDebut="ngModel">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Date de fin :</label>
+        <div class="col-10">
+          <input class="form-control form-control" type="date" name="dateFin" value="AAAA-MM-JJ" [(ngModel)]="formation.dateFin" required #dateFin="ngModel">
+        </div>
+        <span class="alert alert-danger" *ngIf="checkDate()">Les dates ne conviennent pas</span>
+        <div class="alert alert-danger" *ngIf="dateDebut.dirty && dateDebut.invalid">*information obligatoire</div>
+      </div>
+      <!--choix de la salle-->
+      <div class="row justify-content-center m-2">
+        <div class="col-3 text-center">
+          <label> Choix de la salle </label>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+          <select name="listeSalle">
+            <option *ngFor="let salle of salles" value="">{{salle.code}}</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-success btn-block"  [disabled]="FormFormation.invalid" [disabled]="verif" (click)="save()">Valider</button>
+        <a [routerLink]="['/formations']" routerLinkActive="active" class="btn btn-warning btn-block">Retour</a>
       </div>
     </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label">Date de fin :</label>
-      <div class="col-10">
-        <input class="form-control form-control" type="date" name="dateFin" value="AAAA-MM-JJ" [(ngModel)]="formation.dateFin" required #dateFin="ngModel">
-      </div>
-    </div>
-<div>
-    <button type="submit" class="btn btn-success btn-block" (click)="save()">Valider</button>
-    <a [routerLink]="['/formations']" routerLinkActive="active" class="btn btn-warning btn-block">Retour</a>
-</div>
   </form>
 </div>
 </body>
+
+

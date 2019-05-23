@@ -45,9 +45,10 @@ export class StagiaireService {
       'email': stagiaire.email,
       'telephone': stagiaire.telephone,
       'motDePasse': stagiaire.motDePasse,
-      'droits': stagiaire.droits
-    };
+      'ordinateur': {id: stagiaire.ordinateur.id},
 
+    };
+    console.log(stagiaire);
     return this.http.post(`${this.url}`, s, this.httpOptions);
   }
 }
