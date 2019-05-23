@@ -79,6 +79,6 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'technicien/:action/:nom', component: TechnicienComponent},
   { path : 'technicien/edit', component: TechnicienEditComponent},
   { path : 'technicien/:id', component: TechnicienEditComponent},
-  { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
+  { path : 'test', component: TestPageComponent},
   { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];
