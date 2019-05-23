@@ -48,7 +48,8 @@ export class FormationService {
     const f = {
       'titre': formation.titre,
       'dateDebut': formation.dateDebut,
-      'dateFin': formation.dateFin
+      'dateFin': formation.dateFin,
+      'salle': { id : formation.salle.id}
     }
     return this.http.post(`${this.url}`, f, {
       headers: this.headers,

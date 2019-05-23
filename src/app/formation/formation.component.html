@@ -7,6 +7,7 @@
   <thead>
   <th>ID</th>
   <th>TITRE</th>
+  <th>SALLE</th>
   <th>DATE DE DEBUT</th>
   <th>DATE DE FIN</th>
   <th>EDITER</th>
@@ -16,6 +17,7 @@
   <tr *ngFor="let ftn of formations">
     <td>{{ftn.id}}</td>
     <td>{{ftn.titre}}</td>
+    <td>{{ftn.salle?.id}}</td>
     <td>{{ftn.dateDebut}}</td>
     <td>{{ftn.dateFin}}</td>
 

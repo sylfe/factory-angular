@@ -28,16 +28,12 @@
         <div class="alert alert-danger" *ngIf="dateDebut.dirty && dateDebut.invalid">*information obligatoire</div>
       </div>
       <!--choix de la salle-->
-      <div class="row justify-content-center m-2">
-        <div class="col-3 text-center">
-          <label> Choix de la salle </label>
-        </div>
-        <div class="col-3 d-flex justify-content-center">
-          <select name="listeSalle">
-            <option *ngFor="let salle of salles" value="">{{salle.code}}</option>
-          </select>
-        </div>
+      <div>
+        <select class="form-control" type="text"  name="salle" [(ngModel)]="formation.salle.id">
+          <option *ngFor="let salle of salles" [value]="salle.id" [attr.selected]="formation.salle.id ? true : null">{{salle.id}} . {{salle.code}}</option>
+        </select>
       </div>
+
       <div>
         <button type="submit" class="btn btn-success btn-block"  [disabled]="FormFormation.invalid" [disabled]="verif" (click)="save()">Valider</button>
         <a [routerLink]="['/formations']" routerLinkActive="active" class="btn btn-warning btn-block">Retour</a>
