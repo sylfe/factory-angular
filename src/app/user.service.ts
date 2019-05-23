@@ -57,13 +57,13 @@ export class UserService implements CanActivate {
       us = result;
       this.gestionnaireService.findById(us.id).subscribe( rez => {
         sessionStorage.setItem('gestionnaire', 'true');
-      })
+      });
       this.technicienService.findById(us.id).subscribe( rez => {
         sessionStorage.setItem('technicien', 'true');
-      })
+      });
       this.formateurService.findById(us.id).subscribe( rez => {
         sessionStorage.setItem('formateur', 'true');
-      })
+      });
       console.log(us);
       sessionStorage.setItem('droits', JSON.stringify(us.droits));
       console.log(sessionStorage.getItem('droits'));

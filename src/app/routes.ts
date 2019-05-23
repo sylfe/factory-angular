@@ -4,7 +4,6 @@ import {MatieresComponent} from './matieres/matieres.component';
 import {OrdinateursComponent} from './ordinateurs/ordinateurs.component';
 import {VideoProjecteursComponent} from './video-projecteurs/video-projecteurs.component';
 import {SalleComponent} from './salle/salle.component';
-import {MaterielEditComponent} from './materiel-edit/materiel-edit.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {UserEditerComponent} from './testRest/user-editer/user-editer.component';
 import {UserComponent} from './testRest/user/user.component';
@@ -24,61 +23,75 @@ import {ModulesComponent} from './modules/modules.component';
 import {ModulesEditComponent} from './modules-edit/modules-edit.component';
 import {FormationCreateComponent} from './formation-create/formation-create.component';
 import {FormationEditComponent} from './formation-edit/formation-edit.component';
-import {FormationComponent} from "./formation/formation.component";
+import {FormationComponent} from './formation/formation.component';
 import {TechnicienComponent} from './technicien/technicien.component';
 import {TechnicienEditComponent} from './technicien-edit/technicien-edit.component';
 import {GestionnaireComponent} from './gestionnaire/gestionnaire.component';
 import {GestionnaireEditComponent} from './gestionnaire-edit/gestionnaire-edit.component';
+import {StagiaireComponent} from './stagiaire/stagiaire.component';
+import {StagiaireEditComponent} from './stagiaire-edit/stagiaire-edit.component';
 
 
 
 export const routes: Routes = [{path: 'home', component: WelcomeComponent},
+  {path: 'welcome', component: WelcomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'login/:error', component: LoginComponent},
   { path : 'matieres', component: MatieresComponent, canActivate: [AccessFormateurService]},
-  { path : 'matieres/:action/:nom', component: MatieresComponent, canActivate: [AccessFormateurService]},
+  { path : 'matiere/:action/:nom', component: MatieresComponent, canActivate: [AccessFormateurService]},
   { path : 'matiere/edit', component: MatiereEditComponent, canActivate: [AccessFormateurService]},
-  { path : 'matiere/edit/:id', component: MatiereEditComponent, canActivate: [AccessFormateurService]},
+  { path : 'matiere/:id', component: MatiereEditComponent, canActivate: [AccessFormateurService]},
+
   { path : 'ordinateurs', component: OrdinateursComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
-  { path : 'ordinateurs/:action/:nom', component: OrdinateursComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
+  { path : 'ordinateur/:action/:nom', component: OrdinateursComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
   { path : 'ordinateur/edit', component: OrdinateurEditComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
   { path : 'ordinateur/:id', component: OrdinateurEditComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
+
   { path : 'salles', component: SalleComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
-  { path : 'salles/:action/:nom', component: SalleComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
+  { path : 'salle/:action/:nom', component: SalleComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
   { path : 'salle/edit', component: SalleEditComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
   { path : 'salle/:id', component: SalleEditComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
+
   { path : 'videoprojecteurs', component: VideoProjecteursComponent, canActivate: [AccessTechnicienService, AccessGestionnaireService]},
-  { path : 'videoprojecteurs/:action/:nom', component: VideoProjecteursComponent,
+  { path : 'videoprojecteur/:action/:nom', component: VideoProjecteursComponent,
     canActivate: [AccessTechnicienService, AccessGestionnaireService]},
   { path : 'videoprojecteur/edit', component: VideoProjecteurEditComponent,
     canActivate: [AccessTechnicienService, AccessGestionnaireService]},
   { path : 'videoprojecteur/:id', component: VideoProjecteurEditComponent,
     canActivate: [AccessTechnicienService, AccessGestionnaireService]},
+
   { path : 'user', component: UserEditerComponent},
   { path : 'users', component: UserComponent},
   { path : 'user/:action/:nom', component: UserComponent},
-  { path : 'formateur', component: FormateurComponent},
+
+  { path : 'gestionnaires', component: GestionnaireComponent},
+  { path : 'gestionnaire/:action/:nom', component: GestionnaireComponent},
+  { path : 'gestionnaire/edit', component: GestionnaireEditComponent},
+  { path : 'gestionnaire/:id', component: GestionnaireEditComponent},
+
+  { path : 'formateurs', component: FormateurComponent},
   { path : 'formateur/:action/:nom', component: FormateurComponent},
   { path : 'formateur/:id', component: FormateurEditComponent},
-  { path : 'gestionnaires', component: GestionnaireComponent},
-  { path : 'gestionnaires/:action/:nom', component: GestionnaireComponent},
-  { path : 'gestionnaire/edit', component: GestionnaireEditComponent},
-  { path : 'gestionnaire/edit/:id', component: GestionnaireEditComponent},
-  { path : 'formateurs', component: FormateurComponent},
-  { path : 'formateurs/:action/:nom', component: FormateurComponent},
-  { path : 'formateur/edit/:id', component: FormateurEditComponent},
   { path : 'formateur/edit', component: FormateurEditComponent},
+
   { path : 'modules',  component: ModulesComponent},
   { path : 'module',  component: ModulesComponent},
   { path : 'module/edit', component: ModulesEditComponent},
+
   { path : 'formations', component: FormationComponent},
   { path : 'formation/create', component: FormationCreateComponent},
   { path : 'formation/create/:id', component: FormationCreateComponent},
   { path : 'formation/edit/:id', component: FormationEditComponent},
+
+  { path : 'stagiaires', component: StagiaireComponent},
+  { path : 'stagiaire/:action/:nom', component: StagiaireComponent},
+  { path : 'stagiaire/edit/:id', component: StagiaireEditComponent},
+  { path : 'stagiaire/edit', component: StagiaireEditComponent},
+
   { path : 'techniciens', component: TechnicienComponent},
   { path : 'technicien/:action/:nom', component: TechnicienComponent},
   { path : 'technicien/edit', component: TechnicienEditComponent},
   { path : 'technicien/:id', component: TechnicienEditComponent},
-  { path : 'test', component: TestPageComponent, canActivate: [AccessAdminService]},
+  { path : 'test', component: TestPageComponent},
   { path : 'testinit', component: TestComponentComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}];

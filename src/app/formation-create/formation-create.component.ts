@@ -35,8 +35,27 @@ export class FormationCreateComponent implements OnInit {
         console.log(result);
         console.log(result.headers.location);
        // this.router.navigate(['/formation/edit', this.formation.id]);
+        this.router.navigate(['/formations']);
       });
 
+    }
+  }
+
+  check() {
+    for ( const f in this.formationService.list()) {
+
+      if ( f === this.formation.titre) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+  checkDate() {
+    if (this.formation.dateDebut > this.formation.dateFin) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
