@@ -37,6 +37,10 @@ export class ModulesService {
     return this.http.get(`${this.url}/${id}`, this.httpOptions);
   }
 
+  public findByIdMatiere(id: number): Observable<any> {
+    return this.http.get(`${this.url}/${id}/matiere/formateur`, this.httpOptions);
+  }
+
 
   public login(options): Observable<any> {
     return this.http.get(`${this.url}/1`, options);

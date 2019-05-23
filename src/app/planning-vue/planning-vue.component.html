@@ -1,0 +1,172 @@
+<style>*{
+  box-sizing: border-box;
+}
+
+[class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+  margin-right:0 !important;
+  margin-left:0;
+}
+
+.col-6{
+  margin: 0;
+
+}
+
+.row{
+  padding-right:0;
+  padding-left:0;
+  margin-right:0;
+  margin-left:0;
+}
+
+.oneDay{
+  height: 25px;
+}
+.twoDays{
+  height: 50px !important;
+}
+.threeDays{
+  height: 75px !important;
+}
+.fourDays{
+  height: 100px !important;
+}
+.fiveDays{
+  height: 125px !important;
+}
+
+
+.container{
+  padding-right:0;
+  padding-left:0;
+}
+
+h6{
+  margin: 0;
+}
+
+.bkg-1{
+  background-color: #F4E04D;
+}
+.bkg-2{
+  background-color: #F2ED6F;
+}
+.bkg-3{
+  background-color: #CEE397;
+}
+.bkg-4{
+  background-color: #8DB1AB;
+}
+.bkg-5{
+  background-color: #587792;
+}
+</style>
+<p>
+  {{date}}{{monthStart}}
+</p>
+<div *ngFor="let day of days">
+  <!--  {{tempDate(day).getDay()}}-->
+  <!--  {{dayWeek[tempDate(day).getDay()]}}-->
+</div>
+<h2 class="text-center m-5">Nouvelle formation</h2>
+
+<div class="container">
+
+  <div class="container border border-black mt-5 mb-5">
+
+    <div class="row border border-black no-pad-marg">
+      <div class="col-12">
+        <h1 class="text-center">Titre formation</h1>
+      </div>
+    </div>
+    <!-- Header du tableau -->
+    <div class="row text-center">
+      <div class="col-md-3 border border-black">
+        <h3>Mois</h3>
+      </div>
+      <div class="col-md-3 border border-black">
+        <h3>Jour</h3>
+      </div>
+      <div class="col-md-3 border border-black">
+        <h3>Module</h3>
+      </div>
+      <div class="col-md-3 border border-black">
+        <h3>Formateur</h3>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- Jours+Mois : col-6 = moitié du tableau-->
+      <div class="col-6">
+
+        <div *ngFor="let month of monthFormation" class="row align-items-center border border-black">
+
+          <!-- Mois -->
+          <div  class="col-6 text-center">
+            <h6>{{months[month]}}</h6>
+          </div>
+
+          <!-- Jours -->
+          <div  *ngIf="monthTest(month)" class="col-6">
+
+            <div  *ngFor="let day of days" class="oneDay row border-left border-bottom border-black">
+              <div class="oneDay col-md-12 text-center">
+                <h6>{{dayWeek[tempDate(day,month).getDay()]}}  {{tempDate(day, month).getDate()}}</h6>
+              </div>
+            </div>
+
+          </div>
+
+          <div  *ngIf="!monthTest(month)" class="col-6">
+
+            <div  *ngFor="let day of days30" class="oneDay row border-left border-bottom border-black">
+              <div class="oneDay col-md-12 text-center">
+                <h6>{{dayWeek[tempDate(day,month).getDay()]}}  {{tempDate(day, month).getDate()}}</h6>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Modules + Formateurs -->
+      <div  class="col-6 border border-black">
+
+        <div *ngFor="let mod of modules" class="row">
+
+          <!-- Modules -->
+          <div class="col-6">
+
+            <div class="row">
+              <div class="fiveDays col-md-12 text-center bkg-1 border-right border-bottom border-black d-flex align-items-center justify-content-center">
+                <h6>ID {{mod.id}}, {{mod.dateDebut}},  {{mod.matiere.nom}}</h6>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Formateurs -->
+          <div class="col-6">
+
+            <div class="row">
+              <div class="fiveDays col-md-12 border-right border-bottom border-black d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                  <h5>{{mod.formateur.nom}}</h5>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
