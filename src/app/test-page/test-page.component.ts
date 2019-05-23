@@ -25,7 +25,7 @@ export class TestPageComponent implements OnInit {
   constructor( private formationService: FormationService) { }
 
   ngOnInit() {
-    this.formationService.findById(5).subscribe( rez => {
+    this.formationService.findByIdModules(115).subscribe( rez => {
       this.formation = rez;
       console.log(rez);
       this.monthStart = new Date(this.formation.dateDebut);
@@ -38,6 +38,7 @@ export class TestPageComponent implements OnInit {
         monthNow ++;
       }
       console.log('months' + this.monthFormation);
+      console.log(this.formation.modules[0]);
     })
 
   }
@@ -55,5 +56,7 @@ export class TestPageComponent implements OnInit {
     }
     return false;
   }
+
+
 
 }
