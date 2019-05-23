@@ -3,20 +3,22 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {Gestionnaire} from './model/gestionnaire';
+import {urlEnCours} from './urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GestionnaireService  {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/user/gestionnaire';
+  private urll = urlEnCours;
+  private url = urlEnCours + '/la-factory/rest/user/gestionnaire';
   private headers: HttpHeaders;
   private httpOptions: any;
 
   constructor(private http: HttpClient, private router: Router) {
   this.headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Authorization': 'Basic ' + btoa(`benjamin@benjamin.fr:benjamin`)
+    'Authorization': 'Basic ' + sessionStorage.getItem('basic')
   });
   this.httpOptions = { headers: this.headers};
   }

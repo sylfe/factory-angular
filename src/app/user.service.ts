@@ -6,13 +6,14 @@ import {CanActivate, Router} from '@angular/router';
 import {FormateurService} from './formateur.service';
 import {GestionnaireService} from './gestionnaire.service';
 import {TechnicienService} from './technicien.service';
+import {urlEnCours} from './urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService implements CanActivate {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/user';
+  private url = urlEnCours + '/la-factory/rest/user';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -43,7 +44,7 @@ export class UserService implements CanActivate {
       'Authorization': 'Basic ' + btoa(`${user.email}:${user.motDePasse}`)
       }
     );
-    return this.http.get('http://localhost:8080/la-factory/rest/login', { headers: headers });
+    return this.http.get(urlEnCours + '/la-factory/rest/login', { headers: headers });
 
   }
 
