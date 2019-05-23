@@ -23,7 +23,7 @@ export class AccessTechnicienService {
       }
     }
     if(this.isAdmin){ return true };
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
     return false;
   }
 }
