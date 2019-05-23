@@ -12,7 +12,7 @@ import {TechnicienService} from './technicien.service';
 })
 export class UserService implements CanActivate {
 
-  private url = 'http://localhost:8080/la-factory/rest/user';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/user';
   private headers: HttpHeaders;
   private httpOptions: any;
 
