@@ -40,6 +40,13 @@
   </div>
   <div *ngIf="telephone.dirty && telephone.invalid" class="alert-danger">*information obligatoire </div>
 
+  <div class="input-group mb-3">
+    <label class="input-group-text">Ordinateur</label>
+    <select [(ngModel)]="stagiaire.ordinateur" [ngModelOptions]="{standalone: true}">
+      <option *ngFor="let ordi of ordinateurs"  type="text" class="form-control" name="ordinateurs" [ngValue]="ordi" required>{{ordi.code}}</option>
+    </select>
+  </div>
+
   <div>
     <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
     <button class="btn btn-secondary"  [routerLink]="['/stagiaire']" routerLinkActive="active">Retour</button>

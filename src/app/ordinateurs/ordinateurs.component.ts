@@ -14,7 +14,7 @@ export class OrdinateursComponent implements OnInit {
   private message: string = null;
 
 
-  constructor(private ordinateurService: OrdinateurService, private stagiaireService: StagiaireService, private activatedRoute: ActivatedRoute) { }
+  constructor(private ordinateurService: OrdinateurService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -38,6 +38,7 @@ export class OrdinateursComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+
   }
 
 }

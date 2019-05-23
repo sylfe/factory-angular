@@ -1,0 +1,32 @@
+.h1 {
+  color: #75e9c2;
+}
+img {
+  background-image: url("http://www.gif.ovh/french-gif/Informaticien%20Gif/Informaticien%20Gif%20(23).gif");
+  position: fixed;
+  height: 60%;
+  left: 0;
+  width: 60%;
+}
+
+.h3 {
+  color: whitesmoke;
+  text-align: center;
+}
+
+body {
+  background: rgb(47,58,89);
+  background: linear-gradient(351deg, rgba(47,58,89,0.9821288378632703) 0%, rgba(9,69,121,1) 32%, rgba(93,223,192,1) 100%);
+  background-cover: cover;
+}
+
+p {
+  color: white;
+}
+
+.toto {
+  text-align: center;
+  text-color: black;
+  margin-left: auto;
+  margin-right: auto;
+}
