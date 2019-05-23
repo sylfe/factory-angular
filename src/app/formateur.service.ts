@@ -2,20 +2,21 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Formateur} from './model/formateur';
+import {urlEnCours} from './urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormateurService {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/user/formateur';
+  private url = urlEnCours + '/la-factory/rest/user/formateur';
   private headers: HttpHeaders;
   private httpOptions: any;
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Basic ' + btoa(`benjamin@benjamin.fr:benjamin`)
+      'Authorization': 'Basic ' + btoa(sessionStorage.getItem('basic'))
     });
     this.httpOptions = { headers: this.headers};
   }

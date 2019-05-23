@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Ordinateur} from './model/ordinateur';
+import {urlEnCours} from './urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdinateurService {
-  private url = 'http://10.0.0.205:8080/la-factory/rest/ordinateur';
+  private url = urlEnCours + '/la-factory/rest/ordinateur';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -15,7 +16,7 @@ export class OrdinateurService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/JSON',
-      'Authorization': 'Basic ' + btoa('benjamin@benjamin.fr:benjamin')
+      'Authorization': 'Basic ' + btoa(sessionStorage.getItem('basic'))
     });
 
     this.httpOptions = {headers: this.headers};

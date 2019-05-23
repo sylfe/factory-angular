@@ -3,13 +3,14 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Formation} from './model/formation';
 import {Router} from '@angular/router';
+import {urlEnCours} from './urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormationService {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/formations';
+  private url = urlEnCours + '/la-factory/rest/formations';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -17,7 +18,7 @@ export class FormationService {
 
     this.headers = new HttpHeaders({
       'Content-Type': 'application/JSON',
-      'Authorization': 'Basic ' + btoa('karen@karen.fr:karen')
+      'Authorization': 'Basic ' + btoa(sessionStorage.getItem('basic'))
     });
 
     this.httpOptions = {headers: this.headers};
@@ -33,7 +34,7 @@ export class FormationService {
   }
 
   public findById(id): Observable<any> {
-    return this.http.get(`${this.url}/${id}`, this.httpOptions);
+    return this.http.get(`${this.url}/${id}` + '/salle', this.httpOptions);
   }
 
   public findByTitre(titre: string): Observable<any> {
