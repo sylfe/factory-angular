@@ -2,20 +2,21 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Module} from './model/module';
+import {urlEnCours} from './urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ModulesService {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/module';
+  private url = urlEnCours + '/la-factory/rest/module';
   private headers: HttpHeaders;
   private httpOptions: any;
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization' : 'Basic ' + btoa('benjamin@benjamin.fr:benjamin'),
+      'Authorization' : 'Basic ' + sessionStorage.getItem('basic'),
     });
     this.httpOptions = { headers: this.headers};
   }
