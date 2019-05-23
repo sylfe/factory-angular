@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SalleService} from '../salle.service';
 import {Salle} from '../model/salle';
-import {VideoProjecteur} from "../model/videoProjecteur";
-import {VideoProjecteurService} from "../video-projecteur.service";
+import {VideoProjecteur} from '../model/videoProjecteur';
+import {VideoProjecteurService} from '../video-projecteur.service';
 
 @Component({
   selector: 'app-salle-edit',
@@ -20,8 +20,6 @@ export class SalleEditComponent implements OnInit {
 
   private salle: Salle = new Salle();
   private videoprojecteurs: VideoProjecteur[];
-  private salleAvecVideo: boolean;
-  private afficher: boolean;
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -32,10 +30,10 @@ export class SalleEditComponent implements OnInit {
         });
       }
     });
-      this.videoprojecteurService.list().subscribe(result => {
-        this.videoprojecteurs = result;
-      });
-      this.salle.videoprojecteur = new VideoProjecteur();
+    this.videoprojecteurService.list().subscribe(result => {
+      this.videoprojecteurs = result;
+    });
+    this.salle.videoprojecteur = new VideoProjecteur();
   }
 
 
@@ -51,12 +49,5 @@ export class SalleEditComponent implements OnInit {
     }
   }
 
-  video() {
-    if (this.salleAvecVideo === true) {
-    this.afficher = true;
-    } else {
-      this.afficher = false;
-    }
-  }
 }
 
