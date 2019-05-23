@@ -45,7 +45,7 @@ export class FormateurService {
       'email': formateur.email,
       'telephone': formateur.telephone,
       'motDePasse': formateur.motDePasse,
-      'droits':formateur.droits
+      'droits': formateur.droits
     };
 
     return this.http.post(`${this.url}`, f, this.httpOptions );
