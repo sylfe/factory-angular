@@ -4,6 +4,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormationService} from '../formation.service';
 import {SalleService} from '../salle.service';
 import {Salle} from '../model/salle';
+import {until} from 'selenium-webdriver';
+import elementIsSelected = until.elementIsSelected;
+import {VideoProjecteur} from "../model/videoProjecteur";
 
 
 @Component({
@@ -26,6 +29,9 @@ private verif: boolean;
         });
       }
     });
+    this.salleService.list().subscribe(result => {
+      this.salles = result;
+    });
     this.listSalle();
   }
 
@@ -39,8 +45,7 @@ private verif: boolean;
       this.formationService.insert(this.formation).subscribe(result => {
         console.log(result.headers);
         console.log(result);
-        console.log(result.headers.location.keys());
-       // this.router.navigate(['/formation/edit', this.formation.id]);
+       //this.router.navigate(['/formation/edit', this.formation.id]);
         this.router.navigate(['/formations']);
       });
 
@@ -57,8 +62,8 @@ private verif: boolean;
   }
 
   listSalle() {
-    this.salleService.list().subscribe( data => {
-      this.salles = data;
+    this.salleService.list().subscribe( result => {
+      this.salles = result;
       console.log(this.salles);
     }, error => {
       console.log('error');

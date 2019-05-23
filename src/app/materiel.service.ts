@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Materiel} from './model/materiel';
+import {urlEnCours} from './urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MaterielService {
-  private url = 'http://10.0.0.205:8080/la-factory/rest/materiel';
+  private url = urlEnCours + '/la-factory/rest/materiel';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -15,7 +16,7 @@ export class MaterielService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/JSON',
-      'Authorization': 'Basic ' + btoa('tutu:tutu')
+      'Authorization': 'Basic ' + sessionStorage.getItem('basic')
     });
 
     this.httpOptions = {headers: this.headers};

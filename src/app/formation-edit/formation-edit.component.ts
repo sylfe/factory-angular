@@ -20,6 +20,9 @@ export class FormationEditComponent implements OnInit {
   private formateurs: Formateur[];
   private modules: Module[];
 
+  //Le module qu'on est entrain de créer:
+  private module: Module = new Module();
+
   private formation: Formation = new Formation();
 
   constructor(private activedRoute: ActivatedRoute,
@@ -33,13 +36,21 @@ export class FormationEditComponent implements OnInit {
     this.activedRoute.params.subscribe( params => {
       if (params.id) {
         this.formationService.findById(params.id).subscribe( data => {
+          console.log('data' + data);
+          console.log(data.id)
+          console.log('tryfind');
           this.formation = data;
+          //console.log(this.formation);
+          this.module.formation = this.formation;
+         // console.log('blabla' + this.module.formation.id);
+
         });
       }
     });
     this.listMatiere();
     this.listFormateur();
     this.listModule();
+    console.log('la formation choisie: ' + this.formation.id);
   }
 
   save() {
@@ -54,6 +65,33 @@ export class FormationEditComponent implements OnInit {
       });
     }
   }
+
+  //Supprimer un module dans la formation qu'on édite:
+  delete(id: number) {
+    this.moduleService.delete(id).subscribe(result => {
+        this.listModule();
+      }
+    );
+  }
+
+  //Quand on clique sur ajouter le module, le module est créé en base avec les bons attributs et on recharge la liste:
+  add() {
+    //this.module.formation = this.formation;
+    this.send();
+  }
+
+  send() {
+      console.log('Voici le module sauvé dans la base: ');
+      console.log(this.module);
+      console.log('Son formateur: ' + this.module.formateur.nom);
+      console.log('Sa matière: ' + this.module.matiere.nom);
+      this.moduleService.insert(this.module).subscribe(result => {
+        this.listModule();
+        }, error => {
+          console.log(error);
+        }
+      );
+    }
 
   listMatiere() {
     this.matiereService.list().subscribe( data => {

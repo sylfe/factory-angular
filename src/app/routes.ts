@@ -102,6 +102,7 @@ export const routes: Routes = [{path: 'home', component: WelcomeComponent},
   { path : 'administrateur/:id', component: AdministrateurEditComponent},
 
   { path : 'test', component: OrdinateurDispoComponent},
+  { path : 'test2', component: TestPageComponent},
   { path : 'testinit', component: TestComponentComponent},
 
   { path: '', redirectTo: 'home', pathMatch: 'full'}];

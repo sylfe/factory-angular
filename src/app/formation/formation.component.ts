@@ -3,6 +3,8 @@ import {FormGroup} from "@angular/forms";
 import {Formation} from "../model/formation";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormationService} from "../formation.service";
+import {SalleService} from "../salle.service";
+import {Salle} from "../model/salle";
 
 @Component({
   selector: 'app-formation',
@@ -16,10 +18,10 @@ export class FormationComponent implements OnInit {
   private monForm: FormGroup;
 
   private message: string = null;
-
+private salles: Salle[];
 
   constructor(private activatedRoute: ActivatedRoute,
-              private router: Router, private formationService: FormationService) {
+              private router: Router, private salleService: SalleService, private formationService: FormationService) {
 
   }
   ngOnInit() {
@@ -27,6 +29,9 @@ export class FormationComponent implements OnInit {
       if (params.titre) {
         this.message = `La formation "${params.titre}" a été ${params.action}`;
       }
+    });
+    this.salleService.list().subscribe(result => {
+      this.salles = result;
     });
     this.list();
   }

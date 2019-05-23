@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {Formation} from "./model/formation";
-import {Router} from "@angular/router";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Formation} from './model/formation';
+import {Router} from '@angular/router';
+import {urlEnCours} from './urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormationService {
 
-  private url = 'http://10.0.0.205:8080/la-factory/rest/formations';
+  private url = urlEnCours + '/la-factory/rest/formations';
   private headers: HttpHeaders;
   private httpOptions: any;
 
@@ -17,7 +18,7 @@ export class FormationService {
 
     this.headers = new HttpHeaders({
       'Content-Type': 'application/JSON',
-      'Authorization': 'Basic ' + btoa('karen@karen.fr:karen')
+      'Authorization': 'Basic ' + sessionStorage.getItem('basic')
     });
 
     this.httpOptions = {headers: this.headers};
@@ -25,7 +26,7 @@ export class FormationService {
   }
 
   public list(): Observable<any> {
-    return this.http.get(this.url, {headers: this.headers});
+    return this.http.get(this.url + '/salle', {headers: this.headers});
   }
 
   public delete(id: number): Observable<any> {
@@ -33,7 +34,11 @@ export class FormationService {
   }
 
   public findById(id): Observable<any> {
-    return this.http.get(`${this.url}/${id}`, this.httpOptions);
+    return this.http.get(`${this.url}/${id}` , this.httpOptions);
+  }
+
+  public findByIdModules(id): Observable<any> {
+    return this.http.get(`${this.url}/${id}/modules` , this.httpOptions);
   }
 
   public findByTitre(titre: string): Observable<any> {
@@ -48,7 +53,8 @@ export class FormationService {
     const f = {
       'titre': formation.titre,
       'dateDebut': formation.dateDebut,
-      'dateFin': formation.dateFin
+      'dateFin': formation.dateFin,
+      'salle': { id : formation.salle.id}
     }
     return this.http.post(`${this.url}`, f, {
       headers: this.headers,
