@@ -1,5 +1,5 @@
 import {Materiel} from './materiel';
-import {VideoProjecteur} from "./videoProjecteur";
+import {VideoProjecteur} from './videoProjecteur';
 
 export class Salle extends Materiel {
   constructor(id?: number, version?: number, code?: string, coutJournee?: number, private _capacite?: number, private _videoprojecteur?: VideoProjecteur) {

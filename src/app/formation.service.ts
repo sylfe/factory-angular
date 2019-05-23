@@ -46,6 +46,8 @@ export class FormationService {
       'dateDebut': formation.dateDebut,
       'dateFin': formation.dateFin,
     }
-    return this.http.post(this.url, f, this.httpOptions);
+    return this.http.post(this.url, f, {
+      observe: 'response'
+    });
   }
 }

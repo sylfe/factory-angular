@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SalleService} from '../salle.service';
 import {Salle} from '../model/salle';
-import {VideoProjecteur} from "../model/videoProjecteur";
-import {VideoProjecteurService} from "../video-projecteur.service";
+import {VideoProjecteur} from '../model/videoProjecteur';
+import {VideoProjecteurService} from '../video-projecteur.service';
 
 @Component({
   selector: 'app-salle-edit',
@@ -20,8 +20,6 @@ export class SalleEditComponent implements OnInit {
 
   private salle: Salle = new Salle();
   private videoprojecteurs: VideoProjecteur[];
-  private salleAvecVideo: boolean;
-  private afficher: boolean;
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -32,31 +30,24 @@ export class SalleEditComponent implements OnInit {
         });
       }
     });
-      this.videoprojecteurService.list().subscribe(result => {
-        this.videoprojecteurs = result;
-      });
-      this.salle.videoprojecteur = new VideoProjecteur();
+    this.videoprojecteurService.list().subscribe(result => {
+      this.videoprojecteurs = result;
+    });
+    this.salle.videoprojecteur = new VideoProjecteur();
   }
 
 
   save() {
     if (this.salle.id) {
       this.salleService.update(this.salle).subscribe(result => {
-        this.router.navigate(['/salles', 'modifiée', this.salle.code]);
+        this.router.navigate(['/salle', 'modifiée', this.salle.code]);
       });
     } else {
       this.salleService.insert(this.salle).subscribe(result => {
-        this.router.navigate(['/salles', 'ajoutée', this.salle.code]);
+        this.router.navigate(['/salle', 'ajoutée', this.salle.code]);
       });
     }
   }
 
-  video() {
-    if (this.salleAvecVideo === true) {
-    this.afficher = true;
-    } else {
-      this.afficher = false;
-    }
-  }
 }
 

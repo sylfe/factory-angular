@@ -12,7 +12,6 @@ import {routes} from './routes';
 import { UserEditerComponent } from './testRest/user-editer/user-editer.component';
 import { FormateurComponent } from './formateur/formateur.component';
 import { OrdinateursComponent } from './ordinateurs/ordinateurs.component';
-import { MaterielEditComponent } from './materiel-edit/materiel-edit.component';
 import { SalleComponent } from './salle/salle.component';
 import { VideoProjecteursComponent } from './video-projecteurs/video-projecteurs.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -40,6 +39,8 @@ import { GestionnaireComponent } from './gestionnaire/gestionnaire.component';
 import { GestionnaireEditComponent } from './gestionnaire-edit/gestionnaire-edit.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { StagiaireComponent } from './stagiaire/stagiaire.component';
+import { StagiaireEditComponent } from './stagiaire-edit/stagiaire-edit.component';
 
 
 
@@ -49,7 +50,6 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     LoginComponent,
     UserEditerComponent,
     SalleComponent,
-    MaterielEditComponent,
     OrdinateursComponent,
     VideoProjecteursComponent,
     FormateurComponent,
@@ -73,7 +73,9 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     TechnicienComponent,
     TechnicienEditComponent,
     GestionnaireComponent,
-    GestionnaireEditComponent
+    GestionnaireEditComponent,
+    StagiaireComponent,
+    StagiaireEditComponent
   ],
   imports: [
     BrowserModule,
