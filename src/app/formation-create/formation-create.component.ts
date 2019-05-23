@@ -33,9 +33,10 @@ export class FormationCreateComponent implements OnInit {
     } else {
       this.formationService.insert(this.formation).subscribe(result => {
         console.log(result);
-        this.router.navigate(['/formation', 'edit', result.id]);
-        
+        console.log(result.headers.location);
+       // this.router.navigate(['/formation/edit', this.formation.id]);
       });
+
     }
   }
 }
