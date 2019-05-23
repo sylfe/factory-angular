@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 })
 export class FormationService {
 
-  private url = 'http://localhost:8080/la-factory/rest/formations';
+  private url = 'http://10.0.0.205:8080/la-factory/rest/formations';
   private headers: HttpHeaders;
   private httpOptions: any;
 
