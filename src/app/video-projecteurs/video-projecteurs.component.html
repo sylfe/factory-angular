@@ -2,8 +2,8 @@
 <div *ngIf="message" class="alert-success">
   {{message}}
 </div>
-<button [routerLink]="['/videoprojecteur/edit']" class="btn btn-info" routerLinkActive="active">Ajouter un nouveau vidéo-projecteur</button>
-<table class="table table-striped">
+<button [routerLink]="['/videoprojecteur/edit']" class="btn btn-info shadow mb-4 mt-4" routerLinkActive="active">Ajouter un nouveau vidéo-projecteur</button>
+<table class="table table-striped table-hover">
   <thead>
   <th>ID</th>
   <th>CODE</th>
@@ -15,8 +15,8 @@
     <td>{{videopro.id}}</td>
     <td>{{videopro.code}}</td>
     <td>{{videopro.coutJournee}}</td>
-    <td><button class="btn btn-warning" [routerLink]="['/videoprojecteur',videopro.id]" routerLinkActive="active">modifier</button>&nbsp;</td>
-      <td><button class="btn btn-danger" (click)="delete(videopro.id)">Supprimer</button></td>
+    <td><button class="btn btn-warning shadow-sm" [routerLink]="['/videoprojecteur',videopro.id]" routerLinkActive="active">modifier</button>&nbsp;</td>
+      <td><button class="btn btn-danger shadow-sm" (click)="delete(videopro.id)">Supprimer</button></td>
   </tr>
 
 </table>
