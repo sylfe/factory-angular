@@ -21,7 +21,7 @@
   <div *ngIf="prenom.dirty && prenom.invalid" class="alert-danger">*information obligatoire </div>
 
   <div class="input-group mb-3">
-    <label class="input-group-text">Adress</label>
+    <label class="input-group-text">Adresse</label>
     <input [(ngModel)]="technicien.adresse" type="text" class="form-control" name="adresse" placeholder="Adresse" required #adresse="ngModel">
   </div>
   <div *ngIf="adresse.dirty && adresse.invalid" class="alert-danger">*information obligatoire </div>

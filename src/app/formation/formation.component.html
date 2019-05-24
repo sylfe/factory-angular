@@ -1,9 +1,9 @@
-<h1>Liste des formations</h1>
+<h1 class="text-center mt-5">Liste des formations</h1>
 <div *ngIf="message" class="alert-success">
   {{message}}
 </div>
-<button [routerLink]="['/formation/create']" class="btn btn-info" routerLinkActive="active">Ajouter une nouvelle formation</button>
-<table class="table table-striped">
+<button [routerLink]="['/formation/create']" class="btn btn-info shadow mb-4 mt-4" routerLinkActive="active">Ajouter une nouvelle formation</button>
+<table class="table table-striped table-hover">
   <thead>
   <th>ID</th>
   <th>TITRE</th>
@@ -21,9 +21,9 @@
     <td>Salle {{formation.salle?.id}} . {{formation.salle?.code}}</td>
     <td>{{formation.dateDebut}}</td>
     <td>{{formation.dateFin}}</td>
-    <td><button class="btn btn-warning" [routerLink]="['/formation/create',formation.id]" routerLinkActive="active">LA FORMATION</button>&nbsp;</td>
-    <td> <button class="btn btn-warning" [routerLink]="['/formation/edit',formation.id]" routerLinkActive="active">LES MODULES</button>&nbsp;</td>
-     <td> <button class="btn btn-danger" (click)="delete(formation.id)">SUPPRIMER</button></td>
+    <td><button class="btn btn-warning shadow-sm" [routerLink]="['/formation/create',formation.id]" routerLinkActive="active">LA FORMATION</button>&nbsp;</td>
+    <td> <button class="btn btn-warning shadow-sm" [routerLink]="['/formation/edit',formation.id]" routerLinkActive="active">LES MODULES</button>&nbsp;</td>
+     <td> <button class="btn btn-danger shadow-sm" (click)="delete(formation.id)">SUPPRIMER</button></td>
   </tr>
 
 
