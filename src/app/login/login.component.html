@@ -1,32 +1,34 @@
-<div>
-  <h1>
-    <img src="https://img.pngio.com/you-png-8-png-image-you-png-364_414.png" alt="logo qui tourne"/>
-    Identifiez-vous
-
-    <img src="https://img.pngio.com/you-png-8-png-image-you-png-364_414.png" alt="logo qui tourne"/>
-
-
-  </h1>
-  <h2>(✿◠‿◠)</h2>
-  <div *ngIf="message" class=" alert alert-danger"> {{message}}</div>
-  <form (ngSubmit)="send()" #monForm="ngForm">
-    <div class="form-group">
-      <label> email  </label>
-      <input class="form-control" type="email" name="login" [(ngModel)]="user.email" required #login="ngModel">
-      <div *ngIf="login.dirty && login.invalid" class="alert alert-danger">* info obligatoire</div>
-    </div>
-    <div class="form-group">
-      <label>  Mot de passe  </label>
-      <input type="password" class="form-control" name="password" [(ngModel)]="user.motDePasse" required #password="ngModel">
-      <div *ngIf="password.dirty && password.invalid" class="alert alert-danger">* info obligatoire</div>
-    </div>
-
+<div class="card bg-light text-dark mt-5 shadow rounded">
     <div>
-      <button type="submit" value="envoyer" [disabled]="monForm.invalid">Connexion</button>
-      <a [routerLink]="['/']" routerLinkActive="active" class="btn btn-warning">retour</a>
+      <div class="card-header">
+        <h1>
+          <img src="https://img.pngio.com/you-png-8-png-image-you-png-364_414.png" alt="logo qui tourne"/>
+          Identifiez-vous
+
+          <img src="https://img.pngio.com/you-png-8-png-image-you-png-364_414.png" alt="logo qui tourne"/>
+        </h1>
+        <h2>(✿◠‿◠)</h2>
+      </div>
+
+      <div class="card-body">
+        <div *ngIf="message" class=" alert alert-danger"> {{message}}</div>
+        <form (ngSubmit)="send()" #monForm="ngForm">
+          <div class="form-group">
+            <label> Email  </label>
+            <input class="form-control" type="email" name="login" [(ngModel)]="user.email" required #login="ngModel">
+            <div *ngIf="login.dirty && login.invalid" class="alert alert-danger">* info obligatoire</div>
+          </div>
+          <div class="form-group">
+            <label>  Mot de passe  </label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="user.motDePasse" required #password="ngModel">
+            <div *ngIf="password.dirty && password.invalid" class="alert alert-danger">* info obligatoire</div>
+          </div>
+
+          <div>
+            <button type="submit" value="envoyer" [disabled]="monForm.invalid" class="btn btn-success m-2 shadow-sm">Connexion</button>
+            <a [routerLink]="['/']" routerLinkActive="active" class="btn btn-warning m-2 shadow-sm">Retour</a>
+          </div>
+        </form>
+      </div>
     </div>
-
-
-
-  </form>
 </div>

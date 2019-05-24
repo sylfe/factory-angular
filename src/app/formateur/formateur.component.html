@@ -9,7 +9,6 @@
   <th>ADRESSE</th>
   <th>EMAIL</th>
   <th>TELEPHONE</th>
-  <th>MOT DE PASSE</th>
   <th>EDITER</th>
   <th>SUPPRIMER</th>
   </thead>
@@ -20,7 +19,6 @@
     <td> {{ f.adresse }}    </td>
     <td> {{ f.email }}    </td>
     <td> {{ f.telephone }}    </td>
-    <td> {{ f.motDePasse }}    </td>
     <td><a class="btn btn-warning" [routerLink]="['/formateur', f.id]" routerLinkActive="active"> EDITER </a></td>
     <td>
       <button class="btn btn-danger" (click)="delete(f.id)">SUPPRIMER</button>

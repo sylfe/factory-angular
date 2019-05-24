@@ -23,13 +23,6 @@
   </div>
   <div *ngIf="coutJournee.dirty && coutJournee.invalid" class="alert-danger">*champ obligatoire </div>
 
-  <div class="input-group mb-3">
-    <label class="input-group-text">Salle</label>
-    <input [(ngModel)]="videoprojecteur.salle.code" type="radio" name="salle" value="true">Oui
-
-    <div *ngFor="let salle of salles">{{salle.code}}</div>
-    <input [(ngModel)]="videoprojecteur.salle.code" type="radio" name="salle" value="false">Non
-  </div>
 
   <button type="submit" class="btn btn-success" [disabled]="monForm.invalid">Enregistrer</button>
   <button  class="btn btn-secondary" [routerLink]="['/videoprojecteurs']" routerLinkActive="active">Retour</button>
