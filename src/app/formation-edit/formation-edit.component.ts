@@ -17,8 +17,9 @@ import {ModulesService} from '../modules.service';
 export class FormationEditComponent implements OnInit {
 
   private matieres: Matiere[];
-  private formateurs: Formateur[];
+  private formateurs: Formateur[] = [];
   private modules: Module[];
+  private modules2: Module[] = []
 
   //Le module qu'on est entrain de créer:
   private module: Module = new Module();
@@ -35,13 +36,16 @@ export class FormationEditComponent implements OnInit {
   ngOnInit() {
     this.activedRoute.params.subscribe( params => {
       if (params.id) {
-        this.formationService.findById(params.id).subscribe( data => {
+        this.formationService.findByIdModules(params.id).subscribe( data => {
           console.log('data' + data);
           console.log(data.id)
           console.log('tryfind');
           this.formation = data;
           //console.log(this.formation);
           this.module.formation = this.formation;
+          for (let module of this.formation.modules){
+            this.modules2.push(module);
+          }
          // console.log('blabla' + this.module.formation.id);
         });
       }
