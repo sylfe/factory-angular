@@ -20,6 +20,10 @@ export class AccessTechnicienService {
       }
       if(hey[d]['droit'] == 'DROIT_ADMIN') {
         this.isAdmin = true;
+
+      }
+      if(sessionStorage.getItem('technicien')){
+        this.isAdmin = true;
       }
     }
     if(this.isAdmin){ return true };

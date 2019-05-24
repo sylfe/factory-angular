@@ -24,7 +24,8 @@ export class TestPageComponent implements OnInit {
   private month31 = [0, 2, 4, 6, 7, 9, 11];
   private monthFormation = [];
   private formation: Formation;
-  private modules: Module[] = []
+  private modules: Module[] = [];
+  private a: string = 'hello';
   constructor( private formationService: FormationService, private moduleService: ModulesService) { }
 
   ngOnInit() {
