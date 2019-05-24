@@ -12,7 +12,6 @@
   <th>PRE-REQUIS</th>
   <th>CONTENU</th>
   <th>DUREE</th>
-  <th>FORMATEUR</th>
   <th>EDITER</th>
   <th>SUPPRIMER</th>
   </thead>
@@ -24,7 +23,6 @@
     <td>{{mat.prerequis}}</td>
     <td>{{mat.contenu}}</td>
     <td>{{mat.nbJours}}</td>
-    <td>{{mat.enseignements}}</td>
     <td><button class="btn btn-warning shadow-sm" [routerLink]="['/matiere',mat.id]" routerLinkActive="active">modifier</button>&nbsp;</td>
       <td><button class="btn btn-danger shadow-sm" (click)="delete(mat.id)">Supprimer</button></td>
   </tr>
