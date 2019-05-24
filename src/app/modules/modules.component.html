@@ -1,9 +1,9 @@
-<h1>Liste des ordinateurs</h1>
+<h1 class="text-center mt-5">Liste des modules</h1>
 <div *ngIf="message" class="alert-success">
   {{message}}
 </div>
-<button [routerLink]="['/ordinateur/edit']" class="btn btn-info" routerLinkActive="active">Ajouter un nouvel ordinateur</button>
-<table class="table table-striped">
+<button [routerLink]="['/ordinateur/edit']" class="btn btn-info shadow mb-4 mt-4" routerLinkActive="active">Ajouter un nouvel ordinateur</button>
+<table class="table table-striped table-hover">
   <thead>
   <th>ID</th>
   <th>Date début</th>
@@ -18,8 +18,8 @@
     <td>{{module.formateur}}</td>
     <td>{{module.matiere}}</td>
     <td>{{module.formation}}</td>
-    <td><button class="btn btn-warning" [routerLink]="['/ordinateur',module.id]" routerLinkActive="active">modifier</button>&nbsp;
-      <button class="btn btn-danger" (click)="delete(module.id)">Supprimer</button></td>
+    <td><button class="btn btn-warning shadow-sm" [routerLink]="['/ordinateur',module.id]" routerLinkActive="active">modifier</button>&nbsp;
+      <button class="btn btn-danger shadow-sm" (click)="delete(module.id)">Supprimer</button></td>
   </tr>
 
 </table>
