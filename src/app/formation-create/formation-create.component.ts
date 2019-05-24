@@ -18,7 +18,9 @@ export class FormationCreateComponent implements OnInit {
   private formation: Formation = new Formation();
 private salles: Salle[];
 private verif: boolean;
- constructor(private activatedRoute: ActivatedRoute, private formationService: FormationService,  private salleService: SalleService, private router: Router) {
+ constructor(private activatedRoute: ActivatedRoute,
+             private formationService: FormationService,
+             private salleService: SalleService, private router: Router) {
   }
 
   ngOnInit() {
@@ -46,6 +48,7 @@ private verif: boolean;
         console.log(result.headers);
         console.log(result);
        //this.router.navigate(['/formation/edit', this.formation.id]);
+
         this.router.navigate(['/formations']);
       });
 
