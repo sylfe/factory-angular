@@ -1,25 +1,42 @@
 .h1 {
-  color: #75e9c2;
+  color: blue;
+  font-family: 'Roboto', sans-serif;
+  font-size: 8em;
+
+}
+.container{
+  width: 50%;
+  margin: 15px auto;
+  padding: 15px;
+  text-align: center;
+  background-color: #d7dad8;
+  box-shadow: 20px 20px 20px -12px #9ea09e;
+  border-radius: 15px;
+  opacity : 0.95;
 }
 img {
   background-image: url("http://www.gif.ovh/french-gif/Informaticien%20Gif/Informaticien%20Gif%20(23).gif");
   width: 60%;
   height: 60%;
 }
-
-.h3 {
-  color: whitesmoke;
-  text-align: center;
+.h6{
+  font-family: 'Lobster', cursive;
+  font-size: 2em;
 }
 
-.welcome {
-  background: rgb(47,58,89);
-  background: linear-gradient(351deg, rgba(47,58,89,0.9821288378632703) 0%, rgba(9,69,121,1) 32%, rgba(93,223,192,1) 100%);
-  background-cover: cover;
+.h3 {
+  color: darkblue;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+}
+
+body {
+
 }
 
 p {
-  color: white;
+  color: midnightblue;
 }
 
 .toto {
