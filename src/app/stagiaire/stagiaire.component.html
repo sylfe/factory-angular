@@ -1,7 +1,7 @@
-<h1>Liste des stagiaires</h1>
-<div *ngIf="message" class="alert alert-info">{{message}}</div>
-<button class="btn btn-info" [routerLink]="['/stagiaire/edit']" routerLinkActive="active"> Ajouter un nouveau stagiaire</button>
-<table class="table table-striped">
+<h1 class="text-center mt-5">Liste des stagiaires</h1>
+<div *ngIf="message" class="alert-success">{{message}}</div>
+<button class="btn btn-info shadow mb-4 mt-4" [routerLink]="['/stagiaire/edit']" routerLinkActive="active"> Ajouter un nouveau stagiaire</button>
+<table class="table table-striped table-hover">
   <thead>
   <th>ID</th>
   <th>NOM</th>
@@ -24,9 +24,9 @@
     <td> {{ f.ordinateur?.code}}    </td>
     <td> {{ f.formation?.titre}}    </td>
 
-    <td><a class="btn btn-warning" [routerLink]="['/stagiaire', f.id]" routerLinkActive="active"> EDITER </a></td>
+    <td><a class="btn btn-warning shadow-sm" [routerLink]="['/stagiaire', f.id]" routerLinkActive="active"> EDITER </a></td>
     <td>
-      <button class="btn btn-danger" (click)="delete(f.id)">SUPPRIMER</button>
+      <button class="btn btn-danger shadow-sm" (click)="delete(f.id)">SUPPRIMER</button>
     </td>
   </tr>
 </table>

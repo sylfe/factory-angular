@@ -21,6 +21,9 @@ export class AccessGestionnaireService {
       if(hey[d]['droit'] == 'DROIT_ADMIN') {
         this.isAdmin = true;
       }
+      if(sessionStorage.getItem('gestionnaire')){
+        this.isAdmin = true;
+      }
     }
     if(this.isAdmin){ return true };
     this.router.navigate(['/login']);

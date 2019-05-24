@@ -4,6 +4,7 @@ import {Formation} from '../model/formation';
 import {ModulesService} from '../modules.service';
 import {Module} from '../model/module';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Matiere} from '../model/matiere';
 @Component({
   selector: 'app-planning-vue',
   templateUrl: './planning-vue.component.html',
@@ -37,10 +38,19 @@ export class PlanningVueComponent implements OnInit {
           this.formation = rez;
           console.log(rez);
           for (let module of this.formation.modules){
-            this.moduleService.findByIdMatiere(module.id).subscribe( rez => {
-              this.modules.push(rez);
-            })
+            this.modules.push(module);
           }
+          this.modules.sort((a: Module, b: Module) => {
+            return new Date(a.dateDebut).getTime() - new Date(b.dateDebut).getTime();
+          });
+          for(let module of this.modules){
+            module.matiere = new Matiere();
+            this.moduleService.findByIdMatiere(module.id).subscribe( rez => {
+              module.matiere = rez.matiere;
+              module.formateur = rez.formateur;
+            });
+          }
+
           this.monthStart = new Date(this.formation.dateDebut);
           console.log(this.monthStart);
           this.monthEnd = new Date(this.formation.dateFin);
@@ -73,6 +83,12 @@ export class PlanningVueComponent implements OnInit {
     return false;
   }
 
+  refresh() {
+    this.modules.sort((a: Module, b: Module) => {
+      return new Date(a.dateDebut).getTime() - new Date(b.dateDebut).getTime();
+    })
+    console.log(this.modules);
+  }
 
 
 }
